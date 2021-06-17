@@ -1,0 +1,28 @@
+$clr__primary : #3a0ca3;
+
+
+p {
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 2.4em;
+}
+
+button {
+  font-size: 0.9em;
+  font-weight: bold;
+  border: 2px solid $clr__primary;
+  border-radius: 3px;
+  background-color: $clr__primary;
+  color: rgba($color: #fff, $alpha: 1.0);
+  width: 100%;
+  padding: 0.6em;
+
+  &:hover {
+    background-color: white;
+    border-color: rgba($color: #fff, $alpha: 1.0);
+    color: rgba($color: $clr__primary, $alpha: 1.0);
+    box-shadow: 1px 1px 6px rgba($color: $clr__primary, $alpha: 1.0);
+  }
+}

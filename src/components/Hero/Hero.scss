@@ -1,0 +1,20 @@
+.hero {
+    font-size: 1em;
+    width: 100%;
+    background-color: black;
+    background-image: url('');
+    background-position: center;
+    background-size: cover;
+    padding: 7em 1.5em 3em;
+    box-sizing: border-box;
+
+    &__text {
+        color: rgb(255, 255, 255);
+        margin: 0;
+    }
+
+    &__title {
+        color: rgb(255, 255, 255);
+        margin: 0 0 0.7em;
+    }
+}
