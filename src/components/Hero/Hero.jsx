@@ -4,7 +4,7 @@ import './Hero.scss'
 function Hero() {
     return (
         <section className="container">
-            <div className="hero">
+            <div className="hero" style={{backgroundImage: URL('@')}}>
                 <p className="hero__text p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, inventore.
                 </p>

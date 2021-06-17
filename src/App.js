@@ -1,11 +1,10 @@
 import './App.scss';
-import Hero from './components/Hero/Hero'
+import Home from './pages/Home';
 
 function App() {
   return (
     <div>
-      <h1>hi</h1>
-      <Hero/>
+      <Home/>
     </div>
   );
 }
