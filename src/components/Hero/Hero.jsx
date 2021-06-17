@@ -5,10 +5,10 @@ function Hero() {
     return (
         <section className="container">
             <div className="hero">
-                <p className="hero__text">
+                <p className="hero__text p">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel, inventore.
                 </p>
-                <h1 className="hero__title">
+                <h1 className="hero__title h1">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis sit labore neque dolor?
                 </h1>
                 <div className="hero__btns">

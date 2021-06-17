@@ -1,8 +1,10 @@
+$clr__primary : #3a0ca3;
+
 .hero {
     font-size: 1em;
     width: 100%;
     background-color: black;
-    background-image: url('');
+    // background-image: url('');
     background-position: center;
     background-size: cover;
     padding: 7em 1.5em 3em;
@@ -16,5 +18,48 @@
     &__title {
         color: rgb(255, 255, 255);
         margin: 0 0 0.7em;
+        line-height: 1.3em;
+    }
+
+    &__btn {
+        font-size: 1.1em;
+        height: 2.5em;
+        width: 7em;
+        border: 2px solid white;
+        border-radius: 3px;
+        color: white; 
+        font-weight: bold;
+        padding: 0.4em;
+        margin: 0.5em 0.4em 0 0;
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+
+        &:hover {
+            background-color: white;
+            color: $clr__primary;
+        }
+
+        &--active {
+            width: 9em;
+            color: $clr__primary;
+            background-color: white;
+
+            &:hover {
+                background-color: $clr__primary;
+                color: white;
+                border-color: $clr__primary;
+            }
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        font-size: 1.1em;
+
+        &__title {
+            width: 70%;
+        }
+        &__text {
+            width: 70%;
+        }
     }
 }
