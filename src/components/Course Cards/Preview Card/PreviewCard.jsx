@@ -15,11 +15,11 @@ function PreviewCard() {
                 </div>
                 <div className="card__tag-group">
                     <span className="card__tag card__tag--active">$00.000</span>
-                    <span className="card__tag"><span className="icon-vertical-align"><FaStar/></span>5.0</span>
-                    <span className="card__tag"><span className="icon-vertical-align"><FaRegClock/></span>10 hrs</span>
+                    <span title="Course Rating" className="card__tag"><span className="icon-vertical-align"><FaStar/></span>5.0</span>
+                    <span title="Course Duration" className="card__tag"><span className="icon-vertical-align"><FaRegClock/></span>10 hrs</span>
                 </div>
                 <div className="card__btn-group">
-                    <button className="card__btn card__btn--active"><FaCartPlus style={{verticalAlign: 'middle', margin: 'auto auto 0.1em auto'}}/></button>
+                    <button title="Add to Cart" className="card__btn card__btn--active"><FaCartPlus style={{verticalAlign: 'middle', margin: 'auto auto 0.1em -0.15em'}}/></button>
                     <button className="card__btn btn">Preview</button>
                 </div>
             </div>
