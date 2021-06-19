@@ -17,25 +17,33 @@ body {
 // }
 
 .btn {
-  font-weight: bold;
-  border: 2px solid rgba($color: #fff, $alpha: 1.0);
-  border-radius: 3px;
-  background-color: rgba($color: #fff, $alpha: 1.0);
-  color: rgba($color: $clr__primary, $alpha: 1.0);
-  width: 100%;
-  padding: 0.8em;
-  cursor: pointer;
-
-  &--active {
-    background-color: rgba($color: $clr__primary, $alpha: 1.0);
-    border-color: rgba($color: $clr__primary, $alpha: 1.0);
-    color: rgba($color: #fff, $alpha: 1.0);
-  }
-
-  &:hover {
+    font-size: 1em;
+    font-weight: bold;
+    border: 2px solid rgba($color: $clr__primary, $alpha: 1.0);
+    border-radius: 3px;
     background-color: rgba($color: #fff, $alpha: 1.0);
-    border-color: rgba($color: #fff, $alpha: 1.0);
     color: rgba($color: $clr__primary, $alpha: 1.0);
-    box-shadow: 1px 1px 6px rgba($color: $clr__primary, $alpha: 1.0);
-  }
+    width: 100%;
+    padding: 0.6em;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    &--active {
+        background-color: rgba($color: $clr__primary, $alpha: 1.0);
+        border-color: rgba($color: $clr__primary, $alpha: 1.0);
+        color: rgba($color: #fff, $alpha: 1.0);
+    }
+
+    &:hover {
+        background-color: rgba($color: #fff, $alpha: 1.0);
+        border-color: rgba($color: #fff, $alpha: 1.0);
+        color: rgba($color: $clr__primary, $alpha: 1.0);
+        box-shadow: 1px 1px 6px rgba($color: $clr__primary, $alpha: 1.0);
+    }
+}
+
+.hover {
+    &:hover {
+      box-shadow: 1px 1px 6px $clr__primary;
+    }
 }

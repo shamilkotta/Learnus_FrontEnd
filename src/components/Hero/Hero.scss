@@ -1,7 +1,7 @@
 $clr__primary : #3a0ca3;
 
 .hero {
-    font-size: 1em;
+    font-size: 0.8em;
     width: 100%;
     background-color: black;
     // background-image: url('');
@@ -54,8 +54,12 @@ $clr__primary : #3a0ca3;
         }
     }
 
+    @media screen and (min-width: 576px) {
+        font-size: 0.9em;
+    }
+
     @media screen and (min-width: 768px) {
-        font-size: 1.1em;
+        font-size: 1em;
 
         &__title {
             width: 70%;

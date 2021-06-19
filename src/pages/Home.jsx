@@ -1,4 +1,5 @@
 import React from 'react'
+import PreviewCard from '../components/Course Cards/Preview Card/PreviewCard';
 import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 
@@ -7,6 +8,8 @@ function Home() {
         <div>
             <h1>hi</h1>
             <Hero/>
+            <br/>
+            <PreviewCard/>
             <br/>
             <Footer/>
         </div>

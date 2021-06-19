@@ -1,0 +1,30 @@
+import React from 'react'
+import './PreviewCard.scss'
+
+import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
+
+function PreviewCard() {
+    return (
+        <div className="preview-card hover">
+            <div className="card__head" /*style={{backgroundImage: URL()}}*/>
+                <span className="card__code">M012</span>
+            </div>
+            <div className="card__body">
+                <div className="card__title-space">
+                    <p className="card__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, possimus? Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div className="card__tag-group">
+                    <span className="card__tag card__tag--active">$00.000</span>
+                    <span className="card__tag"><span className="icon-vertical-align"><FaStar/></span>5.0</span>
+                    <span className="card__tag"><span className="icon-vertical-align"><FaRegClock/></span>10 hrs</span>
+                </div>
+                <div className="card__btn-group">
+                    <button className="card__btn card__btn--active"><FaCartPlus style={{verticalAlign: 'middle', margin: 'auto auto 0.1em auto'}}/></button>
+                    <button className="card__btn btn">Preview</button>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default PreviewCard
