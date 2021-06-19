@@ -1,5 +1,5 @@
 import React from 'react'
-import PreviewCard from '../components/Course Cards/Preview Card/PreviewCard';
+import PreviewCard from '../components/Course Cards/PreviewCard/PreviewCard';
 import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 
