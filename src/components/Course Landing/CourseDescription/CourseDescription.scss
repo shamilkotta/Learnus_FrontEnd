@@ -1,0 +1,18 @@
+
+.course-description {
+    margin: 0 0 0 1em;
+    
+    .description__title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 1em 0 1em;
+    }
+    
+    .description__body {
+        // font-size: 0.9em;
+        letter-spacing: 1;
+        word-spacing: 0.15em;
+        line-height: 1.5em;
+        margin-left: 0.3em;
+    }
+}

@@ -5,12 +5,12 @@ $clr__primary : #3a0ca3;
 
     .head {
         &__video {
-            // background: url('../Wallpaper\ 11.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             width: 100%;
-            height: 28vh;
+            height: 11.45em;
+            min-height: 160px;
             background-color: black;
         }
 
@@ -74,18 +74,18 @@ $clr__primary : #3a0ca3;
     }
 
     @media screen and (min-width: 992px) {
-        font-size: 1.1em;
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-rows: auto auto;
         justify-content: space-between;
         box-sizing: border-box;
-
+    
         .head {
             &__background {
                 grid-area: 1/1/2/3;
                 background-color: rgb(226, 217, 217);
-                height: 33vh;
+                height: 13.5em;
+                min-height: 190px;
             }
             
             &__video {
@@ -97,16 +97,16 @@ $clr__primary : #3a0ca3;
                 box-shadow: 0px 3px 5px rgb(165, 165, 165);
                 box-sizing: border-box;
             }
-
+    
             &__course-info {
                 grid-area: 1/1/2/2;
                 margin: auto 0;
             }
-
+    
             &__price-card {
-                grid-area: 2/2/4/3;
+                grid-area: 2/2/3/3;
                 margin: -1em auto 0;
-                padding: 1em 2em;
+                padding: 0.2em 1.8em 0.8em;
                 width: 80%;
                 height: fit-content;
                 box-sizing: border-box;
@@ -116,12 +116,12 @@ $clr__primary : #3a0ca3;
                 box-shadow: 0px 3px 5px rgb(165, 165, 165);
             }
         }
-
+    
         .course {
             &__tag-group {
                 display: flex;
             }
-
+    
             &__sticky-card {
                 position: relative;
                 width: 100%;
@@ -134,19 +134,15 @@ $clr__primary : #3a0ca3;
                 align-items: flex-start;
                 box-shadow: 0 0 0;
             }
-
+    
             &__btn {
                 width: 100%;
             }
-
+    
             &__price {
                 width: 100%;
                 margin: 0.4em 0;
             }
-        }   
-
-        // &-sec {
-        //     grid-area: 3/1/4/2;
-        // }
+        }
     }
 }
