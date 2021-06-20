@@ -1,6 +1,8 @@
 import React from 'react'
 import './CourseHead.scss'
 
+import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
+
 function CourseHead() {
 
     return (
@@ -15,9 +17,10 @@ function CourseHead() {
                 <h3 className="course__title h">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, magnam sequi! Eius eveniet harum sunt!</h3>
                 <p className="course__short-description p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A at id alias cupiditate? Ex consequuntur nulla eaque molestias asperiores inventore.</p>
                 <div className="course__tag-group">
-                    <p className="course__tag p">4.5(8,858)</p>
-                    <p className="course__tag p">Created 9/2020</p>
-                    <p className="course__tag p">English</p>
+                    <p className="course__tag p" title="Course Rating"><span className="icon-vertical-align"><FaStar/></span>4.5(8,858)</p>
+                    <p className="course__tag p" title="Course Created"><span className="icon-vertical-align"><FaCalendarAlt/></span>Created 9/2020</p>
+                    <p className="course__tag p" title="Course Language"><span className="icon-vertical-align"><FaGlobe/></span>English</p>
+                    <p className="course__tag p" title="Course Duration"><span className="icon-vertical-align" style={{fontSize: '1.1em'}}><FaRegClock/></span>10 hrs</p>
                 </div>
             </div>
             <div className="head__price-card" id="head__price-card">

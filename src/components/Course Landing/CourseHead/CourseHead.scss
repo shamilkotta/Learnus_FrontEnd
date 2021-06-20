@@ -83,7 +83,7 @@ $clr__primary : #3a0ca3;
         .head {
             &__background {
                 grid-area: 1/1/2/3;
-                background-color: rgb(226, 217, 217);
+                background-color: rgb(0, 0, 0);
                 height: 13.5em;
                 min-height: 190px;
             }
@@ -100,7 +100,8 @@ $clr__primary : #3a0ca3;
     
             &__course-info {
                 grid-area: 1/1/2/2;
-                margin: auto 0;
+                margin: 1em 0 auto;
+                color: white;
             }
     
             &__price-card {
@@ -120,6 +121,14 @@ $clr__primary : #3a0ca3;
         .course {
             &__tag-group {
                 display: flex;
+            }
+
+            &__tag {
+                background-color: rgba(82, 82, 82, 0.384);
+                border: 2px solid rgb(116, 116, 116);
+                border-radius: 5px;
+                padding: 0.6em 0.7em 0.4em;
+                cursor: default;
             }
     
             &__sticky-card {
