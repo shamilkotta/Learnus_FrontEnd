@@ -1,0 +1,106 @@
+$clr__primary : #3a0ca3;
+
+.accordion {
+    font-size: 1.3em;
+    list-style: none;
+
+    .dropdown {
+        &__toggle {
+            font-size: 0.9em;
+            color: rgb(0, 0, 0);
+            padding: 0.5em;
+            width: 100%;
+            cursor: pointer;
+            box-sizing: border-box;
+            display: flex;
+    
+            &-icon {
+                color: $clr__primary;
+                font-weight: bold;
+                margin: 0 0.3em 0 0;
+                padding: 0.3em 0.5em;
+                border: 2px solid $clr__primary;
+            }
+    
+            &-txt {
+                font-size: 1em;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                margin: auto 0;
+            }
+    
+            &:hover {
+                .dropdown__toggle-icon {
+                    color: $clr__primary;
+                    background-color: white;
+                    border: 2px solid white;
+                    box-shadow: 0px 0px 3px $clr__primary;
+                }
+            }
+        }
+
+        &__list {
+            height: 0;
+            overflow-y: hidden;
+            -webkit-transition: height 0.4s ease-in-out;
+            transition: height 0.4s ease-in-out;
+        }
+    
+        &__submenu {
+            position: relative;
+            font-size: 0.8em;
+            
+            &::before {
+                font-size: 1.5em;
+                content: "";
+                display: block;
+                width: 1px;
+                font-weight: bolder;
+                height: 100%;
+                border-left: 2px solid $clr__primary;
+                position: absolute;
+                margin: 0 0 0 -0.4em;
+            }
+            
+            li {
+                margin: 0.3em 0;
+                padding: 0.5em;
+                width: 100%;
+                cursor: pointer;
+                list-style: none;
+                color: black;
+                box-sizing: border-box;
+    
+                &::before {
+                    content: '\2022';
+                    color: $clr__primary;
+                    margin: 0 0.5em 0 -1.23em;
+                    font-weight: bolder;
+                    display: inline-block;
+                }
+    
+                &:hover {
+                    color: rgb(88, 88, 88);
+                }
+            }
+            
+            .dropdown__submenu--active {
+                color: $clr__primary;
+            }
+        }
+
+        &--active {
+            height: 220px;
+            overflow-y: scroll;
+
+            &::-webkit-scrollbar {
+                width: 12px;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgb(197, 197, 197);
+                border-radius: 5px;
+            }
+        }
+    }
+}
