@@ -94,12 +94,17 @@ $clr__primary : #3a0ca3;
             max-height: 220px;
             overflow-y: scroll;
 
+            scrollbar-width: 10px; /* firefox */
             &::-webkit-scrollbar {
-                width: 12px;
+                width: 10px;
             }
             &::-webkit-scrollbar-thumb {
-                background-color: rgb(197, 197, 197);
+                background-color: rgb(224, 224, 224);
                 border-radius: 5px;
+
+                &:hover, &:active {
+                    background-color: rgb(197, 197, 197);
+                }
             }
         }
     }
