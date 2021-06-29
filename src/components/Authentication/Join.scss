@@ -11,7 +11,7 @@ $clr__primary : #3a0ca3;
     width: 80%;
     max-width: 400px;
     height: 100%;
-    max-height: 450px;
+    // max-height: 450px;
     text-align: center;
     border-radius: 5px;
     background-color: rgb(255, 255, 255);
@@ -63,9 +63,7 @@ $clr__primary : #3a0ca3;
             border-radius: 0 5px 5px 0;
             box-sizing: border-box;
         }
-    }
-
-    
+    } 
 
     &__btn {
         margin: 0.8em 0.5em 1.5em;
