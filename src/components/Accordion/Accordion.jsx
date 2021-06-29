@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './Accordion.scss'
 
 
-function Accordion({data}) {
+function Accordion({data, showContent}) {
 
     const [activeDropdown, setActiveDropdown] = useState(0)
     const [activeSubmenu, setActiveSubmenu] = useState([0,0])
@@ -36,7 +36,7 @@ function Accordion({data}) {
                             <ul className="dropdown__submenu" >
                                 {
                                     content.chapters.map((chapter, idx)=> (
-                                        <li key= {idx} className={`${submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''}`} onClick={()=>{setActiveSubmenu([indx, idx])}}>{chapter}</li>
+                                        <li key= {idx} className={showContent && submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''} onClick={()=>{showContent && setActiveSubmenu([indx, idx])}} >{chapter}</li>
                                     ))
                                 }
                             </ul>

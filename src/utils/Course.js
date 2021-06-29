@@ -15,10 +15,7 @@ const data = [
         module: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, corporis - 2',
         chapters: [
             'Dashboard style 2 6',
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dolores. lorem20 7',
-            'Image Dropzone 8',
-            'Image Dropzone 9',
-            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dolores. lorem20 10',
+            'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus, dolores. lorem20 7',   
         ]
     },
 
