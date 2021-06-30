@@ -49,9 +49,9 @@ function Join() {
                 <p className="auth__txt">or use your {isSignup? 'email' : 'account'}</p>
                 <div className="auth-input-group">
                     {
-                        isSignup && <InputText className="auth__input" name="name" value={authData.name} holder="Your Name" onChange={handleChange}/>
+                        isSignup && <InputText className="auth__input" name="name" value={authData.name} holder="Your Name" onChange={handleChange}  required/>
                     }
-                    <InputEmail value={authData.email} className="auth__input" onChange={handleChange}/>
+                    <InputEmail value={authData.email} className="auth__input" onChange={handleChange}  required/>
                     <InputPassword value={authData.password} className="auth__input" onChange={handleChange}/>
                     {
                         isSignup && <InputConfirmPassword value={authData.confirmPassword} className="auth__input" onChange={handleChange}/>

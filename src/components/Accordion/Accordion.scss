@@ -43,8 +43,8 @@ $clr__primary : #3a0ca3;
         &__list {
             max-height: 0;
             overflow-y: hidden;
-            -webkit-transition: max-height 0.4s ease-in-out;
-            transition: max-height 0.4s ease-in-out;
+            -webkit-transition: max-height 0.5s linear;
+            transition: max-height 0.5s linear;
         }
     
         &__submenu {
@@ -94,9 +94,9 @@ $clr__primary : #3a0ca3;
             max-height: 220px;
             overflow-y: scroll;
 
-            scrollbar-width: 10px; /* firefox */
+            scrollbar-width: 7px; /* firefox */ 
             &::-webkit-scrollbar {
-                width: 10px;
+                width: 6px;
             }
             &::-webkit-scrollbar-thumb {
                 background-color: rgb(224, 224, 224);
@@ -106,6 +106,12 @@ $clr__primary : #3a0ca3;
                     background-color: rgb(197, 197, 197);
                 }
             }
+
+            &:hover {
+                &::-webkit-scrollbar {
+                    width: 12px;
+                } 
+            } 
         }
     }
 }

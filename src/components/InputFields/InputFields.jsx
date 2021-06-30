@@ -6,10 +6,17 @@ import {FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const checkValidity = e => {
-    (e.target.setCustomValidity('hi')) 
+    if (e.target.type === 'email') {
+        let msg = 'Enter a valid Email Address'
+        e.required && alert('hi')  
+        e.target.setCustomValidity(msg)
+    }else {
+        let msg = 'Enter a valid Password'
+        e.target.setCustomValidity(msg)
+    }
 }
 
-export function InputText({name, value, className, holder, onChange}) {
+export function InputText({name, value, className, holder, onChange, ...props}) {
     return (
         <input
             type="text"
@@ -18,23 +25,23 @@ export function InputText({name, value, className, holder, onChange}) {
             className={className}
             placeholder={holder}
             onChange={onChange}
-            required
+            {...props}
         />
     )
 }
 
-export function InputEmail({value, className, onChange}) {
+export function InputEmail({value, className, onChange, ...props}) {
     return (
         <input 
             type="email" 
             name="email" 
             value={value}
             className={className} 
-            placeholder="Email" 
             onChange={onChange}
-            onInvalid={checkValidity} 
-            onInput={e=>e.target.setCustomValidity('')} 
-            required 
+            placeholder="Email" 
+            // onInvalid={checkValidity}
+            // onInput={e=>e.target.setCustomValidity('')} 
+            {...props}
         />
     )
 }
@@ -58,8 +65,8 @@ export function InputConfirmPassword({value, className, onChange}) {
             name="confirmPassword"
             value={value}
             className={className} 
-            placeholder="Confirm Password" 
             onChange={onChange}
+            placeholder="Confirm Password" 
             onInvalid={checkValidity} 
             onInput={e=>e.target.setCustomValidity('')} 
             required 
@@ -78,10 +85,12 @@ export function InputPassword({value, className, onChange}) {
                 name="password"
                 value={value}
                 className={className}
-                placeholder="Password"
                 onChange={onChange}
-                onInvalid={checkValidity}
-                onInput={e=>e.target.setCustomValidity('')}
+                placeholder="Password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                // onInvalid={checkValidity}
+                // onInput={e=>e.target.setCustomValidity('')}
                 required
             />
             <i onClick={()=> setIsShowPass(!isShowPass)}>
