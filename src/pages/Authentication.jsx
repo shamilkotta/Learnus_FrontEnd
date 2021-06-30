@@ -1,5 +1,7 @@
 import React from 'react'
 import Join from '../components/Authentication/Join'
+import ForgotPassword from '../components/ForgotPassword/ForgotPassword'
+import ResetPassword from '../components/RestePassword/ResetPassword'
 
 function Authentication() {
 
@@ -14,6 +16,8 @@ function Authentication() {
     return (
         <div style={style}>
             <Join/>
+            {/* <ResetPassword/>
+            <ForgotPassword/> */}
         </div>
     )
 }
