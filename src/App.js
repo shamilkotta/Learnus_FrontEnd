@@ -1,5 +1,6 @@
 import './App.scss';
 import Authentication from './pages/Authentication';
+import Cart from './pages/Cart/Cart';
 import CourseLanding from './pages/Course Landing/CourseLanding';
 // import Home from './pages/Home';
 
@@ -8,7 +9,8 @@ function App() {
     <div>
       {/* <Authentication/> */}
       {/* <Home/> */}
-      <CourseLanding/>
+      {/* <CourseLanding/> */}
+      <Cart/>
     </div>
   );
 }
