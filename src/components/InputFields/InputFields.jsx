@@ -3,19 +3,6 @@ import './InputFields.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
 
-
-
-const checkValidity = e => {
-    if (e.target.type === 'email') {
-        let msg = 'Enter a valid Email Address'
-        e.required && alert('hi')  
-        e.target.setCustomValidity(msg)
-    }else {
-        let msg = 'Enter a valid Password'
-        e.target.setCustomValidity(msg)
-    }
-}
-
 export function InputText({name, value, className, holder, onChange, ...props}) {
     return (
         <input
@@ -66,9 +53,8 @@ export function InputConfirmPassword({value, className, onChange}) {
             value={value}
             className={className} 
             onChange={onChange}
-            placeholder="Confirm Password" 
-            onInvalid={checkValidity} 
-            onInput={e=>e.target.setCustomValidity('')} 
+            placeholder="Confirm Password"
+            pattern="(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,16}"
             required 
         />
     )
@@ -87,10 +73,8 @@ export function InputPassword({value, className, onChange}) {
                 className={className}
                 onChange={onChange}
                 placeholder="Password"
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,10}"
-                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                // onInvalid={checkValidity}
-                // onInput={e=>e.target.setCustomValidity('')}
+                pattern="(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,16}"
+                title="Must contain at least one number, one uppercase and lowercase letter, one special charecter. and 8 to 16 charecters long, space between charecters not allowed"
                 required
             />
             <i onClick={()=> setIsShowPass(!isShowPass)}>
