@@ -1,16 +1,14 @@
 $clr__primary : #3a0ca3;
 
 .cart {
+    font-size: 1em;
     padding: 1em;
 
     &__checkout-group {
-        font-size: 1em;
 
         .cart-checkout {
             &__title {
-                font-size: 1.3em;
                 margin: 1em 0 0.2em;
-                padding: 0;
             }
         
             &__price {
@@ -22,7 +20,6 @@ $clr__primary : #3a0ca3;
     }
 
     &__head {
-        font-size: 1em;
         margin-top: 1.5em;
         padding: 0 0 0.5em;
         border-bottom: 1px solid rgba($color: rgb(194, 194, 194), $alpha: 1.0);
