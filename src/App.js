@@ -6,7 +6,7 @@ import CourseLanding from './pages/Course Landing/CourseLanding';
 function App() {
   return (
     <div>
-      <Authentication/>
+      {/* <Authentication/> */}
       {/* <Home/> */}
       <CourseLanding/>
     </div>
