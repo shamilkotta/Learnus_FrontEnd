@@ -5,14 +5,12 @@ import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
 function CourseHead() {
 
+    const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
+
     return (
         <div className="course-head">
-            <div className="head__background">
-                {/* <img src="" alt="" srcset=""/> */}
-            </div>
-            <div className="head__video">
-                {/* <video src=""></video> */}
-            </div>
+            <div className="head__background" style={{background: `url(${image})`}}></div>
+            <iframe className="head__video" src="https://www.youtube.com/embed/9vF1jQBbTss"/>
             <div className="head__course-info">
                 <h3 className="course__title h">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, magnam sequi! Eius eveniet harum sunt!</h3>
                 <p className="course__short-description p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A at id alias cupiditate? Ex consequuntur nulla eaque molestias asperiores inventore.</p>

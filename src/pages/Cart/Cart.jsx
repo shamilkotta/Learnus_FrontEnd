@@ -1,4 +1,5 @@
 import React from 'react'
+import CheckoutCard from '../../components/Course Cards/CheckoutCard/CheckoutCard'
 import './Cart.scss'
 
 function Cart() {
@@ -13,7 +14,7 @@ function Cart() {
                 <div className="cart__items--active">
                     <p className="cart__head p">00 Courses in Cart</p>
                     
-                    
+                    <CheckoutCard/>
                 </div>
                 <div className="cart__items--later">
                     <p className="cart__head p">saved for later</p>

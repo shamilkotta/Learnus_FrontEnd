@@ -1,4 +1,6 @@
 import React from 'react'
+import CheckoutCard from '../../components/Course Cards/CheckoutCard/CheckoutCard'
+import PreviewCard from '../../components/Course Cards/PreviewCard/PreviewCard'
 import './Checkout.scss'
 
 function Checkout() {
@@ -12,7 +14,11 @@ function Checkout() {
 
                 <div className="checkout__details">
                     <h3 className="checkout__title h">Order Details</h3>
-                    
+                    <PreviewCard/>
+                    <CheckoutCard/>
+                    <CheckoutCard/>
+                    <CheckoutCard/>
+                    <CheckoutCard/>
                 </div>
             </div>
 

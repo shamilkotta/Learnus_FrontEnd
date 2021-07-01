@@ -4,9 +4,12 @@ import './PreviewCard.scss'
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
 
 function PreviewCard() {
+
+    const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
+
     return (
         <div className="preview-card hover">
-            <div className="card__head" /*style={{backgroundImage: URL()}}*/>
+            <div className="card__head" style={{backgroundImage: `url(${image})`}}>
                 <span className="card__code">M012</span>
             </div>
             <div className="card__body">
