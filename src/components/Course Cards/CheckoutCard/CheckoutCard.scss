@@ -50,6 +50,8 @@ $clr__primary : #3a0ca3;
 
         &__btn {
             font-size: 1em;
+            width: 5em;
+            height: 1em;
             text-align: center;
             color: white;
             background-color: $clr__primary;
@@ -58,14 +60,27 @@ $clr__primary : #3a0ca3;
             border-radius: 3px;
             margin: 0 0.5em 0 0;
             float: left;
+            cursor: pointer;
 
-            // &-icon {
-            //     display: none;
-            // }
+            &-icon {
+                font-size: 1.8em;
+                display: none;
+                margin: -6% auto auto;
+            }
+
+            &:hover {
+                span {
+                    display: none;
+                }
+
+                .checkout-card__btn-icon {
+                    display: block;
+                }
+            }
         }
 
         &__title {
-            font-size: 1.5em;
+            font-size: 1.7em;
             grid-area: 2/2/3/4;
             padding: 0.2em 0.4em;
             margin: 0;

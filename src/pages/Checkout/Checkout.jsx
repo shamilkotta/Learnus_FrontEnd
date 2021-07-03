@@ -9,12 +9,14 @@ function Checkout() {
             <div className="checkout-content">
                 <div className="checkout__gateway">
                     <h3 className="checkout__title h">Checkout</h3>
-                    <div style={{height: '1000px'}}>somw</div>
+                    <div style={{height: '100px'}}>somw</div>
                 </div>
 
                 <div className="checkout__details">
                     <h3 className="checkout__title h">Order Details</h3>
-                    <PreviewCard/>
+                    <CheckoutCard/>
+                    <CheckoutCard/>
+                    <CheckoutCard/>
                     <CheckoutCard/>
                     <CheckoutCard/>
                     <CheckoutCard/>

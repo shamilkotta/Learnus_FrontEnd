@@ -50,6 +50,7 @@ $clr__primary : #3a0ca3;
         &__submenu {
             position: relative;
             font-size: 0.8em;
+            z-index: -1;
             
             &::before {
                 font-size: 1.5em;
