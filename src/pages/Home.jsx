@@ -1,5 +1,5 @@
 import React from 'react'
-import PreviewCard from '../components/Course Cards/PreviewCard/PreviewCard';
+import CoursePreview from '../components/Cards/CoursePreview/CoursePreview';
 import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
 
@@ -9,7 +9,7 @@ function Home() {
             <h1>hi</h1>
             <Hero/>
             <br/>
-            <PreviewCard/>
+            <CoursePreview/>
             <br/>
             <Footer/>
         </div>

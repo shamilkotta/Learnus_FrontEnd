@@ -1,6 +1,5 @@
 import React from 'react'
-import CheckoutCard from '../../components/Course Cards/CheckoutCard/CheckoutCard'
-import PreviewCard from '../../components/Course Cards/PreviewCard/PreviewCard'
+import CheckoutCourse from '../../components/Cards/CheckoutCourse/CheckoutCourse'
 import './Checkout.scss'
 
 function Checkout() {
@@ -14,13 +13,13 @@ function Checkout() {
 
                 <div className="checkout__details">
                     <h3 className="checkout__title h">Order Details</h3>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
-                    <CheckoutCard/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
+                    <CheckoutCourse/>
                 </div>
             </div>
 

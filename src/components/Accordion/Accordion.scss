@@ -3,6 +3,7 @@ $clr__primary : #3a0ca3;
 .accordion {
     font-size: 1.3em;
     list-style: none;
+    margin: 0 0.7em 0 -1.8em;
 
     .dropdown {
         &__toggle {
@@ -50,7 +51,7 @@ $clr__primary : #3a0ca3;
         &__submenu {
             position: relative;
             font-size: 0.8em;
-            z-index: -1;
+            // z-index: -1;
             
             &::before {
                 font-size: 1.5em;

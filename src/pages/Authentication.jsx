@@ -16,8 +16,8 @@ function Authentication() {
     return (
         <div style={style}>
             <Join/>
-            {/* <ResetPassword/>
-            <ForgotPassword/> */}
+            {/* <ResetPassword/> */}
+            {/* <ForgotPassword/> */}
         </div>
     )
 }

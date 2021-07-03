@@ -10,9 +10,9 @@ function App() {
     <div>
       {/* <Authentication/> */}
       {/* <Home/> */}
-      {/* <CourseLanding/> */}
+      <CourseLanding/>
       {/* <Cart/> */}
-      <Checkout/>
+      {/* <Checkout/> */}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './Accordion.scss'
 
 
-function Accordion({data, showContent}) {
+function Accordion({data, showContent=false}) {
 
     const [activeDropdown, setActiveDropdown] = useState(0)
     const [activeSubmenu, setActiveSubmenu] = useState([0,0])

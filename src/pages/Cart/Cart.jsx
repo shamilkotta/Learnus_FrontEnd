@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cart.scss'
 
-import CheckoutCard from '../../components/Course Cards/CheckoutCard/CheckoutCard'
+import CheckoutCourse from '../../components/Cards/CheckoutCourse/CheckoutCourse'
 
 function Cart() {
     return (
@@ -14,17 +14,17 @@ function Cart() {
             <div className="cart__items">
                 <div className="cart__items--active">
                     <p className="cart__head p">00 Courses in Cart</p>
-                    <CheckoutCard isCart/>
-                    <CheckoutCard isCart/>
-                    <CheckoutCard isCart/>
-                    <CheckoutCard isCart/>
+                    <CheckoutCourse isCart/>
+                    <CheckoutCourse isCart/>
+                    <CheckoutCourse isCart/>
+                    <CheckoutCourse isCart/>
                 </div>
                 <div className="cart__items--later">
                     <p className="cart__head p">saved for later</p>
-                    <CheckoutCard isCart isLater/>
-                    <CheckoutCard isCart isLater/>
-                    <CheckoutCard isCart isLater/>
-                    <CheckoutCard isCart isLater/>
+                    <CheckoutCourse isCart isLater/>
+                    <CheckoutCourse isCart isLater/>
+                    <CheckoutCourse isCart isLater/>
+                    <CheckoutCourse isCart isLater/>
                 </div>
             </div>
         </div>

@@ -12,6 +12,7 @@ $clr__primary : #3a0ca3;
             height: 11.45em;
             min-height: 160px;
             background-color: black;
+            box-sizing: border-box;
         }
 
         &__course-info {
@@ -26,6 +27,9 @@ $clr__primary : #3a0ca3;
     .course {
         &__short-description {
             margin: 0.4em 0 1em;
+            letter-spacing: 1;
+            word-spacing: 0.15em;
+            line-height: 1.2em;
         }
 
         &__tag {
@@ -44,6 +48,7 @@ $clr__primary : #3a0ca3;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 -2px 8px rgba($color: rgb(204, 204, 204), $alpha: 1.0);
+            z-index: 5;
         }
 
         &__price {
@@ -105,7 +110,7 @@ $clr__primary : #3a0ca3;
                 background-color: black;
                 margin: auto auto;
                 width: 80%;
-                border: 1px solid rgb(255, 255, 255);
+                border: 2px solid rgb(255, 255, 255);
                 border-radius: 8px 8px 0 0;
                 box-shadow: 0px 3px 5px rgb(165, 165, 165);
                 box-sizing: border-box;
@@ -156,7 +161,6 @@ $clr__primary : #3a0ca3;
                 justify-content: flex-start;
                 align-items: flex-start;
                 box-shadow: 0 0 0;
-                z-index: 5;
             }
     
             &__btn {

@@ -9,7 +9,7 @@ function CourseContent() {
     return (
         <div className="course-content">
             <p className="course-content__title">Course Content</p>
-            <Accordion data={data} showContent={false}/>
+            <Accordion data={data} />
         </div>
     )
 }

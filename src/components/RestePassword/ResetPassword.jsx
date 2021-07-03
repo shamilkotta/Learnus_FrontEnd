@@ -6,7 +6,7 @@ import {FaPlus} from 'react-icons/fa'
 
 function ResetPassword() {
     
-    const [resetPassData, setResetPassData] = useState({email: ''})
+    const [resetPassData, setResetPassData] = useState({password: '', confirmPassword: ''})
     const handleChange = e=> setResetPassData(prvsData=>({...prvsData, [e.target.name]: e.target.value}))
     const handleSubmit = e=> {
         console.log(resetPassData)

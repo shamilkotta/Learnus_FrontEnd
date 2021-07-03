@@ -1,9 +1,9 @@
 import React from 'react'
-import './PreviewCard.scss'
+import './CoursePreview.scss'
 
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
 
-function PreviewCard() {
+function CoursePreview() {
 
     const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
 
@@ -30,4 +30,4 @@ function PreviewCard() {
     )
 }
 
-export default PreviewCard
+export default CoursePreview

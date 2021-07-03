@@ -7,7 +7,6 @@ import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 function Join() {
 
     const [isSignup, setIsSignup] = useState(false)
-
     const initialAuthData = {email:'', password: '', name: '', confirmPassword: ''}
     const [authData, setAuthData] = useState(initialAuthData)
 
