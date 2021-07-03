@@ -1,4 +1,5 @@
 import './App.scss';
+import HoverCard from './components/HoverCard/HoverCard';
 import Authentication from './pages/Authentication';
 import Cart from './pages/Cart/Cart';
 import Checkout from './pages/Checkout/Checkout';
@@ -9,8 +10,9 @@ function App() {
   return (
     <div>
       {/* <Authentication/> */}
-      {/* <Home/> */}
-      <CourseLanding/>
+      <Home/>
+      {/* <HoverCard/> */}
+      {/* <CourseLanding/> */}
       {/* <Cart/> */}
       {/* <Checkout/> */}
     </div>

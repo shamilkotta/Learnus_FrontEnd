@@ -1,0 +1,28 @@
+
+
+.cart-hover-card {
+    display: flex;
+    border-bottom: 1px solid rgb(197, 197, 197);
+    padding: 0.5em 0;
+    justify-content: space-between;
+    cursor: pointer;
+
+    &__img {
+        // background: url('../Wallpaper\ 9.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 35%;
+        height: auto;
+    }
+
+    &__title {
+        font-size: 1em;
+        width: 63% !important;
+        line-height: 1.1em;
+        max-height: 3.3em;
+        overflow: hidden;
+        margin-left: 0.2em;
+        margin-top: 0.1em;
+    }
+}
