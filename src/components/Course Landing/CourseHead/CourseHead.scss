@@ -25,6 +25,13 @@ $clr__primary : #3a0ca3;
     }
 
     .course {
+        &__title {
+            letter-spacing: 1;
+            word-spacing: 0.15em;
+            line-height: 1.2em;
+            text-overflow: ellipsis;
+        }
+
         &__short-description {
             margin: 0.4em 0 1em;
             letter-spacing: 1;
@@ -47,7 +54,7 @@ $clr__primary : #3a0ca3;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 -2px 8px rgba($color: rgb(204, 204, 204), $alpha: 1.0);
+            box-shadow: 0 -2px 8px rgba($color: rgb(0, 0, 0), $alpha: 0.5);
             z-index: 5;
         }
 
@@ -57,8 +64,13 @@ $clr__primary : #3a0ca3;
             margin: 0;
         }
 
-        &__btn--active{
-            width: 65%;
+        &__btn {
+            width: 100%;
+            max-width: 40em; 
+
+            &--active{
+                width: 65%;
+            }
         }
 
         &__includes-title {
@@ -68,6 +80,10 @@ $clr__primary : #3a0ca3;
 
         &__includes-text {
             margin: 0.4em 0.6em;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-break: break-all;
             letter-spacing: 1;
             word-spacing: 0.15em;
             line-height: 1.5em;
@@ -124,8 +140,8 @@ $clr__primary : #3a0ca3;
     
             &__price-card {
                 grid-area: 2/2/3/3;
-                margin: -1em auto 0;
-                padding: 0.2em 1.8em 0.8em;
+                margin: -1.02em auto 0;
+                padding: 0.2em 1.5em 0.8em;
                 width: 80%;
                 height: fit-content;
                 box-sizing: border-box;
@@ -138,6 +154,16 @@ $clr__primary : #3a0ca3;
         }
     
         .course {
+            &__title {
+                max-height: 2.5em;
+                overflow: hidden;
+            }
+                
+            &__short-description {
+                max-height: 2.5em;
+                overflow: hidden;
+            }
+
             &__tag-group {
                 display: flex;
             }

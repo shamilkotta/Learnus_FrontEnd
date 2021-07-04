@@ -70,6 +70,7 @@ $clr__primary : #3a0ca3;
             position: fixed;
             right: 0;
             border: 1px solid rgb(194, 194, 194);
+            background-color: rgb(255, 255, 255);
             border-radius: 5px;
 
             .checkout-bill {
@@ -78,6 +79,8 @@ $clr__primary : #3a0ca3;
                     padding: 0;
                     position: relative;
                     width: 100%;
+                    background-color: rgba(255, 255, 255, 0);
+                    border-top: 0px;
         
                     &-total {
                         display: none;

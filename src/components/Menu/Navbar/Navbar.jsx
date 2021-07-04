@@ -3,12 +3,12 @@ import './Navbar.scss'
 
 import { FiBarChart, FiShoppingCart, FiUser } from 'react-icons/fi'
 
-function Navbar() {
+function Navbar({toggle}) {
     return (
         <nav className="navbar">
             <div className="navbar-container">
                 <span className="navbar__logo"><span>My</span>Course</span>
-                <span className="navbar__toggler" onclick="toggler()">
+                <span className="navbar__toggler" onClick={toggle}>
                     <span><FiBarChart/></span>
                 </span>
             </div>

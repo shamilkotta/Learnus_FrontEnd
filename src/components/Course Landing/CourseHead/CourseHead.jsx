@@ -27,7 +27,7 @@ function CourseHead() {
                     <button type="submit" className="course__btn course__btn--active btn btn--active">Buy now</button>
                 </div>
                 <button type="submit" className="course__btn btn">Add to cart</button>
-                <p className="course__includes-title  p">This course includes:</p>
+                <p className="course__includes-title p">This course includes:</p>
                 <p className="course__includes-text p">6.5 hours on-demand video</p>
                 <p className="course__includes-text p">8 articles</p>
                 <p className="course__includes-text p">51 downloadable resources</p>

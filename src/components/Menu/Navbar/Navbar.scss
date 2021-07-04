@@ -19,6 +19,7 @@ $clr__primary : #3a0ca3;
         font-size: 1.8em;
         font-weight: bolder;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        cursor: pointer;
 
         span {
             color: $clr__primary;
@@ -33,6 +34,7 @@ $clr__primary : #3a0ca3;
         align-items: center;
         justify-content: center;
         transform:rotate(-90deg);
+        cursor: pointer;
     }
 
     &__items {
@@ -52,7 +54,7 @@ $clr__primary : #3a0ca3;
             font-size: 1.1em;
             list-style: none;
             text-align: right;
-            width: 50%;
+            width: 60%;
             margin: 0.8em 0;
             display: flex;
             justify-content: flex-end;
@@ -62,6 +64,10 @@ $clr__primary : #3a0ca3;
             margin: auto;
             font-weight: bold;
             cursor: pointer;
+            
+            &:hover {
+                color: $clr__primary;
+            }
 
             &--btn {
                 color: rgb(255, 255, 255);
@@ -86,6 +92,11 @@ $clr__primary : #3a0ca3;
                 padding: 0.3em;
                 border-radius: 50%;
                 overflow: visible;
+
+                &:hover {
+                    color: rgb(255, 255, 255);
+                    background-color: $clr__primary;
+                }
             }
         }
     }

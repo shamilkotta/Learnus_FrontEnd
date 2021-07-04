@@ -3,16 +3,19 @@ import './CourseLanding.scss'
 import CourseHead from '../../components/Course Landing/CourseHead/CourseHead'
 import CourseDescription from '../../components/Course Landing/CourseDescription/CourseDescription'
 import CourseContent from '../../components/Course Landing/CourseContent/CourseContent'
+import GustLayout from '../../layouts/GustLayout'
 
 function CourseLanding() {
     return (
-        <div className="course-landing">
-            <CourseHead/>
-            <div className="course-body">
-                <CourseDescription/>
-                <CourseContent/>
+        <GustLayout>
+            <div className="course-landing">
+                <CourseHead/>
+                <div className="course-body">
+                    <CourseDescription/>
+                    <CourseContent/>
+                </div>
             </div>
-        </div>
+        </GustLayout>
     )
 }
 
