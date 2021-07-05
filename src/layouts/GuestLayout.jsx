@@ -3,7 +3,7 @@ import Footer from '../components/Footer/Footer'
 import MobileNavbar from '../components/Menu/MobileNavbar/MobileNavbar'
 import Navbar from '../components/Menu/Navbar/Navbar'
 
-function GustLayout(props) {
+function GuestLayout(props) {
 
     const [isMobileNav, setIsMobileNav] = useState(false)
 
@@ -21,4 +21,4 @@ function GustLayout(props) {
     )
 }
 
-export default GustLayout
+export default GuestLayout

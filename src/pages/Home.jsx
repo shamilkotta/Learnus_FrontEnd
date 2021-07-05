@@ -2,7 +2,7 @@ import React from 'react'
 import CoursePreview from '../components/Cards/CoursePreview/CoursePreview';
 import Footer from '../components/Footer/Footer';
 import Hero from '../components/Hero/Hero';
-import GustLayout from '../layouts/GustLayout';
+import GuestLayout from '../layouts/GuestLayout';
 
 function Home() {
     return (
@@ -14,10 +14,10 @@ function Home() {
         //     <br/>
         //     <Footer/>
         // </div>
-        <GustLayout>
+        <GuestLayout>
             <Hero/>
             <CoursePreview/>
-        </GustLayout>
+        </GuestLayout>
     )
 }
 

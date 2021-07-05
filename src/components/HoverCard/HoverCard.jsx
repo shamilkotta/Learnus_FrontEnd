@@ -2,7 +2,7 @@ import React from 'react'
 import CartHoverCard from '../Cards/CartHoverCard/CartHoverCard'
 import './HoverCard.scss'
 
-function HoverCard() {
+function HoverCard({data}) {
     return (
         <div className="hover-card">
             <div className="hover-card__content">

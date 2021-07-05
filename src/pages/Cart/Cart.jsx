@@ -2,11 +2,11 @@ import React from 'react'
 import './Cart.scss'
 
 import CheckoutCourse from '../../components/Cards/CheckoutCourse/CheckoutCourse'
-import GustLayout from '../../layouts/GustLayout'
+import GuestLayout from '../../layouts/GuestLayout'
 
 function Cart() {
     return (
-        <GustLayout>
+        <GuestLayout>
             <div className="cart">
                 <div className="cart__checkout-group">
                     <p className="cart-checkout__title h">Total</p>
@@ -30,7 +30,7 @@ function Cart() {
                     </div>
                 </div>
             </div>
-        </GustLayout>
+        </GuestLayout>
     )
 }
 

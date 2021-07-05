@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './CheckoutCourse.scss'
 
 import { MdRemoveShoppingCart, MdPlaylistAdd, MdPlaylistPlay } from "react-icons/md"
 
-function CheckoutCourse({isCart=false, isLater=false}) {
+function CheckoutCourse({data, isCart=false, isLater=false}) {
 
     const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
     const handleLater = ()=>{}

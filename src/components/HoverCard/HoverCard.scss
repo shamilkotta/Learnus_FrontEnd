@@ -2,15 +2,15 @@ $clr__primary : #3a0ca3;
 
 .hover-card {
     width: 23%;
-    margin: 3em auto auto;
-    padding-top: 1em;
+    margin: 10px auto auto;
+    padding-top: 10px;
     box-shadow: 0px 2px 5px rgb(187, 187, 187);
     position: relative;
     box-sizing: border-box;
-    z-index: 2000;
+    z-index: 50;
 
     &__content {
-        margin: 0 0.5em 0;
+        margin: 0 7px 0;
         overflow: auto;
         max-height: 50vh;
 
@@ -32,7 +32,7 @@ $clr__primary : #3a0ca3;
     &__sticky {
         background-color: rgba($color: rgb(255, 255, 255), $alpha: 1.0);
         box-shadow: 0px -1px 5px rgb(187, 187, 187);
-        padding: 0.5em;
+        padding: 8px;
         align-items: center;
         box-sizing: border-box;
     }

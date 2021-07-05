@@ -1,38 +1,40 @@
 $clr__primary : #3a0ca3;
 
+.hero-container{
+    background-color: black;
+}
+
 .hero {
     font-size: 0.8em;
     width: 100%;
-    background-color: black;
-    // background-image: url('');
     background-position: center;
     background-size: cover;
-    padding: 7em 1.5em 3em;
+    padding: 200px 18px 70px;
     box-sizing: border-box;
 
     &__text {
         font-size: 1.3em;
         color: rgb(255, 255, 255);
-        margin: 0;
+        margin: 0 0 8px;
     }
 
     &__title {
         font-size: 2.1em;
         color: rgb(255, 255, 255);
-        margin: 0 0 0.7em;
+        margin: 0 0 30px;
         line-height: 1.3em;
     }
 
     &__btn {
-        font-size: 1.1em;
-        height: 2.5em;
-        width: 7em;
+        font-size: 1.3em;
+        height: 50px;
+        width: 140px;
         border: 2px solid white;
         border-radius: 3px;
         color: white; 
         font-weight: bold;
-        padding: 0.4em;
-        margin: 0.5em 0.4em 0 0;
+        padding: 10px;
+        margin: 7px 7px 0 0;
         background-color: rgba(255, 255, 255, 0);
         cursor: pointer;
 
@@ -42,7 +44,7 @@ $clr__primary : #3a0ca3;
         }
 
         &--active {
-            width: 9em;
+            width: 180px;
             color: $clr__primary;
             background-color: white;
 

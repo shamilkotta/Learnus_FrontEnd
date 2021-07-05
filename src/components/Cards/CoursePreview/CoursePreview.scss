@@ -2,13 +2,13 @@ $clr__primary : #3a0ca3;
 
 .preview-card {
     font-size: 1em;
-    width: 15em;
+    width: 250px;
     background-color: rgb(255, 255, 255);
     border-radius: 9px;
-    margin: 1.5em 1em;
+    margin: 15px;
     box-sizing: border-box;
     cursor: pointer;
-    flex: 0 0 auto;
+    // flex: 0 0 auto;
     border: 1px solid rgb(182, 182, 182);
 
     .card {
@@ -16,7 +16,6 @@ $clr__primary : #3a0ca3;
             width: 100%;
             height: 10em;
             color: white;
-            // background: url();
             border-radius: 9px 9px 0 0;
             background-color: rgb(0, 0, 0);
             background-size: cover;
@@ -29,22 +28,22 @@ $clr__primary : #3a0ca3;
         &__code {
             font-size: 0.8em;
             background-color: rgb(15, 228, 15);
-            padding: 0.1em 0.3em;
+            padding: 1px 5px;
             font-weight: bold;
             color: white;
             border-radius: 3px;
             width: fit-content;
-            margin: 0.5em;
+            margin: 5px;
             align-self: flex-end;
         }
 
         &__body {
-            padding: 0 0.5em;
+            padding: 0 7px;
         }
 
         &__title-space {
             width: 98%;
-            height: 4.6em;
+            height: 70px;
         }
 
         &__title {
@@ -54,20 +53,20 @@ $clr__primary : #3a0ca3;
             overflow: hidden;
             max-height: 3.7em;
             line-height: 1.2em;
-            margin: 0.5em 0;
+            margin: 8px 0;
         }
 
         &__tag-group {
-            padding-top: 0.4em;
+            padding-top: 6px;
         }
 
         &__tag {
             font-size: 0.9em;
             background-color: rgb(238, 238, 238);
-            padding: 0.2em 0.3em;
+            padding: 2px 4px;
             border-radius: 3px;
             color: $clr__primary;
-            margin: 0 0 0 0.2em; 
+            margin: 0 0 0 5px; 
 
             &--active {
                 font-size: 1.3em;
@@ -75,15 +74,15 @@ $clr__primary : #3a0ca3;
                 background-color: rgb(255, 255, 255);
                 font-weight: bolder;
                 padding: 0;
-                margin: 0 0.6em 0 0;
+                margin: 0 9px 0 0;
             }
         }
 
         &__btn-group {
             display: flex;
             justify-content: space-between;
-            margin: 0.4em 0;
-            padding-top: 0.4em;
+            margin: 7px 0;
+            padding-top: 7px;
             border-top: 0.5px solid rgb(221, 221, 221);
         }
 

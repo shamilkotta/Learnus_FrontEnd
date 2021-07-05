@@ -3,8 +3,8 @@ $clr__primary : #3a0ca3;
 .checkout {
     &-card {
         font-size: 10px;
-        margin: 1em 0;
-        padding: 0.3em;
+        margin: 10px 0;
+        padding: 3px;
         width: 100%;
         min-height: 110px;
         border: 1px solid rgb(194, 194, 194);
@@ -25,7 +25,7 @@ $clr__primary : #3a0ca3;
 
         &__code {
             grid-area: 1/2/2/3;
-            padding: 0 0.4em;
+            padding: 0 4px;
             margin: auto auto auto 0;
 
             p {
@@ -33,10 +33,10 @@ $clr__primary : #3a0ca3;
                 text-align: center;
                 color: rgb(0, 0, 0);
                 background-color: rgb(204, 204, 204);
-                padding: 0.2em;
+                padding: 2px;
                 border: 1px solid rgb(204, 204, 204);
                 border-radius: 3px;
-                margin: 0 0.5em 0 0;
+                margin: 0;
             }
         }
 
@@ -50,15 +50,15 @@ $clr__primary : #3a0ca3;
 
         &__btn {
             font-size: 1em;
-            width: 5em;
-            height: 1em;
+            width: 50px;
+            height: 11px;
             text-align: center;
             color: white;
             background-color: $clr__primary;
-            padding: 0.4em;
+            padding: 4px;
             border: 1px solid $clr__primary;
             border-radius: 3px;
-            margin: 0 0.5em 0 0;
+            margin: 0 5px 0 0;
             float: left;
             cursor: pointer;
 
@@ -82,7 +82,7 @@ $clr__primary : #3a0ca3;
         &__title {
             font-size: 1.7em;
             grid-area: 2/2/3/4;
-            padding: 0.2em 0.4em;
+            padding: 3px 6px;
             margin: 0;
             justify-content: center;
             line-height: 1.5em;
@@ -94,7 +94,7 @@ $clr__primary : #3a0ca3;
             font-size: 1.8em;
             grid-area: 3/2/4/4;
             font-weight: bolder;
-            padding: 0.1em 0.4em;
+            padding: 1.5px 5px;
             align-self: center;
         }
     }

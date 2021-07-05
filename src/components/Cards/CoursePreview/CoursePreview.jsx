@@ -3,7 +3,7 @@ import './CoursePreview.scss'
 
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
 
-function CoursePreview() {
+function CoursePreview({data}) {
 
     const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
 

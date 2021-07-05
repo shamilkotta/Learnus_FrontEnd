@@ -1,11 +1,11 @@
 import React from 'react'
 import './Checkout.scss'
 import CheckoutCourse from '../../components/Cards/CheckoutCourse/CheckoutCourse'
-import GustLayout from '../../layouts/GustLayout'
+import GuestLayout from '../../layouts/GuestLayout'
 
 function Checkout() {
     return (
-        <GustLayout>
+        <GuestLayout>
             <div className="checkout">
                 <div className="checkout-content">
                     <div className="checkout__gateway">
@@ -52,7 +52,7 @@ function Checkout() {
                     </div>
                 </div>
             </div>
-        </GustLayout>
+        </GuestLayout>
     )
 }
 

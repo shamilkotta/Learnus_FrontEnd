@@ -10,9 +10,9 @@ function App() {
   return (
     <div>
       {/* <Authentication/> */}
-      {/* <Home/> */}
+      <Home/>
       {/* <HoverCard/> */}
-      <CourseLanding/>
+      {/* <CourseLanding/> */}
       {/* <Cart/> */}
       {/* <Checkout/> */}
     </div>

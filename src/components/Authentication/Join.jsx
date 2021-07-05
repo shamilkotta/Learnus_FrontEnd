@@ -36,7 +36,7 @@ function Join() {
     }
 
     return (
-        <div className="auth" style={{maxHeight: `${isSignup ? '32em' : '27em'}`}}>
+        <div className="auth" style={{maxHeight: `${isSignup ? '510px' : '440px'}`}}>
             <FaPlus style={{transform: 'rotate(45deg)',float: 'right'}} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">{isSignup? 'Sign Up' : 'Sign In'}</h1>

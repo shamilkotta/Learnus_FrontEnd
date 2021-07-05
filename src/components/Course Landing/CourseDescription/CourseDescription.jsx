@@ -1,7 +1,7 @@
 import React from 'react'
 import './CourseDescription.scss'
 
-function CourseDescription() {
+function CourseDescription({data}) {
     return (
         <div className="course-description">
             <div>

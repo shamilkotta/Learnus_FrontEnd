@@ -4,8 +4,8 @@ import './Footer.scss'
 
 function Footer() {
     return (
-        <section className="container">
-            <div className="footer">
+        <section className="footer-container">
+            <div className="footer wrapper">
                 <div className="footer__main">
                     <div className="footer__description">
                         <div className="footer__brand">

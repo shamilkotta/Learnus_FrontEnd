@@ -1,20 +1,24 @@
-$clr__primary : #3a0ca3;
+$clr__primary : #3a0ca3; 
 
 .footer {
     font-size: 1.15em;
-    background-color: rgb(0, 0, 0);
+    padding: 0 18px;
+
+    &-container {
+        background-color: rgb(0, 0, 0);
+    }
 
     &__main {
         font-size: 0.9em;
         color: rgb(155, 155, 155);
-        padding: 1em ;
+        padding: 15px 0;
         font-weight: lighter;
         letter-spacing: 3;
         line-height: 1.5em;
     }
 
     &__brand {
-        margin: 1em 0 3em;
+        margin: 15px 0  40px;
 
         .brand {
             &__logo {
@@ -28,8 +32,8 @@ $clr__primary : #3a0ca3;
         }
 
         .social__icon {
-            margin: 0.2em;
-            padding: 0.6em;
+            margin: 6px;
+            padding: 12px;
             color: rgb(255, 255, 255);
             border: 1px solid rgb(255, 255, 255);
             border-radius: 3px;
@@ -43,7 +47,7 @@ $clr__primary : #3a0ca3;
     }
 
     &__info {
-        margin: 1em;
+        margin: 1em 0;
 
         .info {
             &__description {
@@ -62,7 +66,7 @@ $clr__primary : #3a0ca3;
         flex-direction: row;
 
         >div {
-            margin: 1em;
+            margin: 1em 0;
             width: 50%;
         }
 
@@ -88,7 +92,7 @@ $clr__primary : #3a0ca3;
         font-size: 0.8em;
         color: rgb(190, 190, 190);
         border-top: 1px solid rgb(255, 255, 255);
-        padding: 0.5em;
+        padding: 25px;
         text-align: center;
     }
 
@@ -104,6 +108,7 @@ $clr__primary : #3a0ca3;
         }
         &__info {
             width: 50%;
+            margin: 1em;
         }
     }
 
@@ -115,8 +120,12 @@ $clr__primary : #3a0ca3;
         &__description {
             width: 60%;
         }
+        &__info {
+            margin: 1em;
+        }
         &__links {
             width: 40%;
+            margin: 0 1em;
         }
     }
 
