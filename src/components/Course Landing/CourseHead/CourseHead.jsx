@@ -21,7 +21,7 @@ function CourseHead({data, isCardFixed=false}) {
                     <p className="course__tag p" title="Course Duration"><span className="icon-vertical-align" style={{fontSize: '1.1em'}}><FaRegClock/></span>10 hrs</p>
                 </div>
             </div>
-            <div className="head__price-card" id="head__price-card" style={isCardFixed ? {position: 'fixed', width: '26.7%', top: '111px', right: '3.3%'} : {position: 'relative', width: '80%'}}>
+            <div className="head__price-card" id="head__price-card" style={isCardFixed ? {position: 'fixed', width: '26.7%', top: '125px', right: '3.3%'} : {position: 'relative', width: '80%'}}>
                 <div className="course__sticky-card">
                     <h2 className="course__price">$00,000</h2>
                     <button type="submit" className="course__btn course__btn--active btn btn--active">Buy now</button>

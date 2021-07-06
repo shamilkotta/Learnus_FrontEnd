@@ -9,15 +9,16 @@ import GuestLayout from '../../layouts/GuestLayout'
 function CourseLanding() {
 
     const [isCardFixed, setIsCardFixed] = useState(false)
-    const [isMatchMedia, setIsMatchMedia] = useState(false)
-    const mediaQuery = window.matchMedia('(min-width: 992px)');
     const handleFixedPriceCard = ()=> {
         if (mediaQuery.matches) {
-            window.pageYOffset >= 120 ? setIsCardFixed(true) : setIsCardFixed(false);
+            window.pageYOffset >= 180 ? setIsCardFixed(true) : setIsCardFixed(false);
         } else {
             setIsCardFixed(false)
         }
     }
+
+    const [isMatchMedia, setIsMatchMedia] = useState(false)
+    const mediaQuery = window.matchMedia('(min-width: 992px)');
     const handleMediaQuery = ()=> {
         mediaQuery.matches ? setIsMatchMedia(true) : setIsMatchMedia(false)
     }
@@ -25,6 +26,11 @@ function CourseLanding() {
         mediaQuery.matches ? setIsMatchMedia(true) : setIsMatchMedia(false)
         window.addEventListener('scroll', handleFixedPriceCard)
         window.addEventListener('resize', handleMediaQuery)
+
+        return ()=> {
+            window.removeEventListener('scroll', handleFixedPriceCard)
+            window.removeEventListener('resize', handleMediaQuery)
+        }
     }, [])
 
     return (
@@ -33,7 +39,7 @@ function CourseLanding() {
                 <CourseHead isCardFixed={isCardFixed}/>
                 <div className="course-body" 
                 style={
-                    isMatchMedia ? isCardFixed ? {margin: '0 15px'} : {margin: '-385px 15px'} : {margin: '0 15px'}
+                    isMatchMedia ? isCardFixed ? {margin: '0 15px'} : {margin: '-385px 15px 15px', boxSizing: 'border-box'} : {margin: '0 15px'}
                 }>
                     <CourseDescription/>
                     <CourseContent/>
