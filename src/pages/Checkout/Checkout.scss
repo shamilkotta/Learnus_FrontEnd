@@ -2,18 +2,18 @@ $clr__primary : #3a0ca3;
 
 .checkout {    
     font-size: 1em;
-    padding: 1em;
+    padding: 15px;
     box-sizing: border-box;
 
     &__title {
-        margin: 1.5em 0 0.3em;
+        margin: 20px 0 10px;
     }
 
     &-bill {
         &__row {
             display: flex;
             justify-content: space-between;
-            padding: 0.8em 0;
+            padding: 12px 5px;
             text-align: center;
         }
 
@@ -27,7 +27,7 @@ $clr__primary : #3a0ca3;
             display: flex;
             justify-content: space-between;
             left: 0;
-            padding: 0.6em 1em;
+            padding: 9px 15px;
             box-sizing: border-box;
             position: fixed;
             bottom: 0;
@@ -42,7 +42,7 @@ $clr__primary : #3a0ca3;
     }
     
     &__bill {
-        margin: 1em 0 4em;
+        margin: 18px 0 20px;
         
         .total--amount {
             font-weight: bold;
@@ -52,23 +52,25 @@ $clr__primary : #3a0ca3;
     @media screen and (min-width: 768px) {
         display: flex;
         justify-content: space-between;
+        position: relative;
 
         &-content {
             width: 65%;
         }
 
         &__title {
-            margin: 0.3em 0;
+            margin: 8px 0;
         }
 
         &__bill {
             font-size: 1.1em;
-            padding: 1em;
-            margin-right: 1em !important;
+            padding: 12px;
+            margin-right: 18px;
             box-sizing: border-box;
             width: 30%;
             position: fixed;
             right: 0;
+            top: 90px;
             border: 1px solid rgb(194, 194, 194);
             background-color: rgb(255, 255, 255);
             border-radius: 5px;

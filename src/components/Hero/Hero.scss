@@ -1,7 +1,7 @@
 $clr__primary : #3a0ca3;
 
 .hero-container{
-    background-color: black;
+    background-color: rgb(155, 155, 155);
 }
 
 .hero {
@@ -9,7 +9,7 @@ $clr__primary : #3a0ca3;
     width: 100%;
     background-position: center;
     background-size: cover;
-    padding: 200px 18px 70px;
+    padding: 200px 15px 70px;
     box-sizing: border-box;
 
     &__text {

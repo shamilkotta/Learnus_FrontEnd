@@ -7,7 +7,7 @@ import GuestLayout from '../../layouts/GuestLayout'
 function Cart() {
     return (
         <GuestLayout>
-            <div className="cart">
+            <div className="cart wrapper">
                 <div className="cart__checkout-group">
                     <p className="cart-checkout__title h">Total</p>
                     <h1 className="cart-checkout__price">$00,000</h1>

@@ -2,31 +2,31 @@ $clr__primary : #3a0ca3;
 
 .cart {
     font-size: 1em;
-    padding: 1em;
+    padding: 15px;
 
     &__checkout-group {
 
         .cart-checkout {
             &__title {
-                margin: 1em 0 0.2em;
+                margin: 18px 0 5px;
             }
         
             &__price {
                 font-size: 1.8em;
                 font-weight: bold;
-                margin: 0 0 0.6em;
+                margin: 0 0 15px;
             }
         } 
     }
 
     &__head {
-        margin-top: 1.5em;
-        padding: 0 0 0.5em;
+        margin-top: 25px;
+        padding: 0 0 10px;
         border-bottom: 1px solid rgba($color: rgb(194, 194, 194), $alpha: 1.0);
     }
 
     &__items--later {
-        margin: 3em 0 0;
+        margin: 40px 0 0;
     }
 
     @media screen and (min-width: 768px) {

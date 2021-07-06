@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Navbar.scss'
 
 import { FiBarChart, FiShoppingCart, FiUser } from 'react-icons/fi'
+import { FaRegBell } from 'react-icons/fa'
 
 function Navbar({toggle}) {
+
+    const [isNavFixed, setIsNavFixed] = useState(false)
+    const changeNavbar = ()=> {
+        window.scrollY >= 60 ? setIsNavFixed(true) : setIsNavFixed(false)
+    }
+    useEffect(() => {
+        window.addEventListener('scroll', changeNavbar)
+    }, [])
+
     return (
-        <div className="nav-container">
+        <div className="nav-container" style={isNavFixed? {position: 'fixed'} : {position: 'relative'}}>
             <nav className="navbar wrapper">
                 <div className="navbar-container">
                     <span className="navbar__logo"><span>My</span>Course</span>

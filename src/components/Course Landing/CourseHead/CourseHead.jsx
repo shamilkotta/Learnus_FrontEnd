@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './CourseHead.scss'
 
 import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
-function CourseHead({data}) {
+function CourseHead({data, isCardFixed=false}) {
 
     const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
 
@@ -21,7 +21,7 @@ function CourseHead({data}) {
                     <p className="course__tag p" title="Course Duration"><span className="icon-vertical-align" style={{fontSize: '1.1em'}}><FaRegClock/></span>10 hrs</p>
                 </div>
             </div>
-            <div className="head__price-card" id="head__price-card">
+            <div className="head__price-card" id="head__price-card" style={isCardFixed ? {position: 'fixed', width: '26.7%', top: '111px', right: '3.3%'} : {position: 'relative', width: '80%'}}>
                 <div className="course__sticky-card">
                     <h2 className="course__price">$00,000</h2>
                     <button type="submit" className="course__btn course__btn--active btn btn--active">Buy now</button>

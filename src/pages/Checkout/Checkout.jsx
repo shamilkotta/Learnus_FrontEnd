@@ -6,7 +6,7 @@ import GuestLayout from '../../layouts/GuestLayout'
 function Checkout() {
     return (
         <GuestLayout>
-            <div className="checkout">
+            <div className="checkout wrapper">
                 <div className="checkout-content">
                     <div className="checkout__gateway">
                         <h3 className="checkout__title h">Checkout</h3>

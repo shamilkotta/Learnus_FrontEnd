@@ -13,7 +13,7 @@ function GuestLayout(props) {
 
     return (
         <>
-            {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-100%'}} />}
+            {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-110%'}} />}
             <Navbar toggle={navToggler} />
                 {props.children}
             <Footer/>
