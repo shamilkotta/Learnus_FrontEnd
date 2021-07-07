@@ -2,9 +2,9 @@ import React from 'react'
 import CartHoverCard from '../Cards/CartHoverCard/CartHoverCard'
 import './HoverCard.scss'
 
-function HoverCard({data}) {
+function HoverCard({data, style}) {
     return (
-        <div className="hover-card">
+        <div className="hover-card" style={style}> 
             <div className="hover-card__content">
                 <CartHoverCard/>
                 <CartHoverCard/>
@@ -14,7 +14,7 @@ function HoverCard({data}) {
                 <CartHoverCard/>
             </div>
             <div className="hover-card__sticky">
-                <button className="hover-card__btn btn btn--active">Go To Course</button>
+                <button className="hover-card__btn btn btn--active">Go To Cart</button>
             </div>
         </div>
     )

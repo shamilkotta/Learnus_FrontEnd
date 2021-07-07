@@ -1,6 +1,6 @@
 $clr__primary : #3a0ca3;
 
-.nav-container {
+.navbar {
     position: sticky;
     top: 0;
     left: 0;
@@ -8,20 +8,12 @@ $clr__primary : #3a0ca3;
     z-index: 100;
     background-color: rgb(0, 0, 0);
     transition: 0.3s all ease-in;
-}
 
-.navbar {
-    font-size: 1em;
-    color: rgb(255, 255, 255);
-    width: 100%;
-    height: 75px;
-    padding: 0 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-
-    &-container {
+    &-container {font-size: 1em;
+        color: rgb(255, 255, 255);
+        width: 100%;
+        height: 75px;
+        padding: 0 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -52,7 +44,6 @@ $clr__primary : #3a0ca3;
     }
 
     @media screen and (min-width: 768px) {
-        height: 75px;
 
         &__toggler { 
             display: none;
@@ -65,12 +56,15 @@ $clr__primary : #3a0ca3;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
     
         &__link {
             font-size: 1.1em;
             margin: auto 0 auto 30px;
+            background-color: rgb(0, 0, 0);
             font-weight: bold;
+            position: relative;
             cursor: pointer;
             
             &:hover {
@@ -91,10 +85,14 @@ $clr__primary : #3a0ca3;
                     background-color: rgb(255, 255, 255);
                 }
             }
+
+            > div:first-child {
+                height: 75px;
+            }
     
             &--icon {
                 font-size: 1.2em;
-                margin: 07px 0 0;
+                margin: 17px 0 0;
                 width: 23px;
                 height: 23px;
                 border: 2px solid $clr__primary;
@@ -108,6 +106,11 @@ $clr__primary : #3a0ca3;
                     background-color: rgb(255, 255, 255);
                 }
             }
+
+            &--hover {
+                font-size: 1em;
+                font-weight: normal;
+            } 
         }
 
         .active {
