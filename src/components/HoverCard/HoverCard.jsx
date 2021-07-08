@@ -1,6 +1,8 @@
 import React from 'react'
-import CartHoverCard from '../Cards/CartHoverCard/CartHoverCard'
+import { Link } from 'react-router-dom'
+
 import './HoverCard.scss'
+import CartHoverCard from '../Cards/CartHoverCard/CartHoverCard'
 
 function HoverCard({data, style}) {
     return (
@@ -14,7 +16,7 @@ function HoverCard({data, style}) {
                 <CartHoverCard/>
             </div>
             <div className="hover-card__sticky">
-                <button className="hover-card__btn btn btn--active">Go To Cart</button>
+                <Link to='/cart' ><button className="hover-card__btn btn btn--active">Go To Cart</button></Link>
             </div>
         </div>
     )

@@ -62,12 +62,19 @@ $clr__primary : #3a0ca3;
         &__link {
             font-size: 1.1em;
             margin: auto 0 auto 30px;
-            background-color: rgb(0, 0, 0);
             font-weight: bold;
-            position: relative;
             cursor: pointer;
-            
-            &:hover {
+            position: relative;
+
+            &--txt {
+                color: rgb(255, 255, 255);
+                
+                &:hover {
+                    color: $clr__primary;
+                }
+            }
+
+            .active {
                 color: $clr__primary;
             }
 
@@ -76,7 +83,6 @@ $clr__primary : #3a0ca3;
                 background-color: rgba(255, 255, 255, 0);
                 border: 2px solid $clr__primary;
                 padding: 4px 1em 5px;
-                font-weight: bold;
                 border-radius: 50px;
 
                 &:hover {
@@ -93,6 +99,7 @@ $clr__primary : #3a0ca3;
             &--icon {
                 font-size: 1.2em;
                 margin: 17px 0 0;
+                color: rgb(255, 255, 255);
                 width: 23px;
                 height: 23px;
                 border: 2px solid $clr__primary;
@@ -111,10 +118,6 @@ $clr__primary : #3a0ca3;
                 font-size: 1em;
                 font-weight: normal;
             } 
-        }
-
-        .active {
-            color: $clr__primary;
         }
     }
 

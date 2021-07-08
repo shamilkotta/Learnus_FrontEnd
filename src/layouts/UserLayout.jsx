@@ -1,10 +1,12 @@
 import React from 'react'
+import Footer from '../components/Footer/Footer'
 
-const UserLayout = () => {
+const UserLayout = (props) => {
     return (
-        <div>
-            
-        </div>
+        <>
+            {props.children}
+            <Footer/>
+        </>
     )
 }
 

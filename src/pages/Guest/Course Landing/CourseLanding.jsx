@@ -1,10 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import './CourseLanding.scss'
 
-import CourseHead from '../../components/Course Landing/CourseHead/CourseHead'
-import CourseDescription from '../../components/Course Landing/CourseDescription/CourseDescription'
-import CourseContent from '../../components/Course Landing/CourseContent/CourseContent'
-import GuestLayout from '../../layouts/GuestLayout'
+import CourseHead from '../../../components/Course Landing/CourseHead/CourseHead'
+import CourseDescription from '../../../components/Course Landing/CourseDescription/CourseDescription'
+import CourseContent from '../../../components/Course Landing/CourseContent/CourseContent'
 
 function CourseLanding() {
 
@@ -34,18 +33,18 @@ function CourseLanding() {
     }, [])
 
     return (
-        <GuestLayout>
-            <div className="course-landing wrapper">
-                <CourseHead isCardFixed={isCardFixed}/>
-                <div className="course-body" 
-                style={
-                    isMatchMedia ? isCardFixed ? {margin: '0 15px'} : {margin: '-385px 15px 15px', boxSizing: 'border-box'} : {margin: '0 15px'}
-                }>
-                    <CourseDescription/>
-                    <CourseContent/>
-                </div>
+    
+        <div className="course-landing wrapper">
+            <CourseHead isCardFixed={isCardFixed}/>
+            <div className="course-body" 
+            style={
+                isMatchMedia ? isCardFixed ? {margin: '0 15px'} : {margin: '-385px 15px 15px', boxSizing: 'border-box'} : {margin: '0 15px'}
+            }>
+                <CourseDescription/>
+                <CourseContent/>
             </div>
-        </GuestLayout>
+        </div>
+        
     )
 }
 

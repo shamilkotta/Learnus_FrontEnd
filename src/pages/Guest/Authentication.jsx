@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Join from '../components/Authentication/Join'
-import ForgotPassword from '../components/ForgotPassword/ForgotPassword'
-import ResetPassword from '../components/RestePassword/ResetPassword'
+import Join from '../../components/Authentication/Join'
+import ForgotPassword from '../../components/ForgotPassword/ForgotPassword'
+import ResetPassword from '../../components/RestePassword/ResetPassword'
 
 function Authentication() {
 
