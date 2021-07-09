@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Switch, Route, useRouteMatch } from 'react-router-dom'
+import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom'
 
 import Footer from '../components/Footer/Footer'
 import MobileNavbar from '../components/Menu/MobileNavbar/MobileNavbar'
@@ -9,7 +9,6 @@ import Home from '../pages/Guest'
 import Cart from '../pages/Guest/Cart/Cart'
 import Checkout from '../pages/Guest/Checkout/Checkout'
 import CourseLanding from '../pages/Guest/Course Landing/CourseLanding'
-import Authentication from '../pages/Guest/Authentication'
 import ErrorPage from '../pages/Guest/ErrorPage'
 
 function GuestLayout() {
@@ -33,15 +32,15 @@ function GuestLayout() {
     console.log(path)
     return (
         <>
-                {/* <Route exact path={`${path}login`} component={Authentication} /> */}
-                {isMatchMedia && <> {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-100%'}} />} </>}
-                <Navbar toggle={navToggler} />
+            {isMatchMedia && <> {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-100%'}} />} </>}
+            <Navbar toggle={navToggler} />
             <Switch>
                     <Route exact path={path} component={Home} />
                     <Route exact path={`${path}course`} component={CourseLanding} />
                     <Route exact path={`${path}cart`} component={Cart} />
                     <Route exact path={`${path}checkout`} component={Checkout} />
-                    <Route  component={ErrorPage} />
+                    <Route exact path='/404-page-not-found' component={ErrorPage} />
+                    <Redirect to='/404-page-not-found' />
             </Switch>
             <Footer/>
         </>

@@ -22,7 +22,7 @@ function CourseLanding() {
         mediaQuery.matches ? setIsMatchMedia(true) : setIsMatchMedia(false)
     }
     useEffect(() => {
-        mediaQuery.matches ? setIsMatchMedia(true) : setIsMatchMedia(false)
+        handleMediaQuery()
         window.addEventListener('scroll', handleFixedPriceCard)
         window.addEventListener('resize', handleMediaQuery)
 
