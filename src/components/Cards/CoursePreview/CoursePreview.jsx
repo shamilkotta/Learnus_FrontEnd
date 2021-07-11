@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CoursePreview.scss'
 
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
@@ -9,12 +10,12 @@ function CoursePreview({data}) {
 
     return (
         <div className="preview-card hover">
-            <div className="card__head" style={{backgroundImage: `url(${image})`}}>
+            <Link to="/course" className="card__head" style={{backgroundImage: `url(${image})`}}>
                 <span className="card__code">M012</span>
-            </div>
+            </Link>
             <div className="card__body">
                 <div className="card__title-space">
-                    <p className="card__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, possimus? Lorem ipsum dolor sit amet.</p>
+                    <Link to="/course"><p className="card__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et, possimus? Lorem ipsum dolor sit amet.</p></Link>
                 </div>
                 <div className="card__tag-group">
                     <span className="card__tag card__tag--active">$00.000</span>
@@ -23,7 +24,7 @@ function CoursePreview({data}) {
                 </div>
                 <div className="card__btn-group">
                     <button title="Add to Cart" className="card__btn card__btn--active"><FaCartPlus style={{verticalAlign: 'middle', margin: 'auto auto 0.1em -0.15em'}}/></button>
-                    <button className="card__btn btn">Preview</button>
+                    <Link to='/course'  className="card__btn btn" >Preview</Link>
                 </div>
             </div>
         </div>

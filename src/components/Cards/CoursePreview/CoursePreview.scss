@@ -7,7 +7,6 @@ $clr__primary : #3a0ca3;
     border-radius: 9px;
     margin: 15px;
     box-sizing: border-box;
-    cursor: pointer;
     // flex: 0 0 auto;
     border: 1px solid rgb(182, 182, 182);
 
@@ -53,6 +52,10 @@ $clr__primary : #3a0ca3;
             overflow: hidden;
             max-height: 3.7em;
             line-height: 1.2em;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
             margin: 8px 0;
         }
 
@@ -88,6 +91,7 @@ $clr__primary : #3a0ca3;
 
         &__btn {    
             width: 68%;
+            text-align: center;
 
             &--active {
                 font-size: 1.6em;

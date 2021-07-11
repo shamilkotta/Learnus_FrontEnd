@@ -8,7 +8,6 @@
     cursor: pointer;
 
     &__img {
-        // background: url('../Wallpaper\ 9.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -18,12 +17,16 @@
 
     &__title {
         font-size: 0.8em;
-        color: #000;
+        color: black;
         text-align: left;
         width: 63% !important;
         line-height: 1.1em;
         max-height: 3.3em;
         overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
         margin-left: 3px;
         margin-top: 1.5px;
     }

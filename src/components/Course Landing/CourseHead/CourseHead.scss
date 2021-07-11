@@ -157,11 +157,19 @@ $clr__primary : #3a0ca3;
             &__title {
                 max-height: 2.4em;
                 overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
                 
             &__short-description {
                 max-height: 2.4em;
                 overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
             }
 
             &__tag-group {

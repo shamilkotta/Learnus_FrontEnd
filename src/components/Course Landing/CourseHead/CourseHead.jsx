@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './CourseHead.scss'
 
 import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
@@ -13,7 +13,7 @@ function CourseHead({data, isCardFixed=false}) {
             <iframe className="head__video" src="https://www.youtube.com/embed/9vF1jQBbTss"/>
             <div className="head__course-info">
                 <h3 className="course__title h">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, magnam sequi! Eius eveniet harum sunt!</h3>
-                <p className="course__short-description p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A at id alias cupiditate? Ex consequuntur nulla eaque molestias asperiores inventore.</p>
+                <p className="course__short-description p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A at id alias cupiditate? Ex consequuntur nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quae? eaque molestias asperiores inventore.</p>
                 <div className="course__tag-group">
                     <p className="course__tag p" title="Course Rating"><span className="icon-vertical-align"><FaStar/></span>4.5(8,858)</p>
                     <p className="course__tag p" title="Course Created"><span className="icon-vertical-align"><FaCalendarAlt/></span>Created 9/2020</p>

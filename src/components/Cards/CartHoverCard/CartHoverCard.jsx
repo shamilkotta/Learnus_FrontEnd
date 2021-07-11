@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CartHoverCard.scss'
 
 function CartHoverCard({data}) {
@@ -7,8 +8,8 @@ function CartHoverCard({data}) {
 
     return (
         <div className="cart-hover-card">
-            <div className="cart-hover-card__img" style={{backgroundImage: `url(${image})`}}></div>
-            <p className="cart-hover-card__title p">Lorem ipsum dolor. audantium, placeat. orem ipsum dolor sit amet consectetur adipisicing elit. Magnam, dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat.</p>
+            <Link to="/course" className="cart-hover-card__img" style={{backgroundImage: `url(${image})`}}></Link>
+            <Link to="/course" className="cart-hover-card__title p">Lorem ipsum dolor. audantium, placeat. orem ipsum dolor sit amet consectetur adipisicing elit. Magnam, dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, placeat.</Link>
         </div>
     )
 }

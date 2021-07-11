@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useLayoutEffect } from 'react'
 import './CourseLanding.scss'
 
 import CourseHead from '../../../components/Course Landing/CourseHead/CourseHead'
@@ -21,15 +21,16 @@ function CourseLanding() {
     const handleMediaQuery = ()=> {
         mediaQuery.matches ? setIsMatchMedia(true) : setIsMatchMedia(false)
     }
-    useEffect(() => {
+
+    useLayoutEffect(() => {
         handleMediaQuery()
         window.addEventListener('scroll', handleFixedPriceCard)
         window.addEventListener('resize', handleMediaQuery)
 
-        return ()=> {
+        return () => {
             window.removeEventListener('scroll', handleFixedPriceCard)
             window.removeEventListener('resize', handleMediaQuery)
-        }
+        };
     }, [])
 
     return (

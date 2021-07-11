@@ -80,6 +80,7 @@ $clr__primary : #3a0ca3;
         }
 
         &__title {
+            color: black;
             font-size: 1.7em;
             grid-area: 2/2/3/4;
             padding: 3px 6px;
@@ -88,6 +89,10 @@ $clr__primary : #3a0ca3;
             line-height: 1.5em;
             max-height: 4.5em;
             overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
         }
 
         &__price {

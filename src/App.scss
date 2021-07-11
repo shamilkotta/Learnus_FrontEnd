@@ -7,9 +7,9 @@ body {
   font-family: sans-serif;
 }
 
-a {
+a, .a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  cursor: pointer;
 }
 
 .wrapper {
@@ -93,9 +93,12 @@ input {
   }
 }
 
-.link {
-  cursor: pointer;
-  &:hover {
-    color: $clr__primary;
-  }
+.fff {
+  color: white;
+}
+.ooo {
+  color: black;
+}
+.clr__primary {
+  color: $clr__primary;
 }

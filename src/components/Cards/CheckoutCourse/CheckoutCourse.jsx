@@ -2,6 +2,7 @@ import React from 'react'
 import './CheckoutCourse.scss'
 
 import { MdRemoveShoppingCart, MdPlaylistAdd, MdPlaylistPlay } from "react-icons/md"
+import { Link } from 'react-router-dom'
 
 function CheckoutCourse({data, isCart=false, isLater=false}) {
 
@@ -11,9 +12,9 @@ function CheckoutCourse({data, isCart=false, isLater=false}) {
 
     return (
         <div className="checkout-card">
-            <div className="checkout-card__img" style={{backgroundImage: `url(${image})`}}>
-            </div>
-            <div className="checkout-card__code"><p>M0157</p></div>
+            <Link to="/course" className="checkout-card__img" style={{backgroundImage: `url(${image})`}}>
+            </Link>
+            <Link to="/course" className="checkout-card__code"><p>M0157</p></Link>
             {
                 isCart &&
                 <div className="checkout-card-btns">
@@ -37,7 +38,7 @@ function CheckoutCourse({data, isCart=false, isLater=false}) {
                 </div>
             }
             
-            <p className="checkout-card__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, ipsam? Lorem ipsum dolor sit,</p>
+            <Link to="/course" className="checkout-card__title">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla, ipsam? Lorem ipsum dolor sit,</Link>
             <span className="checkout-card__price">$12,45</span>
         </div>
     )

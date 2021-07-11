@@ -18,7 +18,7 @@ $clr__primary : #3a0ca3;
         scrollbar-color: rgb(224, 224, 224) transparent; /* firefox */ 
         scrollbar-width: thin; /* firefox */ 
         &::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         &::-webkit-scrollbar-thumb {
             background-color: rgb(224, 224, 224);
