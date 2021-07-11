@@ -7,7 +7,6 @@ import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 function LogIn({setPopUp}) {
 
     const history = useHistory()
-
     const initialLogInData = { email: '', password: '', name: '', confirmPassword: '' }
     const [logInData, setLogInData] = useState(initialLogInData)
     const handleChange = e => {setLogInData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value }) )}

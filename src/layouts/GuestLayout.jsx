@@ -10,12 +10,13 @@ import Courses from '../pages/Guest/Courses/Courses'
 import Cart from '../pages/Guest/Cart/Cart'
 import Checkout from '../pages/Guest/Checkout/Checkout'
 import CourseLanding from '../pages/Guest/Course Landing/CourseLanding'
+import Authentication from '../pages/Guest/Authentication'
 import ErrorPage from '../pages/Guest/ErrorPage'
-import { ScrollToTopOnRoute } from '../components/RestoreScroll/RestoreScroll'
+import useScrollToTop, { UseScrollToTopOnRoute } from '../hooks/useScrollToTop'
 
 function GuestLayout() {
 
-    let { path, url } = useRouteMatch()
+    let { path } = useRouteMatch()
 
     const [isMobileNav, setIsMobileNav] = useState(false)
     const navToggler = ()=> { setIsMobileNav(!isMobileNav) }
@@ -35,16 +36,18 @@ function GuestLayout() {
         <>
             {isMatchMedia && <> {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-100%'}} />} </>}
             <Navbar toggle={navToggler} />
-            <ScrollToTopOnRoute/>
+            <UseScrollToTopOnRoute/>
             <Switch>
                     <Route exact path={path} component={Home} />
-                    <Route exact path={`${path}all-courses`} component={Courses} />
-                    <Route exact path={`${path}course`} component={CourseLanding} />
-                    <Route exact path={`${path}cart`} component={Cart} />
-                    <Route exact path={`${path}checkout`} component={Checkout} />
+                    <Route exact path='/all-courses' component={Courses} />
+                    <Route exact path='/course' component={CourseLanding} />
+                    <Route exact path='/cart' component={Cart} />
+                    <Route exact path='/checkout' component={Checkout} />
+                    <Route path='/reset-password' component={Authentication} />
                     <Route exact path='/404-page-not-found' component={ErrorPage} />
                     <Redirect to='/404-page-not-found' />
             </Switch>
+            <h1 onClick={useScrollToTop}>hi</h1>
             <Footer/>
         </>
     )

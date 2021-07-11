@@ -26,7 +26,6 @@ function Authentication() {
                     'forgotPasswrod': <ForgotPassword  setPopUp={(value) => {setPopUpValue(value)}}/>
                 }[popUpValue]
             }
-            {/* <ForgotPassword setPopUp={(value) => {setPopUpValue(value)}}/> */}
         </div>
     )
 }

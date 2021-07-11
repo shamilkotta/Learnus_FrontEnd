@@ -5,7 +5,7 @@ import './App.scss';
 import GuestLayout from './layouts/GuestLayout'
 import UserLayout from './layouts/UserLayout'
 import AdminLayout from './layouts/AdminLayout'
-import AuthLayout from './layouts/AuthLayout'
+import AuthLayout from './pages/Guest/Authentication'
 import Authentication from './components/Authentication';
 
 function App() {
@@ -28,7 +28,6 @@ function App() {
       <Switch>
         <Route path='/user' component={UserLayout} />
         <Route path='/admin' component={AdminLayout} />
-        <Route path='/authentication' component={AuthLayout} />
         <Route path='/' component={GuestLayout} />
       </Switch>
     </div>

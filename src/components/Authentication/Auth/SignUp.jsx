@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router';
 
-import { InputConfirmPassword, InputEmail, InputPassword, InputButton, InputText } from '../../InputFields/InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
+import { InputConfirmPassword, InputEmail, InputPassword, InputButton, InputText } from '../../InputFields/InputFields'
 
 function SignUp({setPopUp}) {
 
+    const history = useHistory()
     const initialSignUpData = { email: '', password: '', name: '', confirmPassword: '' }
     const [signUpData, setSignUpData] = useState(initialSignUpData)
     const handleChange = e => {setSignUpData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value}) )}
@@ -15,7 +17,7 @@ function SignUp({setPopUp}) {
 
     return (
         <div className="auth" style={{ maxHeight: '520px'}}>
-            <FaPlus style={{ transform: 'rotate(45deg)', float: 'right' }} />
+            <FaPlus style={{ transform: 'rotate(45deg)', float: 'right' }} onClick={()=> history.goBack()} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Sign Up</h1>
                 <div className="auth__social-sign">
