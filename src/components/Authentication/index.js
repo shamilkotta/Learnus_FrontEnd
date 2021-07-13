@@ -9,16 +9,8 @@ function Authentication() {
 
     const [popUpValue, setPopUpValue] = useState('logIn')
 
-    const style = {    
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'rgba(0,0,0, 0.4)',
-        position: 'fixed',
-        zIndex: '1000'
-    }
-
     return (
-        <div style={style}>
+        <div className="Authentication-wrapper">
             {
                 {
                     'logIn': <LogIn  setPopUp={(value) => {setPopUpValue(value)}} />,

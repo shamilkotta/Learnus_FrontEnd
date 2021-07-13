@@ -1,8 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './CheckoutCourse.scss'
 
-import { MdRemoveShoppingCart, MdPlaylistAdd, MdPlaylistPlay } from "react-icons/md"
-import { Link } from 'react-router-dom'
+import { MdDone, MdDoneAll, MdClear } from "react-icons/md"
 
 function CheckoutCourse({data, isCart=false, isLater=false}) {
 
@@ -21,18 +21,18 @@ function CheckoutCourse({data, isCart=false, isLater=false}) {
                     {
                         isLater ? 
                         <p className="checkout-card__btn" title="Add to cart list" onClick={handleLater}>
-                            <MdPlaylistAdd className="checkout-card__btn-icon"/>
+                            <MdDoneAll className="checkout-card__btn-icon"/>
                             <span>NOW</span>
                         </p>
                         :
                         <p className="checkout-card__btn" title="Save for later">
-                            <MdPlaylistPlay className="checkout-card__btn-icon"/>
+                            <MdDone className="checkout-card__btn-icon"/>
                             <span>NOT NOW</span>
                         </p>
                     }
                     
                     <p className="checkout-card__btn" title="Remove from cart" onClick={handleRemove}>
-                        <MdRemoveShoppingCart className="checkout-card__btn-icon"/>
+                        <MdClear className="checkout-card__btn-icon"/>
                         <span>REMOVE</span>
                     </p>
                 </div>

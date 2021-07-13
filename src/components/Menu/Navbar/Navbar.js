@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import './Navbar.scss'
 import { useLocation } from "react-router-dom";
+import './Navbar.scss'
 
 import {Link} from 'react-router-dom'
 import { FiBarChart, FiShoppingCart, FiUser } from 'react-icons/fi'

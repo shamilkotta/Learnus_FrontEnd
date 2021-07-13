@@ -10,7 +10,7 @@ function CourseHead({data, isCardFixed=false}) {
     return (
         <div className="course-head">
             <div className="head__background" style={{background: `url(${image})`}}></div>
-            <iframe className="head__video" src="https://www.youtube.com/embed/9vF1jQBbTss"/>
+            <iframe className="head__video" src="https://www.youtube.com/embed/9vF1jQBbTss" title="YouTube video player"/>
             <div className="head__course-info">
                 <h3 className="course__title h">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, magnam sequi! Eius eveniet harum sunt!</h3>
                 <p className="course__short-description p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. A at id alias cupiditate? Ex consequuntur nulla Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus, quae? eaque molestias asperiores inventore.</p>

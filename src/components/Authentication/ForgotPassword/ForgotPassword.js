@@ -17,7 +17,7 @@ function ForgotPassword({setPopUp}) {
 
     return (
         <div className="auth" style={{ maxHeight: '270px'}}>
-            <FaPlus style={{transform: 'rotate(45deg)',float: 'right'}} onClick={()=> history.goBack()} />
+            <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Forgot Password?</h1>
                 <p className="auth__txt">Enter your email to reset password</p>

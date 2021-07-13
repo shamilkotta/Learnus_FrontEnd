@@ -5,7 +5,6 @@ import './App.scss';
 import GuestLayout from './layouts/GuestLayout'
 import UserLayout from './layouts/UserLayout'
 import AdminLayout from './layouts/AdminLayout'
-import AuthLayout from './pages/Guest/Authentication'
 import Authentication from './components/Authentication';
 
 function App() {

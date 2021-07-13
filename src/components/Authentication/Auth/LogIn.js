@@ -17,7 +17,7 @@ function LogIn({setPopUp}) {
 
     return (
         <div className="auth" style={{ maxHeight: '420px'}}>
-            <FaPlus style={{ transform: 'rotate(45deg)', float: 'right' }} onClick={()=> history.goBack()} />
+            <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Log In</h1>
                 <div className="auth__social-sign">

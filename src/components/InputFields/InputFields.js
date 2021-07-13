@@ -26,8 +26,6 @@ export function InputEmail({value, className, onChange, ...props}) {
             className={className} 
             onChange={onChange}
             placeholder="Email" 
-            // onInvalid={checkValidity}
-            // onInput={e=>e.target.setCustomValidity('')} 
             {...props}
         />
     )

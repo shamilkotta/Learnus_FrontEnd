@@ -1,27 +1,21 @@
-import React, { useLayoutEffect } from 'react'
+import { useLayoutEffect, useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { animateScroll } from 'react-scroll'
 
-export const UseScrollToTopOnRoute = () => {
+export const useScrollToTopOnRoute = ()=> {
     const { pathname } = useLocation()
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     }, [pathname])
 
-    return (
-        null
-    )
 }
 
-export const UseScrollToTopOnMount = () => {
-    useLayoutEffect(() => {
+export const useScrollToTopOnMount = () => {
+    useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
-
-    return (
-        null
-    )
 }
 
 export default function useScrollToTop () {
-    window.scrollTo(0, 0)
+    animateScroll.scrollToTop()
 }

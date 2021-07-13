@@ -21,10 +21,10 @@ function Cart() {
                 </div>
                 <div className="cart__items--later">
                     <p className="cart__head p">saved for later</p>
-                    <CheckoutCourse isCart isLater/>
-                    <CheckoutCourse isCart isLater/>
-                    <CheckoutCourse isCart isLater/>
-                    <CheckoutCourse isCart isLater/>
+                    <CheckoutCourse isCart isLater={true}/>
+                    <CheckoutCourse isCart isLater={true}/>
+                    <CheckoutCourse isCart isLater={true}/>
+                    <CheckoutCourse isCart isLater={true}/>
                 </div>
             </div>
         </div>

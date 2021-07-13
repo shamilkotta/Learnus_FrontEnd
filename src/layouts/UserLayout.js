@@ -3,9 +3,11 @@ import React from 'react'
 import Footer from '../components/Footer/Footer'
 
 const UserLayout = (props) => {
+    
     return (
         <>
             {props.children}
+            <div style={{height: '100vh'}}>hi</div>
             <Footer/>
         </>
     )

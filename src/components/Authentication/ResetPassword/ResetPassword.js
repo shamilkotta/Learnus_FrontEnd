@@ -1,9 +1,7 @@
 import React, {useState} from 'react'
-// import './ResetPassword.scss'
 import '../Auth.scss'
 
 import {InputButton, InputPassword, InputConfirmPassword} from '../../InputFields/InputFields'
-import {FaPlus} from 'react-icons/fa'
 
 function ResetPassword() {
     
