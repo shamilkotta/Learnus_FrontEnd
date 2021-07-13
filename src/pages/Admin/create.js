@@ -1,10 +1,9 @@
 import React from 'react'
+import CreateCourse from '../../components/CreateCourse'
 
 const create = () => {
     return (
-        <div>
-            admin page1
-        </div>
+        <CreateCourse/>
     )
 }
 

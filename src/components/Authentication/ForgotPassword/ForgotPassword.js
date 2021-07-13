@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { useHistory } from 'react-router'
 
-import {InputButton, InputEmail} from '../../InputFields/InputFields'
+import {InputButton, InputEmail} from '../../InputFields'
 import {FaPlus} from 'react-icons/fa'
 
 function ForgotPassword({setPopUp}) {

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
-import { InputConfirmPassword, InputEmail, InputPassword, InputButton, InputText } from '../../InputFields/InputFields'
+import { InputConfirmPassword, InputEmail, InputPassword, InputButton, InputText } from '../../InputFields'
 
 function SignUp({setPopUp}) {
 
@@ -30,7 +30,7 @@ function SignUp({setPopUp}) {
                     <InputText className="auth__input" name="name" value={signUpData.name} holder="Your Name" onChange={handleChange} required />
                     <InputEmail value={signUpData.email} className="auth__input" onChange={handleChange} required />
                     <InputPassword value={signUpData.password} className="auth__input" onChange={handleChange} />
-                    <InputConfirmPassword value={signUpData.confirmPassword} className="auth__input" onChange={handleChange} />
+                    <InputConfirmPassword value={signUpData.confirmPassword} password={signUpData.password} className="auth__input" onChange={handleChange} />
                 </div>
                 <div className="auth-btn-group">
                     <InputButton type="submit" className="auth__btn btn btn--active" value='SIGN UP' />

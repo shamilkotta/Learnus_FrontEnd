@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './InputFields.scss'
+import './index.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -14,6 +14,21 @@ export function InputText({name, value, className, holder, onChange, ...props}) 
             onChange={onChange}
             {...props}
         />
+    )
+}
+
+export function InputTextArea({name, value, className, holder, onChange, ...props}) {
+    return (
+        // <textarea
+        //     type="text"
+        //     name={name}
+        //     value={value}
+        //     className={className}
+        //     placeholder={holder}
+        //     onChange={onChange}
+        //     {...props}
+        // />
+        <textarea />
     )
 }
 
@@ -43,7 +58,16 @@ export function InputButton({type='button', className,value, onClick}) {
     )
 }
 
-export function InputConfirmPassword({value, className, onChange}) {
+export function InputConfirmPassword({value, className, password, onChange}) {
+
+    const handleInvalid = (e)=> {
+        if (password !== value) {
+            e.target.setCustomValidity("Those passwords didn't match")
+        }else {
+            e.target.setCustomValidity('')
+        }
+    }
+
     return (
         <input 
             type="password" 
@@ -54,6 +78,8 @@ export function InputConfirmPassword({value, className, onChange}) {
             placeholder="Confirm Password"
             pattern="(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,16}"
             required 
+            onInvalid= {handleInvalid}
+            onInput = {e=> e.target.setCustomValidity('')}
         />
     )
 }

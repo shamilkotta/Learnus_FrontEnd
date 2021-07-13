@@ -1,0 +1,29 @@
+$clr__primary : #3a0ca3;
+
+.create-course {
+    margin: 0 15px;
+    &__txt {
+        color: $clr__primary;
+    }
+
+    &__arrow-icon {
+        font-size: 1.2em;
+        vertical-align: middle;
+        margin-bottom: 2px;
+    }
+
+    &__btn {
+        &-group {
+            display: flex;
+            justify-content: flex-end;
+            border-top: 1px solid black;
+            padding-top: 15px;
+        }
+
+        width: 100px;
+        margin: auto 3px;
+        &--continue {
+            width: 160px;
+        }
+    }
+}

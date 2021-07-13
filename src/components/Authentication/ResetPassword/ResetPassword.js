@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import '../Auth.scss'
+import '../index.scss'
 
-import {InputButton, InputPassword, InputConfirmPassword} from '../../InputFields/InputFields'
+import {InputButton, InputPassword, InputConfirmPassword} from '../../InputFields'
 
 function ResetPassword() {
     
@@ -18,7 +18,7 @@ function ResetPassword() {
                 <p className="auth__txt">Enter your new password</p>
                 <div className="auth-input-group">
                     <InputPassword value={resetPassData.password} className="auth__input" onChange={handleChange}/>
-                    <InputConfirmPassword value={resetPassData.confirmPassword} className="auth__input" onChange={handleChange}/>
+                    <InputConfirmPassword value={resetPassData.confirmPassword} password={resetPassData.password} className="auth__input" onChange={handleChange}/>
                 </div>
                 <div className="auth-btn-group">
                     <InputButton type="submit" className="auth__btn btn btn--active" value="UPDATE"/>

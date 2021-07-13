@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-import { InputEmail, InputPassword, InputButton } from '../../InputFields/InputFields'
+import { InputEmail, InputPassword, InputButton } from '../../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 
 function LogIn({setPopUp}) {
