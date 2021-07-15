@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './index.scss'
 import { FaLongArrowAltLeft } from 'react-icons/fa'
 
+import StepsProgress from './StepsProgress';
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 
@@ -23,16 +24,16 @@ const CreateCourse = () => {
             <div className="create-course">
                 <h1 className="create-course__title ">Create New Course</h1>
                 <p className="create-course__txt "> <FaLongArrowAltLeft className="icon-vertical-align" /> back to dashboard</p>
-                <div className="form__step-no-group">
-                    <button className="form__step-no completed">1</button>
-                    <button className="form__step-no">2</button>
-                    <button className="form__step-no">3</button>
+                <div className="form__steps-progress">
+                    <StepsProgress text="1" completed />
+                    <StepsProgress text="2" />
+                    <StepsProgress text="3" completed/>
                 </div>
                 <form onSubmit={handleSubmit} className="create-course__form">
 
                     <div className="form__steps">
-                        <Step1 />
-                        {/* <Step2 /> */}
+                        {/* <Step1 /> */}
+                        <Step2 />
                     </div>
 
                     <div className="create-course__btn-group">
