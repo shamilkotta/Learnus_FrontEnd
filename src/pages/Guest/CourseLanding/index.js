@@ -1,9 +1,9 @@
 import React, {useState, useEffect } from 'react'
-import './CourseLanding.scss'
+import './index.scss'
 
-import CourseHead from '../../../components/Course Landing/CourseHead/CourseHead'
-import CourseDescription from '../../../components/Course Landing/CourseDescription/CourseDescription'
-import CourseContent from '../../../components/Course Landing/CourseContent/CourseContent'
+import CourseHead from '../../../components/Course Landing/CourseHead'
+import CourseDescription from '../../../components/Course Landing/CourseDescription'
+import CourseContent from '../../../components/Course Landing/CourseContent'
 import useWindowScroll from '../../../hooks/useWindowScroll'
 import useWindowResize from '../../../hooks/useWindowResize'
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Accordion from '../../Accordion/Accordion'
-import './CourseContent.scss'
+import Accordion from '../../Accordion'
+import './index.scss'
 
 import data from '../../../utils/Course'
 

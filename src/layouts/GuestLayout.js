@@ -3,18 +3,18 @@ import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom'
 import { useScrollToTopOnRoute } from '../hooks/useScrollToTop'
 import useWindowResize from '../hooks/useWindowResize'
 
-import Footer from '../components/Footer/Footer'
-import MobileNavbar from '../components/Menu/MobileNavbar/MobileNavbar'
-import Navbar from '../components/Menu/Navbar/Navbar'
-import ScrollToTop from '../components/ScrollToTop/ScrollToTop'
+import Footer from '../components/Footer'
+import MobileNavbar from '../components/Menu/MobileNavbar'
+import Navbar from '../components/Menu/Navbar'
+import ScrollToTop from '../components/ScrollToTop'
 
 import Home from '../pages/Guest'
-import Courses from '../pages/Guest/Courses/Courses'
-import Cart from '../pages/Guest/Cart/Cart'
-import Checkout from '../pages/Guest/Checkout/Checkout'
-import CourseLanding from '../pages/Guest/Course Landing/CourseLanding'
+import Courses from '../pages/Guest/Courses'
+import Cart from '../pages/Guest/Cart'
+import Checkout from '../pages/Guest/Checkout'
+import CourseLanding from '../pages/Guest/CourseLanding'
 import ErrorPage from '../pages/Guest/ErrorPage'
-import ResetPassword from '../components/Authentication/ResetPassword/ResetPassword'
+import ResetPassword from '../components/Authentication/Auth/ResetPassword'
 
 
 function GuestLayout() {

@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CoursePreview from '../../components/Cards/CoursePreview/CoursePreview';
-import Hero from '../../components/Hero/Hero';
+import CoursePreview from '../../components/Cards/CoursePreview';
+import Hero from '../../components/Hero';
 
 function Home() {
 

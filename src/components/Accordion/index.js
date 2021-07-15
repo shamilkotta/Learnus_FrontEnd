@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './Accordion.scss'
+import './index.scss'
 
 
 function Accordion({data, showContent=false}) {

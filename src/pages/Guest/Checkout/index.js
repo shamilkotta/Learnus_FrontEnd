@@ -1,7 +1,7 @@
 import React from 'react'
-import './Checkout.scss'
+import './index.scss'
 
-import CheckoutCourse from '../../../components/Cards/CheckoutCourse/CheckoutCourse'
+import CheckoutCourse from '../../../components/Cards/CheckoutCourse'
 
 function Checkout() {
     return (

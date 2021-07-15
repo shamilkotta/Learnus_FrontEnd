@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './CoursePreview.scss'
+import './index.scss'
 
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
 

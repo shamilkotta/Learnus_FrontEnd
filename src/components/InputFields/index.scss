@@ -1,5 +1,11 @@
-.auth {
-    &__show-pass {
+.input {
+    &-text__count {
+        font-size: 0.9em;
+        margin: auto 0 auto auto;
+        color: rgb(134, 134, 134);
+    }
+
+    &-password__show-pass {
         font-size: 1.2em;
         position: absolute;
         right: 10.5%;

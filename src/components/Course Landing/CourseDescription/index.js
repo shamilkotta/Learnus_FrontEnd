@@ -1,5 +1,5 @@
 import React from 'react'
-import './CourseDescription.scss'
+import './index.scss'
 
 function CourseDescription({data}) {
     return (

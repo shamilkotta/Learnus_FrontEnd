@@ -1,5 +1,5 @@
 import React from 'react'
-import './MobileNavbar.scss'
+import './index.scss'
 
 import { FiX } from 'react-icons/fi'
 

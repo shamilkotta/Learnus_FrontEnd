@@ -3,7 +3,7 @@ import './index.scss'
 
 import LogIn from './Auth/LogIn'
 import SignUp from './Auth/SignUp'
-import ForgotPassword from './ForgotPassword/ForgotPassword'
+import ForgotPassword from './Auth/ForgotPassword'
 
 function Authentication() {
 

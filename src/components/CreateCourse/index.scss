@@ -2,20 +2,51 @@ $clr__primary : #3a0ca3;
 
 .create-course {
     margin: 0 15px;
+
     &__txt {
+        font-size: 1em;
         color: $clr__primary;
     }
 
-    &__arrow-icon {
-        font-size: 1.2em;
-        vertical-align: middle;
-        margin-bottom: 2px;
+    .form__step-no {
+        font-size: 10px;
+        color: $clr__primary;
+        font-weight: bold;
+        width: 30%;
+        height: 15px;
+        border: 1px solid $clr__primary;
+        background-color: rgb(255, 255, 255);
+        margin: 0 3px;
+        padding: 0;
+
+        &-group {
+            display: flex;
+            width: 70%;
+            margin: 30px auto;
+            justify-content: space-between;
+
+            .completed {
+                // color: rgb(255, 255, 255);
+                // background-color: $clr__primary;
+                // transform: scaleX(0);
+                // transform-origin: left;
+                // animation: animate 0.5s forwards;
+                // transition: all 0.5s linear;
+                box-shadow: inset 100px 0 0 0 rgb(86, 22, 206);
+            }
+        }
+        @keyframes animate {
+            100% {
+                transform: scaleX(1);
+            }
+        }
     }
 
     &__btn {
         &-group {
             display: flex;
             justify-content: flex-end;
+            margin: 40px 0;
             border-top: 1px solid black;
             padding-top: 15px;
         }
@@ -24,6 +55,67 @@ $clr__primary : #3a0ca3;
         margin: auto 3px;
         &--continue {
             width: 160px;
+        }
+    }
+
+    &__form {
+        .form__steps {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-flow: row;
+            flex-wrap: wrap;
+            .form {
+                &__input {
+                    &-group {
+                        font-size: 1em;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        margin: 20px 0;
+                    }
+                    margin: 5px 0;
+                    width: 100%;
+                    &--txt-area {
+                        resize: none;
+                        height: 75px;
+                    }
+                }
+
+                &-module {
+                    &__chapters {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        // .form-step2-module__chapter-name {
+                        //     width: 85%;
+                        // }
+                    }
+                }
+
+                &__module-add-btn {
+                    width: 50%;
+                    margin: auto;
+                }
+                &__modules {
+                    width: 100%;
+                }
+                &__chapter-add-btn {
+                    width: 25%;
+                    min-width: 80px;
+                    margin: 5px 0 0 auto;
+                }
+            }
+
+            .dlt-btn {
+                font-size: 1.2em;
+                color: $clr__primary;
+                padding: 5px;
+                border: 1px solid $clr__primary;
+                border-radius: 5px;
+                margin: 0 5px;
+            }
         }
     }
 }

@@ -3,32 +3,43 @@ import './index.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
 
-export function InputText({name, value, className, holder, onChange, ...props}) {
+export function InputText({name, value, className, holder, onChange, showCount, maxLength, ...props}) {
     return (
+        <React.Fragment>
         <input
             type="text"
             name={name}
             value={value}
             className={className}
+            maxLength={maxLength}
             placeholder={holder}
             onChange={onChange}
             {...props}
         />
+        {
+            showCount && <span className="input-text__count">{value && value.length || 0}/{maxLength}</span>
+        }
+        </React.Fragment>
     )
 }
 
-export function InputTextArea({name, value, className, holder, onChange, ...props}) {
+export function InputTextArea({name, value, className, holder, onChange, showCount, maxLength, ...props}) {
     return (
-        // <textarea
-        //     type="text"
-        //     name={name}
-        //     value={value}
-        //     className={className}
-        //     placeholder={holder}
-        //     onChange={onChange}
-        //     {...props}
-        // />
-        <textarea />
+        <React.Fragment>
+        <textarea
+            type="text"
+            name={name}
+            value={value}
+            maxLength={maxLength}
+            className={className}
+            placeholder={holder}
+            onChange={onChange}
+            {...props}
+        />
+        {
+            showCount && <span className="input-text__count">{value && value.length || 0}/{maxLength}</span>
+        }
+        </React.Fragment>
     )
 }
 
@@ -102,7 +113,7 @@ export function InputPassword({value, className, onChange}) {
                 required
             />
             <i onClick={()=> setIsShowPass(!isShowPass)}>
-                {isShowPass ? <FaEyeSlash className="auth__show-pass"/> : <FaEye className="auth__show-pass"/>}
+                {isShowPass ? <FaEyeSlash className="input-password__show-pass"/> : <FaEye className="input-password__show-pass"/>}
             </i>
         </React.Fragment>
     )

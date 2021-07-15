@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './HoverCard.scss'
-import CartHoverCard from '../Cards/CartHoverCard/CartHoverCard'
+import './index.scss'
+import CartHoverCard from '../Cards/CartHoverCard'
 
 function HoverCard({data, style}) {
     return (

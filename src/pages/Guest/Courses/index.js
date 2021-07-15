@@ -1,5 +1,5 @@
 import React from 'react'
-import CoursePreview from '../../../components/Cards/CoursePreview/CoursePreview'
+import CoursePreview from '../../../components/Cards/CoursePreview'
 
 const Courses = () => {
     return (

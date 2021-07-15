@@ -77,15 +77,17 @@ a, .a {
 
 .icon-vertical-align {
   vertical-align: middle;
-  margin-right: 0.2em;
+  margin-right: 4px;
+  margin-bottom: 4px;
 }
 
-input {
+input, textarea {
   font-size: 1em;
   width: 100%;
   padding: 0.7em;
   border: 1px solid rgb(194, 194, 194);
   border-radius: 5px;
+  box-sizing: border-box;
 
   &:focus, &:active{
     border-color: $clr__primary;
