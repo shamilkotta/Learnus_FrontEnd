@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './index.scss'
+import './Style.scss'
 
 import LogIn from './Auth/LogIn'
 import SignUp from './Auth/SignUp'

@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
-import './index.scss'
-import { FaLongArrowAltLeft } from 'react-icons/fa'
+import React from 'react'
+import './Style.scss'
+import { BsArrowLeft } from 'react-icons/bs';
 
 import StepsProgress from './StepsProgress';
 import Step1 from './Steps/Step1';
@@ -8,22 +8,16 @@ import Step2 from './Steps/Step2';
 
 const CreateCourse = () => {
 
-    // const [stepNo, setStepNo] = useState(1)
-    // const [step1Data, setStep1Data] = useState({})
-    // const [step2Data, setStep2Data] = useState({})
-    // const [step3Data, setStep3Data] = useState({})
-
-
     const handleSubmit = (e)=> {
-        e.preverntDefault()
+        e.preventDefault()
         console.log('submitted')
     }
 
     return (
-        <div className="wrapper">
-            <div className="create-course">
+        <div className="wrapper create-course">
+            <div className="create-course__container">
+                <p className="create-course__txt "> <BsArrowLeft className="icon-vertical-align" /> back to dashboard</p>
                 <h1 className="create-course__title ">Create New Course</h1>
-                <p className="create-course__txt "> <FaLongArrowAltLeft className="icon-vertical-align" /> back to dashboard</p>
                 <div className="form__steps-progress">
                     <StepsProgress text="1" completed />
                     <StepsProgress text="2" />

@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import './Style.scss'
 
 import CheckoutCourse from '../../../components/Cards/CheckoutCourse'
 

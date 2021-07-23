@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import './Style.scss'
 
 import { FiX } from 'react-icons/fi'
 

@@ -13,7 +13,7 @@ const ScrollToTop = () => {
         position: 'fixed',
         bottom: '25px',
         right: '25px',
-        zIndex: 200
+        zIndex: 200,
     }
 
     const isScrolled = useWindowScroll(200)

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import '../index.scss'
+import '../Style.scss'
 
 import {InputButton, InputPassword, InputConfirmPassword} from '../../InputFields'
 

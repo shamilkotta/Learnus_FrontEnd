@@ -3,7 +3,7 @@ $clr__primary : #3a0ca3;
 .accordion {
     font-size: 1.3em;
     list-style: none;
-    margin: 0 0 0 -33px;
+    margin: 0 0 0 -40px;
 
     .dropdown {
         &__toggle {
@@ -53,17 +53,17 @@ $clr__primary : #3a0ca3;
             position: relative;
             // z-index: -1;
             
-            &::before {
-                font-size: 1.5em;
-                content: "";
-                display: block;
-                width: 1px;
-                font-weight: bolder;
-                height: 100%;
-                border-left: 2px solid $clr__primary;
-                position: absolute;
-                margin: 0 0 0 -10px;
-            }
+            // &::before {
+            //     font-size: 1.5em;
+            //     content: "";
+            //     display: block;
+            //     width: 1px;
+            //     font-weight: bolder;
+            //     height: 100%;
+            //     border-left: 2px solid $clr__primary;
+            //     position: absolute;
+            //     margin: 0 0 0 -10px;
+            // }
             
             li {
                 margin: 5px 0;
@@ -75,10 +75,12 @@ $clr__primary : #3a0ca3;
                 box-sizing: border-box;
     
                 &::before {
-                    content: '\2022';
+                    content: '\25E6';
                     color: $clr__primary;
                     margin: 0 10px 0 -20.5px;
+                    vertical-align: middle;
                     font-weight: bolder;
+                    font-size: 30px;
                     display: inline-block;
                 }
     
@@ -113,7 +115,7 @@ $clr__primary : #3a0ca3;
             &:hover {
                 scrollbar-width: auto; /* firefox */ 
                 &::-webkit-scrollbar {
-                    width: 12px;
+                    width: 10px;
                 } 
             } 
         }

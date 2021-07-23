@@ -1,7 +1,10 @@
 $clr__primary : #3a0ca3;
 
 .create-course {
-    margin: 0 15px;
+    &__container {
+        padding: 0 15px;
+        box-sizing: border-box;
+    }
 
     &__txt {
         font-size: 1em;
@@ -58,6 +61,11 @@ $clr__primary : #3a0ca3;
                         resize: none;
                         height: 75px;
                     }
+                }
+
+                &-step2 {
+                    display: flex;
+                    justify-content: space-between;
                 }
 
                 &__module {

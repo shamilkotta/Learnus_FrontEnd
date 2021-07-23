@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './index.scss'
+import './Style.scss'
 
 import { FaCartPlus, FaStar, FaRegClock } from "react-icons/fa";
 

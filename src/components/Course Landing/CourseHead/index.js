@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.scss'
+import './Style.scss'
 
 import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 

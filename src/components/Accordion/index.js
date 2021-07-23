@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
-import './index.scss'
+import './Style.scss'
 
 
-function Accordion({data, showContent=false}) {
+function Accordion({data, showStyle=false}) {
 
     const [activeDropdown, setActiveDropdown] = useState(0)
     const [activeSubmenu, setActiveSubmenu] = useState([0,0])
@@ -36,7 +36,7 @@ function Accordion({data, showContent=false}) {
                             <ul className="dropdown__submenu" >
                                 {
                                     content.chapters.map((chapter, idx)=> (
-                                        <li key= {idx} className={showContent && submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''} onClick={()=>{showContent && setActiveSubmenu([indx, idx])}} >{chapter}</li>
+                                        <li key= {idx} className={showStyle && submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''} onClick={()=>{showStyle && setActiveSubmenu([indx, idx])}} >{chapter}</li>
                                     ))
                                 }
                             </ul>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { InputText, InputTextArea } from '../../InputFields'
 
 const Step1 = () => {

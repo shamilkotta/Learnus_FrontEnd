@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import './index.scss'
+import './Style.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -17,7 +17,7 @@ export function InputText({name, value, className, holder, onChange, showCount, 
             {...props}
         />
         {
-            showCount && <span className="input-text__count">{value && value.length || 0}/{maxLength}</span>
+            showCount && <span className="input-text__count">{value ? value.length : 0}/{maxLength}</span>
         }
         </React.Fragment>
     )
@@ -37,7 +37,7 @@ export function InputTextArea({name, value, className, holder, onChange, showCou
             {...props}
         />
         {
-            showCount && <span className="input-text__count">{value && value.length || 0}/{maxLength}</span>
+            showCount && <span className="input-text__count">{value ? value.length : 0}/{maxLength}</span>
         }
         </React.Fragment>
     )

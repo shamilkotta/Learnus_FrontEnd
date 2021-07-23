@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import './index.scss'
+import './Style.scss'
 import CartHoverCard from '../Cards/CartHoverCard'
 
 function HoverCard({data, style}) {

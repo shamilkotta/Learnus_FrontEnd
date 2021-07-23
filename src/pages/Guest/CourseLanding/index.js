@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react'
-import './index.scss'
+import './Style.scss'
 
 import CourseHead from '../../../components/Course Landing/CourseHead'
 import CourseDescription from '../../../components/Course Landing/CourseDescription'
