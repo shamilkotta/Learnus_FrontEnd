@@ -10,7 +10,8 @@ const StepsProgress = ({text, completed}) => {
         border: '1px solid #3a0ca3',
         borderRadius: '5px',
         overFlow: 'hidden',
-        position: 'relative'
+        position: 'relative',
+        zIndex: '2'
     }
     const progressFill = {
         width: completed ? '100%' : 0,

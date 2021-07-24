@@ -4,8 +4,8 @@ import './App.scss';
 
 import GuestLayout from './layouts/GuestLayout'
 import UserLayout from './layouts/UserLayout'
-import AdminLayout from './layouts/AdminLayout'
 import AuthLayout from './layouts/AuthLayout';
+import AdminLayout from './layouts/AdminLayout';
 
 function App() {
 
@@ -25,7 +25,7 @@ function App() {
     <div>
       {isPopUp && <AuthLayout/>}
       <Switch>
-        <Route path='/user' component={UserLayout} />
+        <Route path='/user' component={UserLayout}  />
         <Route path='/admin' component={AdminLayout} />
         <Route path='/' component={GuestLayout} />
       </Switch>

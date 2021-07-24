@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { InputText } from '../../InputFields'
+import { FormValues } from '../index';
 
 const Step3 = () => {
+
+    const [ formData, setFormData ] = useContext(FormValues)
 
     const initialState = {
         course__price: '',
@@ -14,12 +17,17 @@ const Step3 = () => {
         course__benefits4: '',
         course__coverImg: ''
     }
-    const [step3Data, setStep3Data] = useState(initialState)
+    const [step3Data, setStep3Data] = useState(formData.step3Data || initialState)
     const handleChange = (e)=> {
         setStep3Data(prvsData=> (
             {...prvsData, [e.target.name]: e.target.value}
         ))
     }
+
+    useEffect(() => {
+        const newFromData = {...formData, ['step3Data']: step3Data}
+        setFormData(newFromData)
+    }, [step3Data])
 
     return (
         <>

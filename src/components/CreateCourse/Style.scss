@@ -2,20 +2,19 @@ $clr__primary : #3a0ca3;
 
 .create-course {
     &__container {
-        padding: 0 15px;
         box-sizing: border-box;
+  
+        .form__steps-progress {
+            display: flex;
+            justify-content: space-between;
+            width: 70%;
+            margin: 30px auto;
+        }
     }
 
     &__txt {
         font-size: 1em;
         color: $clr__primary;
-    }
-  
-    .form__steps-progress {
-        display: flex;
-        justify-content: space-between;
-        width: 70%;
-        margin: 30px auto;
     }
 
     &__btn {
@@ -61,11 +60,6 @@ $clr__primary : #3a0ca3;
                         resize: none;
                         height: 75px;
                     }
-                }
-
-                &-step2 {
-                    display: flex;
-                    justify-content: space-between;
                 }
 
                 &__module {

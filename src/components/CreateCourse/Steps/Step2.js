@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { InputText } from '../../InputFields'
 import { FaPlus } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
+import { FormValues } from '../index';
 
 const Step2 = () => {
 
-    const [step2Data, setStep2Data] = useState([{module: '', chapters: []}])
+    const [ formData, setFormData ] = useContext(FormValues)
+    const [step2Data, setStep2Data] = useState(formData.step2Data || [{module: '', chapters: []}])
+
     const handleModuleChange = (e, indx)=> {
         const newData = [...step2Data]
         newData[indx].module = e.target.value
@@ -39,9 +42,14 @@ const Step2 = () => {
         setStep2Data(newData)
     }
 
+    useEffect(() => {
+        const newFromData = {...formData, ['step2Data']: step2Data}
+        setFormData(newFromData)
+    }, [step2Data])
+
     return (
         <>
-            <div className="form__module" id="form-step2-modules">
+            <div className="form__module ">
 
                 {
                     step2Data.map((modules, indx)=> (
@@ -52,7 +60,7 @@ const Step2 = () => {
 
                             {
                                 modules.chapters.map((chapter, chapterIndx)=> (
-                                    <div className="form-module__chapter" id={`form-module-${indx+1}_chapter-${chapterIndx+1}`} key={chapterIndx}>
+                                    <div className="form-module__chapter" key={chapterIndx}>
                                         <label htmlFor={`course__module-${indx+1}_chapter-${chapterIndx+1}`}>{`Chapter ${chapterIndx+1}:`}</label>
                                         <InputText name={`course__module-${indx+1}_chapter-${chapterIndx+1}`} value={chapter} className="form-step2-module__chapter-name form__input" placeholder="Chapter Name" onChange={e=> {handleChapterChange(e, indx ,chapterIndx)}} required />
                                         <MdDelete className="form-module__chapter-dlt-btn dlt-btn hover" title="Delete chapter" onClick={()=>{deleteChapter(indx, chapterIndx)}} />

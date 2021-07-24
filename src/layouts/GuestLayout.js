@@ -27,7 +27,7 @@ function GuestLayout() {
 
     return (
         <>
-            {isMatchMedia && <> {isMobileNav ? <MobileNavbar toggle={navToggler} style={{top: 0}}/> : <MobileNavbar toggle={navToggler} style={{top: '-100%'}} />} </>}
+            {isMatchMedia && <MobileNavbar toggle={navToggler} style={isMobileNav ? {top: 0}: {top: '-100%'} }/>}
             <Navbar toggle={navToggler} />
             <Switch>
                     <Route exact path={path} component={Home} />

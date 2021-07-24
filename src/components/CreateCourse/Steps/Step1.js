@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { InputText, InputTextArea } from '../../InputFields'
+import { FormValues } from '../index';
 
 const Step1 = () => {
+
+    const [ formData, setFormData ] = useContext(FormValues)
     
     const initialState = {
         course__code: '',
@@ -12,12 +15,17 @@ const Step1 = () => {
         course__requirements: '',
         course__target: ''
     }
-    const [step1Data, setStep1Data] = useState(initialState)
+    const [step1Data, setStep1Data] = useState(formData.step1Data || initialState)
     const handleChange = e=> {
         setStep1Data(prvsData=> (
             {...prvsData, [e.target.name]: e.target.value}
         ))
+        
     }
+    useEffect(() => {
+        const newFromData = {...formData, ['step1Data']: step1Data}
+        setFormData(newFromData)
+    }, [step1Data])
 
     return (
         <>
