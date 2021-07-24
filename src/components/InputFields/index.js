@@ -3,11 +3,11 @@ import './Style.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
 
-export function InputText({name, value, className, holder, onChange, showCount, maxLength, ...props}) {
+export function InputText({type="text", name, value, className, holder, onChange, showCount, maxLength, ...props}) {
     return (
         <React.Fragment>
         <input
-            type="text"
+            type={type}
             name={name}
             value={value}
             className={className}

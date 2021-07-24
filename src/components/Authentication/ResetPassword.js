@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import '../Style.scss'
+import './Style.scss'
 
-import {InputButton, InputPassword, InputConfirmPassword} from '../../InputFields'
+import {InputButton, InputPassword, InputConfirmPassword} from '../InputFields'
 
 function ResetPassword() {
     

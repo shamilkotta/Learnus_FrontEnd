@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-import { useHistory } from 'react-router'
+import { useHistory } from 'react-router-dom'
+import './Style.scss'
 
-import {InputButton, InputEmail} from '../../InputFields'
-import {FaPlus} from 'react-icons/fa'
+import { FaPlus } from "react-icons/fa";
+import {InputButton, InputEmail} from '../InputFields'
 
 function ForgotPassword({setPopUp}) {
-
+    
     const history = useHistory()
     const [forgotPassData, setForgotPassData] = useState({email: ''})
     const handleChange = e=> {setForgotPassData(prvsData=>({...prvsData, [e.target.name]: e.target.value}))}
@@ -16,7 +17,7 @@ function ForgotPassword({setPopUp}) {
     }
 
     return (
-        <div className="auth" style={{ maxHeight: '270px'}}>
+        <>
             <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Forgot Password?</h1>
@@ -29,7 +30,7 @@ function ForgotPassword({setPopUp}) {
                     <p className="auth__txt auth__txt--bottom a" style={{color: '#3a0ca3'}} onClick={()=> {setPopUp('logIn')}}>Back to Log In</p>
                 </div>
             </form>
-        </div>
+        </>
     )
 }
 

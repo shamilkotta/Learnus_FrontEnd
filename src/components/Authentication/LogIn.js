@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import './Style.scss'
 
-import { InputEmail, InputPassword, InputButton } from '../../InputFields'
+import { InputEmail, InputPassword, InputButton } from '../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 
 function LogIn({setPopUp}) {
@@ -16,7 +17,7 @@ function LogIn({setPopUp}) {
     }
 
     return (
-        <div className="auth" style={{ maxHeight: '420px'}}>
+        <>
             <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Log In</h1>
@@ -36,7 +37,7 @@ function LogIn({setPopUp}) {
                     <p className='auth__txt auth__txt--bottom'>Not a memeber? <span onClick={()=> {setPopUp('signUp')}} className=" clr__primary a">Sign Up</span></p>
                 </div>
             </form>
-        </div>
+        </>
     )
 }
 

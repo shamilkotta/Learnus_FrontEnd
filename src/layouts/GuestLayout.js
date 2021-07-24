@@ -14,7 +14,7 @@ import Cart from '../pages/Guest/Cart'
 import Checkout from '../pages/Guest/Checkout'
 import CourseLanding from '../pages/Guest/CourseLanding'
 import ErrorPage from '../pages/Guest/ErrorPage'
-import ResetPassword from '../components/Authentication/Auth/ResetPassword'
+import ResetPassword from '../components/Authentication/ResetPassword'
 
 
 function GuestLayout() {

@@ -5,7 +5,7 @@ import './App.scss';
 import GuestLayout from './layouts/GuestLayout'
 import UserLayout from './layouts/UserLayout'
 import AdminLayout from './layouts/AdminLayout'
-import Authentication from './components/Authentication';
+import AuthLayout from './layouts/AuthLayout';
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div>
-      {isPopUp && <Authentication/>}
+      {isPopUp && <AuthLayout/>}
       <Switch>
         <Route path='/user' component={UserLayout} />
         <Route path='/admin' component={AdminLayout} />
