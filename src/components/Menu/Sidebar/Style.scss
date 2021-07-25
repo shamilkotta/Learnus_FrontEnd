@@ -1,0 +1,15 @@
+$clr__primary : #3a0ca3;
+
+.sidebar {
+    list-style: none;
+
+    &__item {
+        color: rgb(255, 255, 255);
+        font-size: 18px;
+        cursor: pointer;
+        padding: 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

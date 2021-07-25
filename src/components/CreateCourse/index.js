@@ -18,7 +18,6 @@ const CreateCourse = () => {
         e.preventDefault()
         setCompletedStep(currentStep)
         currentStep === 3 ? console.log('submitted') : setCurrentStep(currentStep+1)
-        console.log(formData)
     }
     const handleSave = e=> {
         e.preventDefault()
@@ -52,10 +51,10 @@ const CreateCourse = () => {
 
                 <div className="create-course__btn-group">
                     {
-                        currentStep != 1 && <button className="create-course__btn btn" onClick={goBack}>Back</button>
+                        currentStep !== 1 && <button className="create-course__btn btn" onClick={goBack}>Back</button>
                     }
                     {
-                        currentStep != 3 ?
+                        currentStep !== 3 ?
                             <> 
                                 <button className="create-course__btn btn" onClick={handleSave}>Save</button>
                                 <button className="create-course__btn btn btn--active create-course__btn--continue" >Save & Continue</button>

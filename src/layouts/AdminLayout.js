@@ -1,38 +1,43 @@
-import React, { useState, useLayoutEffect } from 'react'
+import React, { useLayoutEffect, useContext } from 'react'
 import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
 import useWindowResize from '../hooks/useWindowResize';
 import './Style.scss'
 
+import AdminSidebar from '../components/Menu/Sidebar/AdminSidebar';
+
 import Admin from '../pages/Admin'
-import Admin12 from '../pages/Admin/create'
-import Navbar from '../components/Menu/Navbar';
+import CreateNewCourse from '../pages/Admin/CreateNewCourse'
+import Students from '../pages/Admin/Students'
+import Courses from '../pages/Admin/Courses';
+import AddContent from '../pages/Admin/AddContent';
+
+import { MenubarToggler } from '../App';
 
 const AdminLayout = () => {
 
     let { path } = useRouteMatch()
 
-    const [isSideBar, setIsSideBar] = useState(true)
-    const matchMedia = useWindowResize('min-width: 992px')
-    const toggleSideBar= (e)=> {
-        e.preventDefault()
-        setIsSideBar(!isSideBar)
-    }
-
+    const [ isSidebar, setIsSidebar ] = useContext(MenubarToggler)
+    
+    const matchMediaSidebar = useWindowResize('min-width: 992px')
     useLayoutEffect(() => {
-        matchMedia ? setIsSideBar(true) : setIsSideBar(false)
-    }, [matchMedia])
+		matchMediaSidebar ? setIsSidebar(true) : setIsSidebar(false);
+    }, [matchMediaSidebar])
+
 
     return (
         <>
-            <Navbar sideBar toggleSideBar={toggleSideBar} />
             <div className="wrapper layout">
-                <div className="layout__sideBar" style={isSideBar ? {width: '320px'} : {width: 0}} >
-                    
+                <div className="layout__sideBar" style={isSidebar ? {width: '320px'} : {width: 0}} >
+                    <AdminSidebar/>
                 </div>
-                <div className="layout__container" style={matchMedia && isSideBar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
+                <div className="layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
                     <Switch>
                         <Route exact path={path} component={Admin} />
-                        <Route exact path={`${path}/create1`} component={Admin12} />
+                        <Route exact path={`${path}/create-new-course`} component={CreateNewCourse} />
+                        <Route exact path={`${path}/students`} component={Students} />
+                        <Route exact path={`${path}/courses`} component={Courses} />
+                        <Route exact path={`${path}/add-content`} component={AddContent} />
                         <Redirect to='/404-page-not-found' />
                     </Switch>
                 </div>

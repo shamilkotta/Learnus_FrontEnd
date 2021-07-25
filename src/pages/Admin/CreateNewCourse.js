@@ -1,10 +1,10 @@
 import React from 'react'
 import CreateCourse from '../../components/CreateCourse'
 
-const create = () => {
+const CreateNewCourse = () => {
     return (
         <CreateCourse/>
     )
 }
 
-export default create
+export default CreateNewCourse

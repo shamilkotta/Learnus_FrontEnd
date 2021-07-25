@@ -7,6 +7,8 @@ $clr__primary : #3a0ca3;
     right: 0;
     z-index: 100;
     background-color: rgb(0, 0, 0);
+    box-shadow: 0px 0px 19px -10px rgb(85, 85, 85);
+    // background-color: #0b132b;
     transition: 0.3s all ease-in;
 
     &-container {font-size: 1em;
@@ -25,6 +27,9 @@ $clr__primary : #3a0ca3;
         font-weight: bolder;
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         span {
             color: $clr__primary;
@@ -102,7 +107,7 @@ $clr__primary : #3a0ca3;
                 color: rgb(255, 255, 255);
                 width: 23px;
                 height: 23px;
-                border: 2px solid $clr__primary;
+                border: 2px solid #ffffff;
                 padding: 8px;
                 border-radius: 50%;
                 overflow: visible;

@@ -1,10 +1,10 @@
 import React from 'react'
 
-const GuestMobNav = ({toggle}) => {
+const GuestMobNav = ({toggleNavbar}) => {
     return (
         <>
-            <li className="mobile-navbar__link active" onClick={toggle}>All Courses</li>
-            <li className="mobile-navbar__link mobile-navbar__link--btn" onClick={toggle}>Login</li>
+            <li className="mobile-navbar__link active" onClick={toggleNavbar}>All Courses</li>
+            <li className="mobile-navbar__link mobile-navbar__link--btn" onClick={toggleNavbar}>Login</li>
         </>
     )
 }

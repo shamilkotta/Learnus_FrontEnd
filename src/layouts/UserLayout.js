@@ -1,31 +1,26 @@
-import React, { useState, useLayoutEffect } from 'react'
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import React, { useContext, useLayoutEffect } from 'react'
+import { Switch, Route, Redirect } from 'react-router-dom';
 import useWindowResize from '../hooks/useWindowResize';
 import './Style.scss'
 
-import Navbar from '../components/Menu/Navbar';
+import { MenubarToggler } from '../App';
 
-const UserLayout = (props) => {
-
-    const [isSideBar, setIsSideBar] = useState(true)
-    const matchMedia = useWindowResize('min-width: 992px')
-    const toggleSideBar= (e)=> {
-        e.preventDefault()
-        setIsSideBar(!isSideBar)
-    }
-
+const UserLayout = () => {
+ 
+    const [ isSidebar, setIsSidebar ] = useContext(MenubarToggler)
+    
+    const matchMediaSidebar = useWindowResize('min-width: 992px')
     useLayoutEffect(() => {
-        matchMedia ? setIsSideBar(true) : setIsSideBar(false)
-    }, [matchMedia])
+		matchMediaSidebar ? setIsSidebar(true) : setIsSidebar(false);
+    }, [matchMediaSidebar])
     
     return (
         <>
-            <Navbar sideBar toggleSideBar={toggleSideBar} />
             <div className="wrapper admin-layout">
-                <div className="admin-layout__sideBar" style={isSideBar ? {width: '320px'} : {width: 0}} >
+                <div className="admin-layout__sideBar" style={isSidebar ? {width: '320px'} : {width: 0}} >
                     
                 </div>
-                <div className="admin-layout__container" style={matchMedia && isSideBar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
+                <div className="admin-layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
                     <Switch>
                         <Route exact path={''} component={''} />
                         <Route exact path={''} component={''} />

@@ -1,12 +1,12 @@
 import React from 'react'
 
-const AdminMobNav = ({toggle}) => {
+const AdminMobNav = ({toggleNavbar}) => {
     return (
         <>
-            <li className="mobile-navbar__link active" onClick={toggle}>All Courses</li>
-            <li className="mobile-navbar__link" onClick={toggle}>My courses</li>
-            <li className="mobile-navbar__link" onClick={toggle}>Cart</li>
-            <li className="mobile-navbar__link" onClick={toggle}>Profile</li>
+            <li className="mobile-navbar__link active" onClick={toggleNavbar}>All Courses</li>
+            <li className="mobile-navbar__link" onClick={toggleNavbar}>My courses</li>
+            <li className="mobile-navbar__link" onClick={toggleNavbar}>Cart</li>
+            <li className="mobile-navbar__link" onClick={toggleNavbar}>Profile</li>
         </>
     )
 }
