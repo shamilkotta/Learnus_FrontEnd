@@ -3,7 +3,7 @@ import { useHistory } from 'react-router';
 import './Style.scss'
 
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
-import { InputConfirmPassword, InputEmail, InputPassword, InputButton, InputText } from '../InputFields'
+import { InputConfirmPassword, InputEmail, InputPassword, InputSubmit, InputText } from '../InputFields'
 
 function SignUp({setPopUp}) {
 
@@ -34,7 +34,7 @@ function SignUp({setPopUp}) {
                     <InputConfirmPassword value={signUpData.confirmPassword} password={signUpData.password} className="auth__input" onChange={handleChange} />
                 </div>
                 <div className="auth-btn-group">
-                    <InputButton type="submit" className="auth__btn btn btn--active" value='SIGN UP' />
+                    <InputSubmit className="auth__btn btn--active" value='SIGN UP' />
                     <p className='auth__txt auth__txt--bottom'>Already a memeber? <span onClick={()=> {setPopUp('logIn')}} className=" clr__primary a">Log In</span></p>
                 </div>
             </form>

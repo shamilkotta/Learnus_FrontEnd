@@ -5,6 +5,7 @@ import StepsProgress from './StepsProgress';
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 import Step3 from './Steps/Step3';
+import { InputSubmit } from '../InputFields';
 
 export const FormValues = createContext()
 
@@ -18,6 +19,7 @@ const CreateCourse = () => {
         e.preventDefault()
         setCompletedStep(currentStep)
         currentStep === 3 ? console.log('submitted') : setCurrentStep(currentStep+1)
+        console.log('hi')
     }
     const handleSave = e=> {
         e.preventDefault()
@@ -56,11 +58,11 @@ const CreateCourse = () => {
                     {
                         currentStep !== 3 ?
                             <> 
-                                <button className="create-course__btn btn" onClick={handleSave}>Save</button>
-                                <button className="create-course__btn btn btn--active create-course__btn--continue" >Save & Continue</button>
+                                <InputSubmit className="create-course__btn" onClick={handleSave} value="Save" />
+                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" loading={false} value="Save & Continue" />
                             </>
                         :
-                            <button className="create-course__btn btn btn--active create-course__btn--finish" >Finish</button>
+                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" value="Finish" />
                     }
                 </div>
             </form>

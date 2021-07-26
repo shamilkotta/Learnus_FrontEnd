@@ -57,11 +57,19 @@ a, .a {
         color: rgba($color: #fff, $alpha: 1.0);
     }
 
-    &:hover {
-        background-color: rgba($color: #fff, $alpha: 1.0);
+	&--loading {
+		background-color: rgba($color: #fff, $alpha: 1.0);
         border-color: rgba($color: #fff, $alpha: 1.0);
         color: rgba($color: $clr__primary, $alpha: 1.0);
-        box-shadow: 0px 0px 7px rgba($color: $clr__primary, $alpha: 1.0);
+	}
+
+    &:hover {
+		&:not([disabled]) {
+			background-color: rgba($color: #fff, $alpha: 1.0);
+			border-color: rgba($color: #fff, $alpha: 1.0);
+			color: rgba($color: $clr__primary, $alpha: 1.0);
+			box-shadow: 0px 0px 7px rgba($color: $clr__primary, $alpha: 1.0);
+		}
     }
 }
 

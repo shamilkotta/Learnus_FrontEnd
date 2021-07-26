@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Style.scss'
 
-import { InputEmail, InputPassword, InputButton } from '../InputFields'
+import { InputEmail, InputPassword, InputSubmit } from '../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 
 function LogIn({setPopUp}) {
@@ -33,7 +33,7 @@ function LogIn({setPopUp}) {
                 </div>
                 <span className="auth__txt a" style={{color: '#3a0ca3'}} onClick={()=> {setPopUp('forgotPasswrod')}}>Forgot password?</span>
                 <div className="auth-btn-group">
-                    <InputButton type="submit" className="auth__btn btn btn--active" value='LOG IN' />
+                    <InputSubmit className="auth__btn btn--active" value='LOG IN' />
                     <p className='auth__txt auth__txt--bottom'>Not a memeber? <span onClick={()=> {setPopUp('signUp')}} className=" clr__primary a">Sign Up</span></p>
                 </div>
             </form>

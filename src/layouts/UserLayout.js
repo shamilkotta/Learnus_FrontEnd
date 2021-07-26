@@ -16,11 +16,11 @@ const UserLayout = () => {
     
     return (
         <>
-            <div className="wrapper admin-layout">
-                <div className="admin-layout__sideBar" style={isSidebar ? {width: '320px'} : {width: 0}} >
+            <div className="wrapper layout">
+                <div className="layout__sideBar" style={isSidebar ? {width: '320px'} : {width: 0}} >
                     
                 </div>
-                <div className="admin-layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
+                <div className="layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
                     <Switch>
                         <Route exact path={''} component={''} />
                         <Route exact path={''} component={''} />

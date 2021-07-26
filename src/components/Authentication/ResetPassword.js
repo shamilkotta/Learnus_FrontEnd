@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Style.scss'
 
-import {InputButton, InputPassword, InputConfirmPassword} from '../InputFields'
+import {InputSubmit, InputPassword, InputConfirmPassword} from '../InputFields'
 
 function ResetPassword() {
     
@@ -21,7 +21,7 @@ function ResetPassword() {
                     <InputConfirmPassword value={resetPassData.confirmPassword} password={resetPassData.password} className="auth__input" onChange={handleChange}/>
                 </div>
                 <div className="auth-btn-group">
-                    <InputButton type="submit" className="auth__btn btn btn--active" value="UPDATE"/>
+                    <InputSubmit className="auth__btn btn--active" value="UPDATE"/>
                 </div>
             </form>
         </div>

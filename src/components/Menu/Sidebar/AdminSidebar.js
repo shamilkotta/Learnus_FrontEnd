@@ -7,7 +7,7 @@ const AdminSidebar = () => {
     return (
         <div className="sidebar">
             <Link to="/admin" className="sidebar__item">
-                <span> Dashbord </span>
+                <span> Dashboard </span>
                 <span> <FaAngleRight className="icon-vertical-align" /> </span>
             </Link>
             <Link to="/admin/courses" className="sidebar__item">

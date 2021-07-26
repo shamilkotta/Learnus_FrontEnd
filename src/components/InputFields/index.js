@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import './Style.scss'
 
 import {FaEye, FaEyeSlash } from "react-icons/fa";
+import { BeatLoader } from 'react-spinners';
 
 export function InputText({type="text", name, value, className, holder, onChange, showCount, maxLength, ...props}) {
     return (
@@ -57,15 +58,18 @@ export function InputEmail({value, className, onChange, ...props}) {
     )
 }
 
-export function InputButton({type='button', className,value, onClick}) {
+export function InputSubmit({type='submit', className, value, loading=false, onClick}) {
     return (
-        <input 
+        <button
             type={type}
-            className={className}
-            value={value}
+            className={`btn ${className} ${ loading && 'btn--loading'}`}
             onClick={onClick}
-            required 
-        />
+            disabled={loading}
+        >
+            {
+                loading ? <BeatLoader color={'#3a0ca3'} loading={true} size={10} /> : value 
+            }
+        </button>
     )
 }
 
