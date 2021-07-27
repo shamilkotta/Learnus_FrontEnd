@@ -6,7 +6,7 @@ import './Style.scss'
 const AdminSidebar = () => {
     return (
         <div className="sidebar">
-            <Link to="/admin" className="sidebar__item">
+            <Link to="/admin/dashboard" className="sidebar__item">
                 <span> Dashboard </span>
                 <span> <FaAngleRight className="icon-vertical-align" /> </span>
             </Link>

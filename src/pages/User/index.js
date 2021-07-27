@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Admin = () => {
+const User = () => {
     return (
         <div>
-            Admin root
+            user route
         </div>
     )
 }
 
-export default Admin
+export default User

@@ -14,14 +14,13 @@ import ResetPassword from '../components/Authentication/ResetPassword'
 
 function GuestLayout() {
 
-    const { path } = useRouteMatch()
-
     return (
         <>
             <Switch>
-                    <Route exact path={path} component={Home} />
-                    <Route exact path='/all-courses' component={Courses} />
-                    <Route exact path='/course' component={CourseLanding} />
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/courses' component={Courses} />
+                    <Route exact path='/course/:id' component={CourseLanding} />
+                    <Redirect exact from='/course' to='/courses' />
                     <Route exact path='/cart' component={Cart} />
                     <Route exact path='/checkout' component={Checkout} />
                     <Route path='/reset-password'><div style={{height: '80vh'}}><ResetPassword/></div></Route>

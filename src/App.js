@@ -1,15 +1,15 @@
 import React, { useEffect, useState, createContext } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom'
-import useWindowResize from './hooks/useWindowResize'
-import { useScrollToTopOnRoute } from './hooks/useScrollToTop'
+import { Switch, Route, useLocation } from 'react-router-dom';
+import useWindowResize from './hooks/useWindowResize';
+import { useScrollToTopOnRoute } from './hooks/useScrollToTop';
 import './App.scss';
 
-import ScrollToTop from './components/ScrollToTop'
-import MobileNavbar from './components/Menu/MobileNavbar'
-import Navbar from './components/Menu/Navbar'
+import ScrollToTop from './components/ScrollToTop';
+import MobileNavbar from './components/Menu/MobileNavbar';
+import Navbar from './components/Menu/Navbar';
 
-import GuestLayout from './layouts/GuestLayout'
-import UserLayout from './layouts/UserLayout'
+import GuestLayout from './layouts/GuestLayout';
+import UserLayout from './layouts/UserLayout';
 import AuthLayout from './layouts/AuthLayout';
 import AdminLayout from './layouts/AdminLayout';
 

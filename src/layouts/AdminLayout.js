@@ -33,11 +33,12 @@ const AdminLayout = () => {
                 </div>
                 <div className="layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
                     <Switch>
-                        <Route exact path={path} component={Admin} />
+                        <Route exact path={`${path}/dashboard`} component={Admin} />
                         <Route exact path={`${path}/create-new-course`} component={CreateNewCourse} />
                         <Route exact path={`${path}/students`} component={Students} />
                         <Route exact path={`${path}/courses`} component={Courses} />
                         <Route exact path={`${path}/add-content`} component={AddContent} />
+                        <Redirect exact from={path} to={`${path}/dashboard`} />
                         <Redirect to='/404-page-not-found' />
                     </Switch>
                 </div>
