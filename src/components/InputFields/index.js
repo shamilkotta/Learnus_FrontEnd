@@ -91,6 +91,8 @@ export function InputConfirmPassword({value, className, password, onChange}) {
             className={className} 
             onChange={onChange}
             placeholder="Confirm Password"
+            minLength= {8}
+            maxLength= {16}
             pattern="(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,16}"
             required 
             onInvalid= {handleInvalid}
@@ -111,7 +113,9 @@ export function InputPassword({value, className, onChange}) {
                 value={value}
                 className={className}
                 onChange={onChange}
-                placeholder="Password"
+                placeholder="Password"        
+                minLength= {8}
+                maxLength= {16}
                 pattern="(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9!@#$%^&*]{8,16}"
                 title="Must contain at least one number, one uppercase and lowercase letter, one special charecter. and 8 to 16 charecters long, space between charecters not allowed"
                 required
