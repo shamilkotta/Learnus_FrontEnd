@@ -31,7 +31,7 @@ const Step1 = () => {
         <>
             <div className="form__input-group" style={{width: '23%'}}>
                 <label htmlFor="course__code">Unique Code:</label>
-                <InputText value={step1Data.course__code} holder="eg: M025K" onChange={handleChange} name="course__code" className="form-step1__code form__input" minLength="5" showCount maxLength="5" pattern="^[A-Za-z0-9]*$" title="(Space and special charecter is not allowed)" required />
+                <InputText value={step1Data.course__code} style={{textTransform: 'uppercase'}} holder="eg: M025K" onChange={handleChange} name="course__code" className="form-step1__code form__input" minLength="5" showCount maxLength="5" pattern="^[A-Za-z0-9]*$" title="(Space and special charecter is not allowed)" required />
             </div>
             <div className="form__input-group" style={{width: '75%'}}>
                 <label htmlFor="course__title">Title:</label>
