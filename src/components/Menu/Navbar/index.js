@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Style.scss'
-import {Link, useHistory, useLocation, useRouteMatch} from 'react-router-dom'
+import {Link, useLocation } from 'react-router-dom'
 import { FiBarChart, FiMenu } from 'react-icons/fi'
 
 import GuestNavbar from './GuestNavbar';

@@ -1,0 +1,39 @@
+$clr__primary : #3a0ca3;
+
+.courses__table {
+    margin: 10px auto auto;
+    width: 95%;
+    border-collapse: collapse;
+
+    thead tr{
+        font-size: 19px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    th, td {
+        padding: 10px 5px ;
+        border-top: thin solid rgb(209, 209, 209);
+    }
+
+    td {
+        font-size: 15px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    &-btn {
+        font-size: 20px;
+        height: 20px;
+        padding: 3px 5px;
+        margin: 0 10px 0 0;
+        color: black;
+        border: 1px solid $clr__primary;
+        border-radius: 5px;
+
+        &:hover {
+            color: rgb(255, 255, 255);
+            background-color: $clr__primary;
+        }
+    }
+}

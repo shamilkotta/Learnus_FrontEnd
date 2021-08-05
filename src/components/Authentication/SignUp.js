@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 import './Style.scss'
+import axios from 'axios'
 
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 import { InputConfirmPassword, InputEmail, InputPassword, InputSubmit, InputText } from '../InputFields'
@@ -8,12 +9,17 @@ import { InputConfirmPassword, InputEmail, InputPassword, InputSubmit, InputText
 function SignUp({setPopUp}) {
 
     const history = useHistory()
-    const initialSignUpData = { email: '', password: '', name: '', confirmPassword: '' }
+    const initialSignUpData = { email: '', password: '', username: '', confirmPassword: '' }
     const [signUpData, setSignUpData] = useState(initialSignUpData)
     const handleChange = e => {setSignUpData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value}) )}
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        axios.post('http://localhost:5000/api/signup', signUpData).then(response=> {
+            console.log(response.data)
+        }).catch(err=> {
+            console.log(err.response.data)
+        })
     }
 
     return (
@@ -28,7 +34,7 @@ function SignUp({setPopUp}) {
                 </div>
                 <p className="auth__txt auth__txt--top">OR</p>
                 <div className="auth-input-group">
-                    <InputText className="auth__input" name="name" value={signUpData.name} holder="Your Name" onChange={handleChange} required />
+                    <InputText className="auth__input" name="username" value={signUpData.username} holder="Username" onChange={handleChange} required />
                     <InputEmail value={signUpData.email} className="auth__input" onChange={handleChange} required />
                     <InputPassword value={signUpData.password} className="auth__input" onChange={handleChange} />
                     <InputConfirmPassword value={signUpData.confirmPassword} password={signUpData.password} className="auth__input" onChange={handleChange} />

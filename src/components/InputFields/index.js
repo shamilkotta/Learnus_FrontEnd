@@ -65,6 +65,7 @@ export function InputSubmit({type='submit', className, value, loading=false, onC
             className={`btn ${className} ${ loading && 'btn--loading'}`}
             onClick={onClick}
             disabled={loading}
+            value={value}
         >
             {
                 loading ? <BeatLoader color={'#3a0ca3'} loading={true} size={10} /> : value 

@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Style.scss'
+import axios from 'axios'
 
-import { InputEmail, InputPassword, InputSubmit } from '../InputFields'
+import { InputPassword, InputSubmit, InputText } from '../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 
 function LogIn({setPopUp}) {
 
     const history = useHistory()
-    const initialLogInData = { email: '', password: '', name: '', confirmPassword: '' }
+    const initialLogInData = { username: '', password: '',}
     const [logInData, setLogInData] = useState(initialLogInData)
     const handleChange = e => {setLogInData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value }) )}
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        axios.post('http://localhost:5000/api/login', logInData).then(response=> {
+            console.log(response.data)
+        }).catch(err=> {
+            console.log(err.response.data)
+        })
     }
 
     return (
@@ -28,7 +34,7 @@ function LogIn({setPopUp}) {
                 </div>
                 <p className="auth__txt auth__txt--top">OR</p>
                 <div className="auth-input-group">
-                    <InputEmail value={logInData.email} className="auth__input" onChange={handleChange} required />
+                    <InputText value={logInData.username} holder="Username" name="username" className="auth__input"  onChange={handleChange} required  />
                     <InputPassword value={logInData.password} className="auth__input" onChange={handleChange} />
                 </div>
                 <span className="auth__txt a" style={{color: '#3a0ca3'}} onClick={()=> {setPopUp('forgotPasswrod')}}>Forgot password?</span>

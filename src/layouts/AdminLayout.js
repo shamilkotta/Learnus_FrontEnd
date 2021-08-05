@@ -10,6 +10,7 @@ import CreateNewCourse from '../pages/Admin/CreateNewCourse'
 import Students from '../pages/Admin/Students'
 import Courses from '../pages/Admin/Courses';
 import AddContent from '../pages/Admin/AddContent';
+import EditCourse from '../pages/Admin/EditCourse';
 
 import { MenubarToggler } from '../App';
 
@@ -37,6 +38,7 @@ const AdminLayout = () => {
                         <Route exact path={`${path}/create-new-course`} component={CreateNewCourse} />
                         <Route exact path={`${path}/students`} component={Students} />
                         <Route exact path={`${path}/courses`} component={Courses} />
+                        <Route exact path={`${path}/edit-course`} component={EditCourse} />
                         <Route exact path={`${path}/add-content`} component={AddContent} />
                         <Redirect exact from={path} to={`${path}/dashboard`} />
                         <Redirect to='/404-page-not-found' />

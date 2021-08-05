@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import Footer from '../components/Footer'
 

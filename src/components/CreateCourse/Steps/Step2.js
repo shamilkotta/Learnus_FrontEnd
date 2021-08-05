@@ -1,68 +1,63 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { InputText } from '../../InputFields'
 import { FaPlus } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
 import { FormValues } from '../index';
 
 const Step2 = () => {
-
     const [ formData, setFormData ] = useContext(FormValues)
-    const [step2Data, setStep2Data] = useState(formData.step2Data || [{module: '', chapters: []}])
 
     const handleModuleChange = (e, indx)=> {
-        const newData = [...step2Data]
-        newData[indx].module = e.target.value
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content[indx].module_name = e.target.value
+        course__content[indx].module_id = indx + 1
+        setFormData({...formData, ['course__content']: course__content})
     }
     const handleChapterChange = (e, indx, chapterIndx)=> {
-        const newData = [...step2Data]
-        newData[indx].chapters[chapterIndx] = e.target.value
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content[indx].chapters[chapterIndx].chapter_name = e.target.value
+        course__content[indx].chapters[chapterIndx].chapter_id = `${indx+1}_${chapterIndx+1}`
+        setFormData({...formData, ['course__content']: course__content})
     }
 
     const addModule = ()=> {
-        const newData = [...step2Data]
-        newData.push({module: '', chapters: []})
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content.push({module_id: '', module_name: '', chapters: []})
+        setFormData({...formData, ['course__content']: course__content})
     }
     const addChapter = (indx)=> {
-        const newData = [...step2Data]
-        newData[indx].chapters.push('')
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content[indx].chapters.push({chapter_id: '', chapter_name: ''})
+        setFormData({...formData, ['course__content']: course__content})
     }
 
     const deleteModule = (indx)=> {
-        const newData = [...step2Data]
-        newData.splice(indx, 1)
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content.splice(indx, 1)
+        setFormData({...formData, ['course__content']: course__content})
     }
     const deleteChapter = (indx, chapterIndx)=> {
-        const newData = [...step2Data]
-        newData[indx].chapters.splice(chapterIndx, 1)
-        setStep2Data(newData)
+        const course__content = [...formData.course__content]
+        course__content[indx].chapters.splice(chapterIndx, 1)
+        setFormData({...formData, ['course__content']: course__content})
     }
-
-    useEffect(() => {
-        const newFromData = {...formData, ['step2Data']: step2Data}
-        setFormData(newFromData)
-    }, [step2Data])
 
     return (
         <>
             <div className="form__module ">
 
                 {
-                    step2Data.map((modules, indx)=> (
+                    formData.course__content.map((modules, indx)=> (
                         <div className="form__input-group form__module-group" key={indx}>
                             <label htmlFor={`module${indx+1}`}>{`Module ${indx+1}`}</label>
                             <MdDelete className="form__module-dlt-btn dlt-btn hover" title="Delete module" onClick={()=>{deleteModule(indx)}} />
-                            <InputText name={`module${indx+1}`} value={modules.module} className="form-step2__module-name form__input" placeholder="Module name" onChange={e=> {handleModuleChange(e, indx)}} required />
+                            <InputText name={`module${indx+1}`} value={modules.module_name} className="form-step2__module-name form__input" placeholder="Module name" onChange={e=> {handleModuleChange(e, indx)}} required />
 
                             {
                                 modules.chapters.map((chapter, chapterIndx)=> (
                                     <div className="form-module__chapter" key={chapterIndx}>
                                         <label htmlFor={`course__module-${indx+1}_chapter-${chapterIndx+1}`}>{`Chapter ${chapterIndx+1}:`}</label>
-                                        <InputText name={`course__module-${indx+1}_chapter-${chapterIndx+1}`} value={chapter} className="form-step2-module__chapter-name form__input" placeholder="Chapter Name" onChange={e=> {handleChapterChange(e, indx ,chapterIndx)}} required />
+                                        <InputText name={`course__module-${indx+1}_chapter-${chapterIndx+1}`} value={chapter.chapter_name} className="form-step2-module__chapter-name form__input" placeholder="Chapter Name" onChange={e=> {handleChapterChange(e, indx ,chapterIndx)}} required />
                                         <MdDelete className="form-module__chapter-dlt-btn dlt-btn hover" title="Delete chapter" onClick={()=>{deleteChapter(indx, chapterIndx)}} />
                                     </div>
                                 ))
