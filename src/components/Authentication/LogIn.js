@@ -5,26 +5,25 @@ import axios from 'axios'
 
 import { InputPassword, InputSubmit, InputText } from '../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
+import { useDispatch } from 'react-redux'
+import { authLogin } from '../../actions/auth'
 
 function LogIn({setPopUp}) {
 
     const history = useHistory()
+    const dispatch = useDispatch()
+
     const initialLogInData = { username: '', password: '',}
     const [logInData, setLogInData] = useState(initialLogInData)
     const handleChange = e => {setLogInData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value }) )}
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/login', logInData).then(response=> {
-            console.log(response.data)
-        }).catch(err=> {
-            console.log(err.response.data)
-        })
+        dispatch(authLogin(logInData, history))
     }
 
     return (
         <>
-            <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
+            <FaPlus className="auth__close-icon" onClick={()=> history.replace(history.location.pathname)} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Log In</h1>
                 <div className="auth__social-sign">

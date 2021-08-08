@@ -1,30 +1,28 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router';
+import { useDispatch } from 'react-redux';
 import './Style.scss'
-import axios from 'axios'
 
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
 import { InputConfirmPassword, InputEmail, InputPassword, InputSubmit, InputText } from '../InputFields'
+import { authSignup } from '../../actions/auth';
 
 function SignUp({setPopUp}) {
 
     const history = useHistory()
+    const dispatch = useDispatch()
+
     const initialSignUpData = { email: '', password: '', username: '', confirmPassword: '' }
     const [signUpData, setSignUpData] = useState(initialSignUpData)
     const handleChange = e => {setSignUpData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value}) )}
-
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/signup', signUpData).then(response=> {
-            console.log(response.data)
-        }).catch(err=> {
-            console.log(err.response.data)
-        })
+        dispatch(authSignup(signUpData, history))
     }
 
     return (
         <>
-            <FaPlus className="auth__close-icon" onClick={()=> history.goBack()} />
+            <FaPlus className="auth__close-icon"  onClick={()=> history.replace(history.location.pathname)} />
             <form className="auth-form" onSubmit={handleSubmit}>
                 <h1 className="auth__title">Sign Up</h1>
                 <div className="auth__social-sign">

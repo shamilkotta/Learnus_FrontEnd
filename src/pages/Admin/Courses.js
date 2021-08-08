@@ -1,24 +1,23 @@
 import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
 import { CourseTable } from '../../components/CoursesTable'
+import { adminCourses } from '../../actions/courses'
 
 const Courses = () => {
-    const [courses, setCourses] = useState([])
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdldGFkbWluYWNjZXNzIiwiaXNVc2VyIjpmYWxzZSwiaWF0IjoxNjI4MTUyODQxLCJleHAiOjE2MjgxNTY0NDF9.RI8Xf0ItjI5SR8DkyKN4yHpERc1Dlc4l-ezHEIPfN_k'
+    const [allCourses, setAllCourses] = useState([])
+    const dispatch = useDispatch()
+    const courses = useSelector(state => state.courses)
     useEffect(() => {
-        axios.get('http://localhost:5000/api/admin/courses', {headers: {Authorization: 'Bearer '+token}}).then((response)=> {
-            console.log(response.data);
-            response.data && setCourses(response.data.courses)
-        }).catch((err)=> {
-            console.log(err.response.data)
-        })
+        dispatch(adminCourses())
+        setAllCourses(courses)
+        
     }, [])
 
     return (
         <>
             <h3>Courses</h3>
             <div className="courses-table">
-                <CourseTable tData={courses} />
+                <CourseTable tData={allCourses} />
             </div>
         </>
     )

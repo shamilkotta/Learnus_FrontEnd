@@ -1,5 +1,5 @@
 import React, { useEffect, useState, createContext } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
+import { Switch, Route, useLocation, Redirect } from 'react-router-dom';
 import useWindowResize from './hooks/useWindowResize';
 import { useScrollToTopOnRoute } from './hooks/useScrollToTop';
 import './App.scss';
@@ -12,27 +12,28 @@ import GuestLayout from './layouts/GuestLayout';
 import UserLayout from './layouts/UserLayout';
 import AuthLayout from './layouts/AuthLayout';
 import AdminLayout from './layouts/AdminLayout';
+import useAuthorization from './hooks/useAuthorization';
 
 export const MenubarToggler = createContext()
 
 function App() {
 
 	const [isPopUp, setIsPopUp] = useState(false)
-	const query = useLocation().search
+	const { search } = useLocation()
 	useEffect(() => {
-		if (query) {
-			const queryValue = new URLSearchParams(query).get('popup')
+		if (search) {
+			const queryValue = new URLSearchParams(search).get('popup')
 			queryValue === 'logIn' ? setIsPopUp(true) : setIsPopUp(false)
 		} else { setIsPopUp(false) }
-	}, [query])
-
+	}, [search])
+	
 	const [isMobileNav, setIsMobileNav] = useState(false)
 	const toggleNavbar = () => { setIsMobileNav(!isMobileNav) }
 	const matchMediaNavbar = useWindowResize('max-width: 768px')
-
+	
 	const [isSidebar, setIsSidebar] = useState(true)
     const toggleSidebar= ()=> { setIsSidebar(!isSidebar) }
-
+	
 	useScrollToTopOnRoute()
 
 	return (
