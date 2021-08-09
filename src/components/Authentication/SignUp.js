@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './Style.scss'
 
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
@@ -11,6 +11,7 @@ function SignUp({setPopUp}) {
 
     const history = useHistory()
     const dispatch = useDispatch()
+    const { isAuthLoading } = useSelector(state => state.auth)
 
     const initialSignUpData = { email: '', password: '', username: '', confirmPassword: '' }
     const [signUpData, setSignUpData] = useState(initialSignUpData)
@@ -38,7 +39,7 @@ function SignUp({setPopUp}) {
                     <InputConfirmPassword value={signUpData.confirmPassword} password={signUpData.password} className="auth__input" onChange={handleChange} />
                 </div>
                 <div className="auth-btn-group">
-                    <InputSubmit className="auth__btn btn--active" value='SIGN UP' />
+                    <InputSubmit className="auth__btn btn--active" loading={isAuthLoading} value='SIGN UP' />
                     <p className='auth__txt auth__txt--bottom'>Already a memeber? <span onClick={()=> {setPopUp('logIn')}} className=" clr__primary a">Log In</span></p>
                 </div>
             </form>

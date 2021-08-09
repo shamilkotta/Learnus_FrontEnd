@@ -20,6 +20,7 @@ $clr__primary : #3a0ca3;
     }
 
     &__container {
+        position: relative;
         width: 100%;
         padding: 0 15px;
         transition: margin 0.2s linear;

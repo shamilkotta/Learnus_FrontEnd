@@ -1,13 +1,20 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import './Style.scss'
 import { Link } from 'react-router-dom'
 import { MdDelete, MdEdit } from 'react-icons/md'
+import LoadingIcon from '../LoadingIcon'
 
 export const CourseTable = ({tData}) => {
 
+    const { isCoursesLoading } = useSelector(state => state.courses)
     const handleDelete = (id)=> {
         console.log(id)
         // axios.delete(`l/api/admin/course/${id}`)
+    }
+
+    if (!tData.length && isCoursesLoading) {
+        return <LoadingIcon/>
     }
 
     return (
@@ -21,7 +28,7 @@ export const CourseTable = ({tData}) => {
                     <th>Edit | Delete</th>
                 </tr>
             </thead>
-                <tbody> {
+                <tbody>{
                     tData?.map((data, index)=> (
                         <tr key={index}>
                             <td>{data.course__code}</td>
@@ -34,7 +41,7 @@ export const CourseTable = ({tData}) => {
                             </td>
                         </tr> 
                     ))
-                } </tbody>
+                }</tbody>
             </table>
     )
 }

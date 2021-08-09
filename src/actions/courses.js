@@ -1,9 +1,14 @@
 import { getCourse, getCourses, getCoursesAsAdmin } from '../api'
 import { actionTypes } from '../utils/constants'
-const { GET_COURSE, GET_COURSES, GET_COURSES_ADMIN, ERROR } = actionTypes
+const { 
+    GET_COURSE, SET_COURSE_LOADING, END_COURSE_LOADING,
+    GET_COURSES, GET_COURSES_ADMIN, SET_COURSES_LOADING, END_COURSES_LOADING,
+    ERROR,
+} = actionTypes
 
 
-export const adminCourses = () => (dispatch) => {
+export const adminCoursesAction = () => (dispatch) => {
+    dispatch({ type: SET_COURSES_LOADING })
     getCoursesAsAdmin().then((response)=> {
         dispatch({
             type: GET_COURSES_ADMIN,
@@ -15,9 +20,12 @@ export const adminCourses = () => (dispatch) => {
             payload: err.response?.data?.message
         })
     })
+    dispatch({ type: END_COURSES_LOADING })
+    
 }
 
-export const courses = () => (dispatch) => {
+export const coursesAction = () => (dispatch) => {
+    dispatch({ type: SET_COURSES_LOADING })
     getCourses().then((response)=> {
         dispatch({
             type: GET_COURSES,
@@ -29,9 +37,11 @@ export const courses = () => (dispatch) => {
             payload: err.response?.data?.message
         })
     })
+    dispatch({ type: END_COURSES_LOADING })
 }
 
-export const course = (id) => (dispatch) => {
+export const courseAction = (id) => (dispatch) => {
+    dispatch({ type: SET_COURSE_LOADING })
     getCourse(id).then((response)=> {
         dispatch({
             type: GET_COURSE,
@@ -43,4 +53,6 @@ export const course = (id) => (dispatch) => {
             payload: err.response?.data?.message
         })
     })
+
+    dispatch({ type: END_COURSE_LOADING })
 }

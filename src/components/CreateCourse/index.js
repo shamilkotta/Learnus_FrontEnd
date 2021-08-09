@@ -1,65 +1,82 @@
 import React, { useState, createContext, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import './Style.scss'
-import axios from 'axios'
 
 import StepsProgress from './StepsProgress';
 import Step1 from './Steps/Step1';
 import Step2 from './Steps/Step2';
 import Step3 from './Steps/Step3';
 import { InputSubmit } from '../InputFields';
+import { courseAction } from '../../actions/courses';
+import { saveCourse, submitCourse } from '../../api';
+import { actionTypes } from '../../utils/constants'
+import LoadingIcon from '../LoadingIcon';
+const { ERROR } = actionTypes
 
 export const FormValues = createContext()
+const initialState = {
+    id: null,
+    course__code: '',
+    course__title: '',
+    course__shortDescription: '',
+    course__description: '',
+    course__benefits: '',
+    course__requirements: '',
+    course__target: '',
+    course__content: [{module_id: '', module_name: '', chapters: []}],
+    course__price: '',
+    course__duration: '',
+    course__language: '',
+    course__resources: '',
+    course__benefits1: '',
+    course__benefits2: '',
+    course__benefits3: '',
+    course__benefits4: '',
+    course__coverImg: '',
+}
 
 const CreateCourse = ({courseId}) => {
-
-    const initialState = {
-        id: null,
-        course__code: '',
-        course__title: '',
-        course__shortDescription: '',
-        course__description: '',
-        course__benefits: '',
-        course__requirements: '',
-        course__target: '',
-        course__content: [{module_id: '', module_name: '', chapters: []}],
-        course__price: '',
-        course__duration: '',
-        course__language: '',
-        course__resources: '',
-        course__benefits1: '',
-        course__benefits2: '',
-        course__benefits3: '',
-        course__benefits4: '',
-        course__coverImg: '',
-    }
     
+    const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState(initialState)
     const [currentStep, setCurrentStep] = useState(1)
     const [completedStep, setCompletedStep] = useState(0)
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImdldGFkbWluYWNjZXNzIiwiaXNVc2VyIjpmYWxzZSwiaWF0IjoxNjI4MTUxNDUwLCJleHAiOjE2MjgxNTUwNTB9.jYFN4rcMmgMgMpZZCH5OEPdivjirqU2gkoSuw_tZqR4"
-    const data = { ...formData}
+
+    const dispatch = useDispatch()
+    const { course, isCourseLoading } = useSelector(state => state.course)
+    
     const handleSubmit = (e)=> {
         e.preventDefault()
+        setLoading(true)  
         setCompletedStep(currentStep)
         if (currentStep === 3) {
-            axios.post('http://localhost:5000/api/admin/new-course', data, {headers: {Authorization: 'Bearer '+token}}).then((response)=> {
+            submitCourse(formData).then((response)=> {
                 console.log(response?.data)
             }).catch((err)=> {
-                console.log(err.response?.data)
+                dispatch({
+                    type: ERROR,
+                    payload: err.response?.data?.message
+                })
             })
         }
         else {
             handleSave(e)
             setCurrentStep(currentStep+1)
         }
+        setLoading(false)
     }
     const handleSave = e=> {
         e.preventDefault()
-        axios.post('http://localhost:5000/api/admin/save-new-course', data, {headers: {Authorization: 'Bearer '+token}}).then((response)=> {
-            response.data.id && setFormData({...formData, ['id']: response.data.id})
+        setLoading(true)
+        saveCourse(formData).then((response)=> {
+            response?.data?.id && setFormData({...formData, id: response.data.id})
         }).catch((err)=> {
-            console.log(err.response?.data)
+            dispatch({
+                type: ERROR,
+                payload: err.response?.data?.message
+            })
         })
+        setLoading(false)
     }
     const goBack = e=> {
         e.preventDefault()
@@ -67,14 +84,15 @@ const CreateCourse = ({courseId}) => {
     }
 
     useEffect(() => {
-        if (courseId) {
-            axios.get(`http://localhost:5000/api/admin/edit-course/${courseId}`, {headers: {Authorization: 'Bearer '+token}}).then((response)=> {
-                setFormData({...response.data.course, ['id']: courseId})
-            }).catch((err)=> {
-                console.log(err.response?.data)
-            })
-        }
+        courseId && dispatch(courseAction(courseId))
     }, [])
+    useEffect(() => {
+        courseId && setFormData({...course, id: courseId})
+    }, [course])
+
+    if (isCourseLoading) {
+        return <LoadingIcon/>
+    }
 
     return (
         <div className="create-course__container">
@@ -105,11 +123,11 @@ const CreateCourse = ({courseId}) => {
                     {
                         currentStep !== 3 ?
                             <> 
-                                <InputSubmit className="create-course__btn" onClick={handleSave} value="Save" />
-                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" value="Continue" />
+                                <InputSubmit loading={loading} className="create-course__btn" onClick={handleSave} value="Save" />
+                                <InputSubmit loading={loading} className="create-course__btn btn--active create-course__btn--continue" value="Continue" />
                             </>
                         :
-                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={false}  value="Finish" />
+                            <InputSubmit loading={loading} className="create-course__btn btn--active create-course__btn--finish" loading={false}  value="Finish" />
                     }
                 </div>
             </form>

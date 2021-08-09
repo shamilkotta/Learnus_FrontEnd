@@ -103,6 +103,16 @@ input, textarea {
   }
 }
 
+.loading-icon {
+  position: relative;
+  display: inline-block;
+  margin-top: 100px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .fff {
   color: white;
 }

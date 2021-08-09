@@ -33,6 +33,7 @@ const AdminLayout = () => {
                     <AdminSidebar/>
                 </div>
                 <div className="layout__container" style={matchMediaSidebar && isSidebar ? {marginLeft: '320px'} : {marginLeft: '0%'}} >
+                    
                     <Switch>
                         <Route exact path={`${path}/dashboard`} component={Admin} />
                         <Route exact path={`${path}/create-new-course`} component={CreateNewCourse} />
@@ -43,6 +44,7 @@ const AdminLayout = () => {
                         <Redirect exact from={path} to={`${path}/dashboard`} />
                         <Redirect to='/404-page-not-found' />
                     </Switch>
+                    
                 </div>
             </div>
         </>

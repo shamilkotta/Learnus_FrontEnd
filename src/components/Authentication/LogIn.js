@@ -1,17 +1,17 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import './Style.scss'
-import axios from 'axios'
 
 import { InputPassword, InputSubmit, InputText } from '../InputFields'
 import { FaGoogle, FaTwitter, FaFacebookF, FaPlus } from "react-icons/fa";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { authLogin } from '../../actions/auth'
 
 function LogIn({setPopUp}) {
 
     const history = useHistory()
     const dispatch = useDispatch()
+    const { isAuthLoading } = useSelector(state => state.auth)
 
     const initialLogInData = { username: '', password: '',}
     const [logInData, setLogInData] = useState(initialLogInData)
@@ -38,7 +38,7 @@ function LogIn({setPopUp}) {
                 </div>
                 <span className="auth__txt a" style={{color: '#3a0ca3'}} onClick={()=> {setPopUp('forgotPasswrod')}}>Forgot password?</span>
                 <div className="auth-btn-group">
-                    <InputSubmit className="auth__btn btn--active" value='LOG IN' />
+                    <InputSubmit className="auth__btn btn--active" loading={isAuthLoading} value='LOG IN' />
                     <p className='auth__txt auth__txt--bottom'>Not a memeber? <span onClick={()=> {setPopUp('signUp')}} className=" clr__primary a">Sign Up</span></p>
                 </div>
             </form>

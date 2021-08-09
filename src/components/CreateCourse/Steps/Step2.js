@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import { InputText } from '../../InputFields'
 import { FaPlus } from 'react-icons/fa'
 import { MdDelete } from 'react-icons/md'
@@ -7,39 +7,52 @@ import { FormValues } from '../index';
 const Step2 = () => {
     const [ formData, setFormData ] = useContext(FormValues)
 
-    const handleModuleChange = (e, indx)=> {
-        const course__content = [...formData.course__content]
-        course__content[indx].module_name = e.target.value
-        course__content[indx].module_id = indx + 1
-        setFormData({...formData, ['course__content']: course__content})
-    }
-    const handleChapterChange = (e, indx, chapterIndx)=> {
-        const course__content = [...formData.course__content]
-        course__content[indx].chapters[chapterIndx].chapter_name = e.target.value
-        course__content[indx].chapters[chapterIndx].chapter_id = `${indx+1}_${chapterIndx+1}`
-        setFormData({...formData, ['course__content']: course__content})
+    const setId = () => {
+        const content = formData.course__content
+        content?.map((module, indx)=> {
+            module.module_id = indx+1
+            module.chapters.map((chapter, cIndx)=> {
+                chapter.chapter_id = `${indx+1}_${cIndx+1}`
+            })
+        })
+        setFormData({...formData, course__content: content})
     }
 
-    const addModule = ()=> {
-        const course__content = [...formData.course__content]
-        course__content.push({module_id: '', module_name: '', chapters: []})
-        setFormData({...formData, ['course__content']: course__content})
+    const handleModuleChange = (e, indx)=> {
+        const content = formData.course__content
+        content[indx].module_name = e.target.value
+        setFormData({...formData, course__content: content})
+        setId()
+    }
+    const handleChapterChange = (e, indx, chapterIndx)=> {
+        const content = formData.course__content
+        content[indx].chapters[chapterIndx].chapter_name = e.target.value
+        setFormData({...formData, course__content: content})
+        setId()
+    }
+
+    const addModule = (e)=> {
+        const content = formData.course__content
+        content.push({module_id: '', module_name: '', chapters: []})
+        setFormData({...formData, course__content: content})
     }
     const addChapter = (indx)=> {
-        const course__content = [...formData.course__content]
-        course__content[indx].chapters.push({chapter_id: '', chapter_name: ''})
-        setFormData({...formData, ['course__content']: course__content})
+        const content = formData.course__content
+        content[indx].chapters.push({chapter_id: '', chapter_name: ''})
+        setFormData({...formData, course__content: content})
     }
 
     const deleteModule = (indx)=> {
-        const course__content = [...formData.course__content]
-        course__content.splice(indx, 1)
-        setFormData({...formData, ['course__content']: course__content})
+        let content = formData.course__content
+        content.splice(indx, 1)
+        setFormData({...formData, course__content: content})
+        setId()
     }
     const deleteChapter = (indx, chapterIndx)=> {
-        const course__content = [...formData.course__content]
-        course__content[indx].chapters.splice(chapterIndx, 1)
-        setFormData({...formData, ['course__content']: course__content})
+        const content = formData.course__content
+        content[indx].chapters.splice(chapterIndx, 1)
+        setFormData({...formData, course__content: content})
+        setId()
     }
 
     return (
