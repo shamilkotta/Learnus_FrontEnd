@@ -8,7 +8,7 @@ const auth = (state = {isAuthLoading: false }, action)=> {
 
         case LOGOUT:
             localStorage.clear('token')
-            return state;
+            return {isAuthLoading: false };
     
         case SET_AUTH_LOADING:
             return {...state, isAuthLoading: true };

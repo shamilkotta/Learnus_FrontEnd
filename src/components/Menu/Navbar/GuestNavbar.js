@@ -9,7 +9,7 @@ const GuestNavbar = () => {
 
     return (
         <>
-            <li className="navbar__link"><Link to='/all-courses' className="navbar__link--txt  active">All Courses</Link></li>
+            <li className="navbar__link"><Link to='/courses' className="navbar__link--txt  active">All Courses</Link></li>
             <li className="navbar__link"><Link to={{pathname: `${location.pathname}`, search: "?popup=logIn"}} className="navbar__link--btn">Login</Link></li>  
         </>
     )

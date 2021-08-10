@@ -8,10 +8,10 @@ export const authLogin = (loginData, history)=> (dispatch)=> {
     dispatch({ type: SET_AUTH_LOADING })
     login(loginData).then((response)=> {
         localStorage.setItem('token', response.data?.token)
-        const { username, exp } = jwt_decode(response.data?.token)
+        const { username, isAdmin, exp } = jwt_decode(response.data?.token)
         dispatch({
             type: AUTH,
-            payload: { username, exp }
+            payload: { username, isAdmin, exp }
         })
     }).catch((err)=>{
         dispatch({
@@ -25,10 +25,10 @@ export const authLogin = (loginData, history)=> (dispatch)=> {
 export const authSignup = (signupData, history)=> (dispatch)=> {
     dispatch({ type: SET_AUTH_LOADING })
     signup(signupData).then((response)=> {
-        const { username, exp } = jwt_decode(response.data?.token)
+        const { username, isAdmin, exp } = jwt_decode(response.data?.token)
         dispatch({
             type: AUTH,
-            payload: { username, exp }
+            payload: { username, isAdmin, exp }
         })
     }).catch((err)=>{
         dispatch({

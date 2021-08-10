@@ -37,7 +37,6 @@ const initialState = {
 
 const CreateCourse = ({courseId}) => {
     
-    const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState(initialState)
     const [currentStep, setCurrentStep] = useState(1)
     const [completedStep, setCompletedStep] = useState(0)
@@ -46,8 +45,7 @@ const CreateCourse = ({courseId}) => {
     const { course, isCourseLoading } = useSelector(state => state.course)
     
     const handleSubmit = (e)=> {
-        e.preventDefault()
-        setLoading(true)  
+        e.preventDefault() 
         setCompletedStep(currentStep)
         if (currentStep === 3) {
             submitCourse(formData).then((response)=> {
@@ -63,11 +61,9 @@ const CreateCourse = ({courseId}) => {
             handleSave(e)
             setCurrentStep(currentStep+1)
         }
-        setLoading(false)
     }
     const handleSave = e=> {
         e.preventDefault()
-        setLoading(true)
         saveCourse(formData).then((response)=> {
             response?.data?.id && setFormData({...formData, id: response.data.id})
         }).catch((err)=> {
@@ -76,7 +72,6 @@ const CreateCourse = ({courseId}) => {
                 payload: err.response?.data?.message
             })
         })
-        setLoading(false)
     }
     const goBack = e=> {
         e.preventDefault()
@@ -123,11 +118,11 @@ const CreateCourse = ({courseId}) => {
                     {
                         currentStep !== 3 ?
                             <> 
-                                <InputSubmit loading={loading} className="create-course__btn" onClick={handleSave} value="Save" />
-                                <InputSubmit loading={loading} className="create-course__btn btn--active create-course__btn--continue" value="Continue" />
+                                <InputSubmit className="create-course__btn" onClick={handleSave} value="Save" />
+                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" value="Continue" />
                             </>
                         :
-                            <InputSubmit loading={loading} className="create-course__btn btn--active create-course__btn--finish" loading={false}  value="Finish" />
+                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={false}  value="Finish" />
                     }
                 </div>
             </form>

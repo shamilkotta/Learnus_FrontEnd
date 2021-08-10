@@ -1,0 +1,28 @@
+$clr__primary : #3a0ca3;
+
+.profile-hover-card {
+    width: 200px;
+    margin: auto auto;
+    padding-top: 10px;
+    box-shadow: 0px 1px 3px 0px rgb(0, 0, 0);
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    z-index: 50;
+
+    &__content {
+        margin: 0 7px 5px;
+        overflow: auto;
+        max-height: 50vh; 
+    }
+
+    &__item {
+        width: 100%;
+        color: black;
+        margin: 10px 0;
+        
+        &:hover {
+            color: $clr__primary;
+        }
+    }
+}

@@ -1,5 +1,5 @@
-import React, { useLayoutEffect, useContext } from 'react'
-import { Switch, Route, useRouteMatch, Redirect } from 'react-router-dom';
+import React, { useLayoutEffect, useContext, useEffect } from 'react'
+import { Switch, Route, useRouteMatch, Redirect, useHistory } from 'react-router-dom';
 import useWindowResize from '../hooks/useWindowResize';
 import './Style.scss'
 
@@ -13,10 +13,14 @@ import AddContent from '../pages/Admin/AddContent';
 import EditCourse from '../pages/Admin/EditCourse';
 
 import { MenubarToggler } from '../App';
+import useAuthorization, { useAdminAuthorization } from '../hooks/useAuthorization';
 
 const AdminLayout = () => {
 
-    let { path } = useRouteMatch()
+    const { path } = useRouteMatch()
+    const { location } = useHistory()
+    const authorized = useAuthorization()
+    const adminAuthorized = useAdminAuthorization()
 
     const [ isSidebar, setIsSidebar ] = useContext(MenubarToggler)
     
@@ -24,6 +28,29 @@ const AdminLayout = () => {
     useLayoutEffect(() => {
 		matchMediaSidebar ? setIsSidebar(true) : setIsSidebar(false);
     }, [matchMediaSidebar])
+
+    if (authorized && !adminAuthorized) {
+        return <Redirect to='/404-page-not-found' />
+    }
+    if (!authorized && !adminAuthorized) {
+        if (location.state?.from) {
+            return <Redirect to={{
+                pathname: location.state.from,
+                search: '?popup=logIn',
+                state: {
+                    to: location.pathname
+                }
+            }} />
+        }else {
+            return <Redirect to={{
+                pathname: `/`,
+                search: '?popup=logIn',
+                state: {
+                    to: location.pathname
+                }
+            }} />
+        }
+    }
 
 
     return (
