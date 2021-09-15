@@ -21,3 +21,5 @@ export const getCoursesAsAdmin = ()=> api.get('/admin/courses') //courses
 export const saveCourse = (data)=> api.put('/admin/save-course', data) //
 export const submitCourse = (data)=> api.put('/admin/put-course', data) //
 
+export const deleteCourse = (id)=> api.delete(`/admin/delete-course/${id}`) //
+

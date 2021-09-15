@@ -23,27 +23,27 @@ const Step3 = () => {
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
                 <label htmlFor="course__language">Course language:</label>
-                <InputText value={formData.course__language} holder="Course Language" onChange={handleChange} name="course__language" className="form-step3__language form__input" required />
+                <InputText value={formData.course__language} holder="Course Language" onChange={handleChange} name="course__language" className="form-step3__language form__input" maxLength="25" required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
                 <label htmlFor="course__resources">Downloadable Resources:</label>
-                <InputText value={formData.course__resources} holder="No of Downloadable Resources" onChange={handleChange} name="course__resources" className="form-step3__resources form__input" required />
+                <InputText value={formData.course__resources} holder="No of Downloadable Resources" onChange={handleChange} name="course__resources" className="form-step3__resources form__input" maxLength="28" required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
-                <label htmlFor="course__benefits1">Other Course Benefits:</label>
-                <InputText value={formData.course__benefits1} holder="Course Benefits" onChange={handleChange} name="course__benefits1" className="form-step3__benefits form__input" required />
+                <label htmlFor="course__benefits1">Other Course Benefits 1:</label>
+                <InputText value={formData.course__benefits1} holder="Course Benefits" onChange={handleChange} name="course__benefits1" className="form-step3__benefits form__input" maxLength="28" showCount required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
-                <label htmlFor="course__benefits2">:</label>
-                <InputText value={formData.course__benefits2} holder="Course Benefits" onChange={handleChange} name="course__benefits2" className="form-step3__benefits form__input" />
+                <label htmlFor="course__benefits2">2:</label>
+                <InputText value={formData.course__benefits2} holder="Course Benefits" onChange={handleChange} name="course__benefits2" className="form-step3__benefits form__input" maxLength="28" showCount required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
-                <label htmlFor="course__benefits3">:</label>
-                <InputText value={formData.course__benefits3} holder="Course Benefits" onChange={handleChange} name="course__benefits3" className="form-step3__benefits form__input" />
+                <label htmlFor="course__benefits3">3:</label>
+                <InputText value={formData.course__benefits3} holder="Course Benefits" onChange={handleChange} name="course__benefits3" className="form-step3__benefits form__input" maxLength="28" showCount required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
-                <label htmlFor="course__benefits4">:</label>
-                <InputText value={formData.course__benefits4} holder="Course Benefits" onChange={handleChange} name="course__benefits4" className="form-step3__benefits form__input" />
+                <label htmlFor="course__benefits4">4:</label>
+                <InputText value={formData.course__benefits4} holder="Course Benefits" onChange={handleChange} name="course__benefits4" className="form-step3__benefits form__input" maxLength="28" showCount required />
             </div>
             <div className="form__input-group" style={{width: '23%'}}>
                 <label htmlFor="course__coverImg">Cover Image:</label>

@@ -18,7 +18,7 @@ function SignUp({setPopUp}) {
     const handleChange = e => {setSignUpData(prvsData => ({ ...prvsData, [e.target.name]: e.target.value}) )}
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(authSignup(signUpData, history))
+        dispatch(authSignup(signUpData))
     }
 
     return (

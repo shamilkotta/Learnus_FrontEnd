@@ -1,5 +1,5 @@
 import { actionTypes } from "../utils/constants";
-const  { AUTH, LOGOUT, SET_AUTH_LOADING, END_AUTH_LOADING } = actionTypes
+const  { AUTH, LOGOUT, SET_AUTH_LOADING, END_AUTH_LOADING, ERROR } = actionTypes
 
 const auth = (state = {isAuthLoading: false }, action)=> {
     switch (action.type) {
@@ -22,3 +22,13 @@ const auth = (state = {isAuthLoading: false }, action)=> {
 }
 
 export default auth
+
+export const error = (state= {message: ''}, action) => {
+    switch (action.type) {
+        case ERROR:
+            return { message: action?.payload};
+    
+        default:
+            return state;
+    }
+}

@@ -11,4 +11,5 @@ export const actionTypes = {
     GET_COURSES: 'GET_COURSES',
     GET_COURSES_ADMIN: 'GET_COURSES_ADMIN',
     ERROR: 'ERROR',
+    COURSE_NOT_FOUND: 'COURSE_NOT_FOUND',
 }

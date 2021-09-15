@@ -3,7 +3,7 @@ $clr__primary : #3a0ca3;
 .courses__table {
     margin: 10px auto auto;
     width: 95%;
-    border-collapse: collapse;
+    // border-collapse: collapse;
 
     thead tr{
         font-size: 19px;
@@ -19,7 +19,12 @@ $clr__primary : #3a0ca3;
 
     td {
         font-size: 15px;
+        color: black;
         font-family: 'Times New Roman', Times, serif;
+        max-width: 350px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     &-btn {

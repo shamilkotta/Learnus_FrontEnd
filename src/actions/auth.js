@@ -1,10 +1,11 @@
 import jwt_decode from 'jwt-decode'
 
 import { login, signup } from '../api'
+import { errorAction } from './error'
 import { actionTypes } from '../utils/constants'
-const { AUTH, LOGOUT, ERROR, SET_AUTH_LOADING, END_AUTH_LOADING } = actionTypes
+const { AUTH, LOGOUT, SET_AUTH_LOADING, END_AUTH_LOADING } = actionTypes
 
-export const authLogin = (loginData, history)=> (dispatch)=> {
+export const authLogin = (loginData)=> (dispatch)=> {
     dispatch({ type: SET_AUTH_LOADING })
     login(loginData).then((response)=> {
         localStorage.setItem('token', response.data?.token)
@@ -13,16 +14,14 @@ export const authLogin = (loginData, history)=> (dispatch)=> {
             type: AUTH,
             payload: { username, isAdmin, exp }
         })
+        dispatch({ type: END_AUTH_LOADING })
     }).catch((err)=>{
-        dispatch({
-            type: ERROR,
-            payload: err.response?.data?.message
-        })
+        dispatch(errorAction(err.response?.data))
+        dispatch({ type: END_AUTH_LOADING })
     })
-    dispatch({ type: END_AUTH_LOADING })
 }
 
-export const authSignup = (signupData, history)=> (dispatch)=> {
+export const authSignup = (signupData)=> (dispatch)=> {
     dispatch({ type: SET_AUTH_LOADING })
     signup(signupData).then((response)=> {
         const { username, isAdmin, exp } = jwt_decode(response.data?.token)
@@ -30,17 +29,14 @@ export const authSignup = (signupData, history)=> (dispatch)=> {
             type: AUTH,
             payload: { username, isAdmin, exp }
         })
+        dispatch({ type: END_AUTH_LOADING })
     }).catch((err)=>{
-        dispatch({
-            type: ERROR,
-            payload: err.response?.data?.message
-        })
+        dispatch(errorAction(err.response?.data))
+        dispatch({ type: END_AUTH_LOADING })
     })
-    dispatch({ type: END_AUTH_LOADING })
 }
 
-export const authLogout = (history)=> (dispatch)=> {
-    
+export const authLogout = ()=> (dispatch)=> {
     dispatch({
         type: LOGOUT
     })

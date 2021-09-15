@@ -36,7 +36,7 @@ const AdminLayout = () => {
         if (location.state?.from) {
             return <Redirect to={{
                 pathname: location.state.from,
-                search: '?popup=logIn',
+                search: 'popup=logIn',
                 state: {
                     to: location.pathname
                 }
@@ -44,7 +44,7 @@ const AdminLayout = () => {
         }else {
             return <Redirect to={{
                 pathname: `/`,
-                search: '?popup=logIn',
+                search: 'popup=logIn',
                 state: {
                     to: location.pathname
                 }

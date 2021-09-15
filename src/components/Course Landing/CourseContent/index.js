@@ -2,9 +2,8 @@ import React from 'react'
 import Accordion from '../../Accordion'
 import './Style.scss'
 
-import data from '../../../utils/Course'
 
-function CourseContent() {
+function CourseContent({data}) {
 
     return (
         <div className="course-content">

@@ -1,7 +1,7 @@
 import { actionTypes } from '../utils/constants'
 const { 
     GET_COURSES, GET_COURSES_ADMIN, SET_COURSES_LOADING, END_COURSES_LOADING, 
-    GET_COURSE, SET_COURSE_LOADING, END_COURSE_LOADING,
+    GET_COURSE, SET_COURSE_LOADING, END_COURSE_LOADING, COURSE_NOT_FOUND
 } = actionTypes
 
 export const courses = (state = {isCoursesLoading: false, courses: []}, action) => {
@@ -23,16 +23,19 @@ export const courses = (state = {isCoursesLoading: false, courses: []}, action) 
     }
 }
 
-export const course = (state = {isCourseLoading: false, course: {}}, action) => {
+export const course = (state = {isCourseLoading: false, isCourseFound: true, course: {}}, action) => {
     switch (action.type) {
         case GET_COURSE:
-            return {...state, course: action.payload}
+            return {...state, course: action.payload, isCourseFound: true}
 
         case SET_COURSE_LOADING:
             return { ...state, isCourseLoading: true };
 
         case END_COURSE_LOADING:
             return { ...state, isCourseLoading: false };
+
+        case COURSE_NOT_FOUND:
+            return { ...state, isCourseFound: false}
     
         default:
             return state;

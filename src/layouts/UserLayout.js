@@ -7,13 +7,14 @@ import User from '../pages/User'
 
 import { MenubarToggler } from '../App';
 import UserSidebar from '../components/Menu/Sidebar/UserSidebar';
-import useAuthorization from '../hooks/useAuthorization';
+import useAuthorization, { useAdminAuthorization } from '../hooks/useAuthorization';
 
 const UserLayout = () => {
 
     let { path } = useRouteMatch()
     const { location } = useHistory()
     const authorized = useAuthorization()
+    const adminAuthorized = useAdminAuthorization()
  
     const [ isSidebar, setIsSidebar ] = useContext(MenubarToggler)
     
@@ -41,6 +42,8 @@ const UserLayout = () => {
                 }
             }} />
         }
+    }else if(authorized && adminAuthorized){
+        return <Redirect to="/admin" />
     }
     
     return (

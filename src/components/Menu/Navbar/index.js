@@ -6,11 +6,13 @@ import { FiBarChart, FiMenu } from 'react-icons/fi'
 import GuestNavbar from './GuestNavbar';
 import UserNavbar from './UserNavbar';
 import AdminNavbar from './AdminNavbar';
+import useAuthorization, { useAdminAuthorization } from '../../../hooks/useAuthorization';
 
 function Navbar({toggleNavbar, toggleSidebar}) {
 
     const { pathname } = useLocation()
     const [layout, setLayout] = useState('guest')
+    const [navbar, setNavbar] = useState('guest')
     useEffect(() => {
         const page = pathname.split('/', 2)
         if (page[1] === 'admin') {
@@ -21,6 +23,21 @@ function Navbar({toggleNavbar, toggleSidebar}) {
             setLayout('guest')
         }
     }, [pathname])
+
+    const authorized = useAuthorization()
+    const adminAuthorized = useAdminAuthorization()
+
+    useEffect(() => {
+        if (adminAuthorized) {
+            setNavbar('admin')
+        }else if (authorized) {
+            setNavbar('user')
+        }else {
+            setNavbar('guest')
+        }
+    }, [authorized, adminAuthorized])
+
+    
 
     return (
         <nav className="navbar">
@@ -35,7 +52,7 @@ function Navbar({toggleNavbar, toggleSidebar}) {
                             'guest': <GuestNavbar />,
                             'user': <UserNavbar/>,
                             'admin': <AdminNavbar />
-                        }[layout]
+                        }[navbar]
                     }
                 </ul>
                 <span className="navbar__toggler" onClick={toggleNavbar}>

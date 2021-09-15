@@ -11,7 +11,7 @@ import { courseAction } from '../../actions/courses';
 import { saveCourse, submitCourse } from '../../api';
 import { actionTypes } from '../../utils/constants'
 import LoadingIcon from '../LoadingIcon';
-const { ERROR } = actionTypes
+import { errorAction } from '../../actions/error';
 
 export const FormValues = createContext()
 const initialState = {
@@ -51,10 +51,7 @@ const CreateCourse = ({courseId}) => {
             submitCourse(formData).then((response)=> {
                 console.log(response?.data)
             }).catch((err)=> {
-                dispatch({
-                    type: ERROR,
-                    payload: err.response?.data?.message
-                })
+                dispatch(errorAction(err?.response?.data))
             })
         }
         else {
@@ -67,10 +64,7 @@ const CreateCourse = ({courseId}) => {
         saveCourse(formData).then((response)=> {
             response?.data?.id && setFormData({...formData, id: response.data.id})
         }).catch((err)=> {
-            dispatch({
-                type: ERROR,
-                payload: err.response?.data?.message
-            })
+            dispatch(errorAction(err?.response?.data))
         })
     }
     const goBack = e=> {

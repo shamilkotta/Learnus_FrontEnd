@@ -26,17 +26,17 @@ function Accordion({data, showStyle=false}) {
     return (
         <ul id="accordion" className="accordion">
             {
-                data.map((content, indx) => (
+                data?.map((content, indx) => (
                     <li key={indx} className="accordion__dropdown">
                         <div className="dropdown__toggle" onClick={()=> {toggleDropdown(indx)}}>
                             <span className="dropdown__toggle-icon">{indx+1}</span>
-                            <span className="dropdown__toggle-txt">{content.module}</span>
+                            <span className="dropdown__toggle-txt">{content.module_name}</span>
                         </div>
                         <div className={`dropdown__list ${activeDropdown===indx ? 'dropdown--active': ''}`}>
                             <ul className="dropdown__submenu" >
                                 {
                                     content.chapters.map((chapter, idx)=> (
-                                        <li key= {idx} className={showStyle && submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''} onClick={()=>{showStyle && setActiveSubmenu([indx, idx])}} >{chapter}</li>
+                                        <li key= {idx} className={showStyle && submenuVisible(indx, idx) ? 'dropdown__submenu--active' : ''} onClick={()=>{showStyle && setActiveSubmenu([indx, idx])}} >{chapter.chapter_name}</li>
                                     ))
                                 }
                             </ul>
