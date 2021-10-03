@@ -13,6 +13,8 @@ import { actionTypes } from '../../utils/constants'
 import LoadingIcon from '../LoadingIcon';
 import { errorAction } from '../../actions/error';
 
+const { COURSE_SAVE_LOADING, COURSE_SAVE_LOADING_END } = actionTypes;
+
 export const FormValues = createContext()
 const initialState = {
     id: null,
@@ -43,14 +45,18 @@ const CreateCourse = ({courseId}) => {
 
     const dispatch = useDispatch()
     const { course, isCourseLoading } = useSelector(state => state.course)
+    const { isCourseSaving } = useSelector(state => state.saveCourse)
     
     const handleSubmit = (e)=> {
         e.preventDefault() 
+        dispatch({type: COURSE_SAVE_LOADING})
         setCompletedStep(currentStep)
         if (currentStep === 3) {
             submitCourse(formData).then((response)=> {
-                console.log(response?.data)
+                // console.log(response?.data)
+                dispatch({type: COURSE_SAVE_LOADING_END})
             }).catch((err)=> {
+                dispatch({type: COURSE_SAVE_LOADING_END})
                 dispatch(errorAction(err?.response?.data))
             })
         }
@@ -61,9 +67,12 @@ const CreateCourse = ({courseId}) => {
     }
     const handleSave = e=> {
         e.preventDefault()
+        dispatch({type: COURSE_SAVE_LOADING})
         saveCourse(formData).then((response)=> {
             response?.data?.id && setFormData({...formData, id: response.data.id})
+            dispatch({type: COURSE_SAVE_LOADING_END})
         }).catch((err)=> {
+            dispatch({type: COURSE_SAVE_LOADING_END})
             dispatch(errorAction(err?.response?.data))
         })
     }
@@ -112,11 +121,11 @@ const CreateCourse = ({courseId}) => {
                     {
                         currentStep !== 3 ?
                             <> 
-                                <InputSubmit className="create-course__btn" onClick={handleSave} value="Save" />
-                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" value="Continue" />
+                                <InputSubmit className="create-course__btn" onClick={handleSave} loading={isCourseSaving} value="Save" />
+                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" loading={isCourseSaving} value="Continue" />
                             </>
                         :
-                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={false}  value="Finish" />
+                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={isCourseSaving}  value="Finish" />
                     }
                 </div>
             </form>

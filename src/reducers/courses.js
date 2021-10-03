@@ -1,7 +1,8 @@
 import { actionTypes } from '../utils/constants'
 const { 
     GET_COURSES, GET_COURSES_ADMIN, SET_COURSES_LOADING, END_COURSES_LOADING, 
-    GET_COURSE, SET_COURSE_LOADING, END_COURSE_LOADING, COURSE_NOT_FOUND
+    GET_COURSE, SET_COURSE_LOADING, END_COURSE_LOADING, COURSE_NOT_FOUND,
+    COURSE_SAVE_LOADING, COURSE_SAVE_LOADING_END,
 } = actionTypes
 
 export const courses = (state = {isCoursesLoading: false, courses: []}, action) => {
@@ -36,6 +37,19 @@ export const course = (state = {isCourseLoading: false, isCourseFound: true, cou
 
         case COURSE_NOT_FOUND:
             return { ...state, isCourseFound: false}
+    
+        default:
+            return state;
+    }
+}
+
+export const saveCourse = (state = {isCourseSaving: false}, action)=> {
+    switch (action.type) {
+        case COURSE_SAVE_LOADING:
+            return {...state, isCourseSaving: true};
+
+        case COURSE_SAVE_LOADING_END:
+            return {...state, isCourseSaving: false}
     
         default:
             return state;
