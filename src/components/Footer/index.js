@@ -10,7 +10,7 @@ function Footer() {
                     <div className="footer__description">
                         <div className="footer__brand">
                             <div className="brand__logo">
-                                <h1><span>My</span>Course</h1>
+                                <h1>Learn<span>us</span></h1>
                             </div>
                             <div className="brand__about">
                                 <p className="p">Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet Semper at elit.</p>

@@ -44,7 +44,7 @@ function Navbar({toggleNavbar, toggleSidebar}) {
             <div className="navbar-container wrapper">
                 <span className="navbar__logo">
                     { layout === 'admin' || layout === 'user' ? <FiMenu onClick={toggleSidebar} /> : null }
-                    <Link to="/" className=" fff" style={{marginLeft: '10px'}}><span>My</span>Course</Link>
+                    <Link to="/" className=" fff" style={{marginLeft: '10px'}}>Learn<span>us</span></Link>
                 </span>
                 <ul className="navbar__items">
                     {
