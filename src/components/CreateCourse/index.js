@@ -95,7 +95,7 @@ const CreateCourse = ({courseId}) => {
     }, [course])
 
     if (isCourseLoading) return <LoadingIcon/>
-    if(popResult === 1) return <Redirect to="/admin"/>
+    if(popResult === 1) return <Redirect to="/admin/courses"/>
     if(popResult === 0) return <Redirect to="/admin/courses" />
 
     return (
