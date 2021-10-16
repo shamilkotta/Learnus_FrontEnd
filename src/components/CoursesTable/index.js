@@ -8,19 +8,27 @@ import { MdDelete, MdEdit } from 'react-icons/md'
 import LoadingIcon from '../LoadingIcon'
 import { deleteCourse } from '../../api'
 import { adminCoursesAction } from '../../actions/courses'
+import ConfrimPopup from '../Popup/ConfrimPopup'
 
 export const CourseTable = ({tData}) => {
 
     const [isDelete, setIsDelete] = useState(false)
+    const [code, setCode] = useState('')
+    const [isDeleting, setIsDeleting] = useState(false)
 
     const dispatch = useDispatch()
     const { isCoursesLoading } = useSelector(state => state.courses)
     const handleDelete = (id)=> {
+        setIsDeleting(true);
         deleteCourse(id).then((response)=> {
             console.log(response?.data?.message)
             dispatch(adminCoursesAction())
+            setIsDeleting(false)
+            setIsDelete(false)
         }).catch((err)=> {
             console.log(err.response?.data?.message);
+            setIsDeleting(false)
+            setIsDelete(false)
         })
     }
 
@@ -29,6 +37,12 @@ export const CourseTable = ({tData}) => {
     }
 
     return (
+        <>
+
+            {
+                isDelete && <ConfrimPopup closePopup={()=> {setIsDelete(false)}} code={code} loading={isDeleting} deleteFun={handleDelete} />
+            }
+
             <table className="courses__table">
                 <thead>
                     <tr>
@@ -46,11 +60,12 @@ export const CourseTable = ({tData}) => {
                             <td>{data.status}</td>
                             <td>
                                 <Link to={{pathname: '/admin/edit-course', state:{courseId: data._id}}}><MdEdit  className="courses__table-btn"/></Link>
-                                <MdDelete className="courses__table-btn" onClick={()=>{setIsDelete(true)}} />
+                                <MdDelete className="courses__table-btn" onClick={()=>{setIsDelete(true); setCode(data.course__code)}} />
                             </td>
                         </tr> 
                     ))
                 }</tbody>
             </table>
+        </>
     )
 }

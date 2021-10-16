@@ -32,5 +32,26 @@ $clr__primary : #3a0ca3;
             display: none;
         }
     }
-    
+}
+
+.confirmPopup {
+    &__title{
+        font-size: 2em;
+        color: red;
+    }
+
+    &__txt{
+        font-size: 1.2em;
+        color: black;
+    }
+
+    &__btns{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn{
+        width: 30%;
+        margin: 5px;
+    }
 }
