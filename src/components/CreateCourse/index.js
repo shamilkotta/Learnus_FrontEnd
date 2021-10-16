@@ -30,13 +30,15 @@ const initialState = {
     course__content: [{module_id: '', module_name: '', chapters: []}],
     course__price: '',
     course__duration: '',
+    course__noModules: '',
     course__language: '',
-    course__resources: '',
     course__benefits1: '',
     course__benefits2: '',
     course__benefits3: '',
     course__benefits4: '',
+    course__benefits5: '',
     course__coverImg: '',
+    course__coverVideo: '',
 }
 
 const CreateCourse = ({courseId}) => {
@@ -101,7 +103,7 @@ const CreateCourse = ({courseId}) => {
     return (
         <>
             {
-                nextStep && <SuccessPopup cancelFun={()=> {setPopResult(0)}} confirmFun={()=> {setPopResult(1)}} />
+                nextStep && <SuccessPopup cancelFun={()=> {setPopResult(0); setNextStep(false)}} confirmFun={()=> {setPopResult(1); setNextStep(false)}} />
             }
             <div className="create-course__container">
                 <h1 className="create-course__title ">Create New Course</h1>

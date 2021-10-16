@@ -37,7 +37,7 @@ $clr__primary : #3a0ca3;
         .form__steps {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-flow: row;
             flex-wrap: wrap;
             .form {

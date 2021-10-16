@@ -5,8 +5,8 @@ import { FaStar, FaRegClock, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
 function CourseHead({data, isCardFixed=false}) {
 
-    const image = 'https://img.freepik.com/free-vector/colorful-palm-silhouettes-background_23-2148541792.jpg?size=626&ext=jpg'
-    const videoUrl = 'https://www.youtube.com/embed/9vF1jQBbTss'
+    const image = data.course__coverImg
+    const videoUrl = data.course__coverVideo
 
     return (
         // 
@@ -30,11 +30,11 @@ function CourseHead({data, isCardFixed=false}) {
                 </div>
                 <button type="submit" className="course__btn btn">Add to cart</button>
                 <p className="course__includes-title p">This course includes:</p>
-                <p className="course__includes-text p">{data.course__resources}</p>
                 <p className="course__includes-text p">{data.course__benefits1}</p>
                 <p className="course__includes-text p">{data.course__benefits2}</p>
                 <p className="course__includes-text p">{data.course__benefits3}</p>
                 <p className="course__includes-text p">{data.course__benefits4}</p>
+                <p className="course__includes-text p">{data.course__benefits5}</p>
             </div>
         </div>
     )
