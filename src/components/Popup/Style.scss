@@ -55,3 +55,25 @@ $clr__primary : #3a0ca3;
         margin: 5px;
     }
 }
+
+.successPopup {
+    &__title{
+        font-size: 2em;
+        color: rgb(3, 156, 28);
+    }
+
+    &__txt{
+        font-size: 1.2em;
+        color: black;
+    }
+
+    &__btns{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__btn{
+        width: 30%;
+        margin: 5px;
+    }
+}

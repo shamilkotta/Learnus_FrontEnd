@@ -12,6 +12,8 @@ import { saveCourse, submitCourse } from '../../api';
 import { actionTypes } from '../../utils/constants'
 import LoadingIcon from '../LoadingIcon';
 import { errorAction } from '../../actions/error';
+import SuccessPopup from '../Popup/SuccessPopup';
+import { Redirect } from 'react-router';
 
 const { COURSE_SAVE_LOADING, COURSE_SAVE_LOADING_END } = actionTypes;
 
@@ -43,6 +45,9 @@ const CreateCourse = ({courseId}) => {
     const [currentStep, setCurrentStep] = useState(1)
     const [completedStep, setCompletedStep] = useState(0)
 
+    const [nextStep, setNextStep] = useState(false)
+    const [popResult, setPopResult] = useState(-1)
+
     const dispatch = useDispatch()
     const { course, isCourseLoading } = useSelector(state => state.course)
     const { isCourseSaving } = useSelector(state => state.saveCourse)
@@ -55,6 +60,7 @@ const CreateCourse = ({courseId}) => {
             submitCourse(formData).then((response)=> {
                 // console.log(response?.data)
                 dispatch({type: COURSE_SAVE_LOADING_END})
+                setNextStep(true)
             }).catch((err)=> {
                 dispatch({type: COURSE_SAVE_LOADING_END})
                 dispatch(errorAction(err?.response?.data))
@@ -88,48 +94,53 @@ const CreateCourse = ({courseId}) => {
         courseId && setFormData({...course, id: courseId})
     }, [course])
 
-    if (isCourseLoading) {
-        return <LoadingIcon/>
-    }
+    if (isCourseLoading) return <LoadingIcon/>
+    if(popResult === 1) return <Redirect to="/admin"/>
+    if(popResult === 0) return <Redirect to="/admin/courses" />
 
     return (
-        <div className="create-course__container">
-            <h1 className="create-course__title ">Create New Course</h1>
-            <div className="form__steps-progress">
-                <StepsProgress text="1.Intro" completed={completedStep >=1 ? true: false} />
-                <StepsProgress text="2.Content" completed={completedStep >=2 ? true: false} />
-                <StepsProgress text="3.info" completed={completedStep >=3 ? true: false} />
-            </div>
-            <form onSubmit={handleSubmit} className="create-course__form">
+        <>
+            {
+                nextStep && <SuccessPopup cancelFun={()=> {setPopResult(0)}} confirmFun={()=> {setPopResult(1)}} />
+            }
+            <div className="create-course__container">
+                <h1 className="create-course__title ">Create New Course</h1>
+                <div className="form__steps-progress">
+                    <StepsProgress text="1.Intro" completed={completedStep >=1 ? true: false} />
+                    <StepsProgress text="2.Content" completed={completedStep >=2 ? true: false} />
+                    <StepsProgress text="3.info" completed={completedStep >=3 ? true: false} />
+                </div>
+                <form onSubmit={handleSubmit} className="create-course__form">
 
-                <div className="form__steps">
-                    <FormValues.Provider value={[formData, setFormData]}>
-                    {
+                    <div className="form__steps">
+                        <FormValues.Provider value={[formData, setFormData]}>
                         {
-                            1: <Step1/>,
-                            2: <Step2/>,
-                            3: <Step3/>
-                        }[currentStep]
-                    }
-                    </FormValues.Provider>
-                </div>
+                            {
+                                1: <Step1/>,
+                                2: <Step2/>,
+                                3: <Step3/>
+                            }[currentStep]
+                        }
+                        </FormValues.Provider>
+                    </div>
 
-                <div className="create-course__btn-group">
-                    {
-                        currentStep !== 1 && <button className="create-course__btn btn" onClick={goBack}>Back</button>
-                    }
-                    {
-                        currentStep !== 3 ?
-                            <> 
-                                <InputSubmit className="create-course__btn" onClick={handleSave} loading={isCourseSaving} value="Save" />
-                                <InputSubmit className="create-course__btn btn--active create-course__btn--continue" loading={isCourseSaving} value="Continue" />
-                            </>
-                        :
-                            <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={isCourseSaving}  value="Finish" />
-                    }
-                </div>
-            </form>
-        </div>
+                    <div className="create-course__btn-group">
+                        {
+                            currentStep !== 1 && <button className="create-course__btn btn" onClick={goBack}>Back</button>
+                        }
+                        {
+                            currentStep !== 3 ?
+                                <> 
+                                    <InputSubmit className="create-course__btn" onClick={handleSave} loading={isCourseSaving} value="Save" />
+                                    <InputSubmit className="create-course__btn btn--active create-course__btn--continue" loading={isCourseSaving} value="Continue" />
+                                </>
+                            :
+                                <InputSubmit className="create-course__btn btn--active create-course__btn--finish" loading={isCourseSaving}  value="Finish" />
+                        }
+                    </div>
+                </form>
+            </div>
+        </>
     )
 }
 
